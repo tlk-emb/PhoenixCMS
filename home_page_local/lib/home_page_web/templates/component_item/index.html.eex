@@ -1,0 +1,34 @@
+<h2>Listing Component items</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Position</th>
+      <th>Size</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for component_item <- @component_items do %>
+    <tr>
+      <td><%= component_item.title %></td>
+      <td><%= component_item.description %></td>
+      <td><%= component_item.position %></td>
+      <td><%= component_item.size %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: component_item_path(@conn, :show, component_item), class: "btn btn-default btn-xs" %></span>
+        <%= if component_item.user_id == current_user(@conn).id do %>
+          <span><%= link "Edit", to: component_item_path(@conn, :edit, component_item), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Delete", to: component_item_path(@conn, :delete, component_item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <% end %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Component item", to: component_item_path(@conn, :new) %></span>

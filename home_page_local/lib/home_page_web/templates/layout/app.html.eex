@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TAKASE's webpage</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="shortcut icon" type="image/x-icon" href="<%= static_path(@conn, "/images/favicon.ico") %>">
+  </head>
+
+  <body>
+    <header>
+      <!--<%= link to: top_path(@conn, :index) do %>
+      <h1>高瀬 英希　(TAKASE hideki)</h1>
+      <% end %>-->
+      <nav class="navbar navbar-dark">
+          <%= link to: top_path(@conn, :index), class: "navbar-brand" do %>
+            <h1>高瀬 英希 (TAKASE hideki)</h1>
+          <% end %>
+        <button class="navbar-toggler" type="button"
+          data-toggle="collapse"
+          data-target="#navmenu1"
+          aria-controls="navmenu1"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navmenu1">
+            <div class="navbar-nav">
+              <%= for item <- component_items() do %>
+                <%= case item.title do %>
+                  <%= "blank" -> %>
+                  <%= _ -> %>
+                    <a class="nav-item nav-link" href="#" onclick="return navJump(<%= item.position %>)"><%= item.title %></a>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+      </nav>
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with bottun groups">
+      <%= if current_user(@conn, @view_template) do %> <!-- layout_viewより -->
+        <%= link to: session_path(@conn, :delete), method: :delete,
+          class: "btn btn-danger btn-sm" do %>
+        <i class="fa fa-user-times fa-lg"></i> ログアウト
+        <% end %>
+        <%= link to: user_path(@conn, :index),
+          class: "btn btn-success btn-sm" do %>
+        <i class=" fa fa-user fa-lg"></i> ユーザページ
+        <% end %>
+        <%= link to: top_path(@conn, :preview),
+          class: "btn btn-primary btn-sm" do %>
+        <i class=" fa fa-eye fa-lg"></i> プレビュー
+        <% end %>
+        <%= link to: photo_path(@conn, :index),
+          class: "btn btn-secondary btn-sm" do %>
+        <i class=" fa fa-image fa-lg"></i> 画像
+        <% end %>
+      <% end %>
+    </div>
+    </header>
+    <main>
+      <%= if success = get_flash(@conn, :success) do %>
+        <p class="alert alert-success"><%= success %></p>
+      <% end %>
+      <%= if info = get_flash(@conn, :info) do %>
+        <p class="alert alert-info"><%= info %></p>
+      <% end %>
+      <%= if error = get_flash(@conn, :error) do %>
+        <p class="alert alert-danger"><%= error %></p>
+      <% end %>
+
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <footer>
+      <%=
+        "Last Update: #{last_updated().year}年#{last_updated().month}月#{last_updated().date}日"
+      %>
+
+      <!--<br>URL: http://www.lab3.kuis.kyoto-u.ac.jp/~takase/index.html<br>-->
+    </footer>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/scroll.js") %>"></script>
+  </body>
+  </body>
+</html>

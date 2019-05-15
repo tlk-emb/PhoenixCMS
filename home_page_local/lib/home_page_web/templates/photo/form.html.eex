@@ -1,0 +1,23 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      something wrong.
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>ファイル名(拡張子は要りません)</label>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group">
+    <label>ファイル</label>
+    <%= file_input f, :image, class: "form-control", accept: ".jpg,.gif,.png,.ico,.jpeg,image/gif,image/jpg,image/gif,image/png,image/ico,image/jpeg" %>
+    <%= error_tag f, :image %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

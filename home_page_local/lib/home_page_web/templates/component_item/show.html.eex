@@ -1,0 +1,29 @@
+<h2>Show Component item</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @component_item.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @component_item.description %>
+  </li>
+
+  <li>
+    <strong>Position:</strong>
+    <%= @component_item.position %>
+  </li>
+
+  <li>
+    <strong>Size:</strong>
+    <%= @component_item.size %>
+  </li>
+
+</ul>
+<%= if @component_item.user_id == current_user(@conn).id do %>
+  <span><%= link "Edit", to: component_item_path(@conn, :edit, @component_item) %></span>
+<% end %>
+<span><%= link "Back", to: component_item_path(@conn, :index) %></span>

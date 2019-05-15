@@ -1,0 +1,7 @@
+<h2>ユーザ編集</h2>
+
+<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :update, @user)) %>
+
+<span><%= link "ユーザページへ戻る", to: user_path(@conn, :index) %></span>
+  <span><%= link "E-mail変更", to: user_path(@conn, :email_edit, @user), class: "btn btn-success btn-xs" %></span>
+  <span><%= link "パスワード変更", to: user_path(@conn, :password_edit, @user), class: "btn btn-danger btn-xs" %></span>

@@ -1,0 +1,134 @@
+<div class="container-fluid item">
+  <div class="row">
+    <% current_id = current_user(@conn).id %>
+    <% line_map = how_line(@component_items, 1, %{}, []) %>
+    <% description_path = "/Users/admin/projects/local/home_page_local/priv/static/contents/" %>
+    <% image_path = "/images/uploaded/" %>
+
+    <%= for item <- @component_items do %>
+      <%= case item.line do %>
+        <%= m when m < 0 -> %>
+          </div><div class="row">
+        <%= _ -> %>
+      <% end %>
+      <!--blankか否か -->
+      <%= case item.title do %>
+        <%= "blank" -> %>
+          <%= case item.size do %>
+            <%= 11 -> %>
+          <div class="card border-light col-md-12 d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>"><!-- blankはmd以下で表示されない -->
+            <%= _ -> %>
+          <div class="card border-light col-md-<%= item.size %> d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>">
+          <% end %>
+          <!-- サムネを持つかどうか -->
+            <%= case item.thumbnail do %>
+              <%= nil -> %>
+                <br>
+                title: blank<br>
+                position:<%= item.position %><br>
+                size:<%= item.size %><br>
+                id:<%= item.id %><br>
+                line:<%= item.line %><br>
+                lock:<%= item.lock %><br>
+                <%= case item.user_id  do %>
+                  <%= u when u == current_id -> %>
+                    <span><%= link "Edit", to: component_item_path(@conn, :edit, item), class: "btn btn-success btn-xs" %></span>
+                    <%= case item.lock do %>
+                      <%= false -> %>
+                        <span><%= link "Delete", to: component_item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                      <%= true -> %>
+                        <br><i class=" fa fa-lock fa-3x lock"></i>
+                    <% end %>
+                <% end %>
+              <%= _ -> %>
+                <img class="card-img" src="<%= image_path <> item.thumbnail %>" alt="thumbnail">
+                <div class="card-img-overlay">
+                  <br>
+                  title: blank<br>
+                  position:<%= item.position %><br>
+                  size:<%= item.size %><br>
+                  id:<%= item.id %><br>
+                  line:<%= item.line %><br>
+                  lock:<%= item.lock %><br>
+                  <%= case item.user_id  do %>
+                    <%= u when u == current_id -> %>
+                      <span><%= link "Edit", to: component_item_path(@conn, :edit, item), class: "btn btn-success btn-xs" %></span>
+                      <%= case item.lock do %>
+                        <%= false -> %>
+                          <span><%= link "Delete", to: component_item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                        <%= true -> %>
+                          <br><i class=" fa fa-lock fa-3x lock"></i>
+                      <% end %>
+                  <% end %>
+                </div>
+            <% end %>
+        <!-- blankか否か -->
+        <% _ -> %>
+         <%= case item.size do %>
+          <%= 11 -> %>
+        <!-- position_nav_jump idはナビゲーションバーからのスクロールに使用
+            line_* クラスは同一行に何個のコンテンツが並ぶかを表し、マージンの調整に使用-->
+        <div class="card rounded-0 border-warning col-12  col-md-12 separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+          <%= _ -> %>
+        <div class="card rounded-0 border-warning col-12  col-md-<%= item.size %> separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+        <% end %>
+
+            <div class="card-block" id="line-<%= line_map["#{item.line}"] %>">
+              <div class="row">
+                <h5 class="card-header rounded-0 col-12 title blank_title">
+                  <%= item.title %>
+                </h5>
+              </div>
+              <!-- サムネを持つかどうか -->
+              <%= case item.thumbnail do %>
+                <%= nil -> %>
+                <%= _ -> %>
+                  <img class="card-img rounded-0 thumbnail" src="<%= image_path <> item.thumbnail %>" alt="thumbnail">
+              <% end %>
+              <p class="card-text">
+                <%= case File.read(description_path <> "#{item.id}.txt") do %>
+                  <%= {:ok, description} -> %>
+                    <%= case description do %>
+                      <%= nil -> %>
+                      <%= t -> %>
+                        <%= parse_markdown(t)
+                            |> raw()
+                         %>
+                    <% end %>
+                  <%= {:error, _} -> %>
+                <% end %>
+              </p>
+              <%= case item.user_id  do %>
+                <%= u when u == current_id -> %>
+                  <br>
+                  position:<%= item.position %><br>
+                  size:<%= item.size %><br>
+                  id:<%= item.id %><br>
+                  line:<%= item.line %><br>
+                  lock:<%= item.lock %><br>
+                  <span><%= link "Edit", to: component_item_path(@conn, :edit, item), class: "btn btn-success btn-xs" %></span>
+                  <%= case item.lock do %>
+                    <%= false -> %>
+                      <span><%= link "Delete", to: component_item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                    <%= true -> %>
+                      <br><i class=" fa fa-lock fa-3x lock"></i>
+                  <% end %>
+                <% _ -> %>
+                  <% nil %>
+              <% end %>
+            </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= if current_user(@conn).id != -1 do %>
+  <%= link to: component_item_path(@conn, :new),
+    class: "btn btn-info" do %>
+    <i class=" fa fa-plus fa-2x"></i><i class=" fa fa-plus fa-xs"></i><font size="5"> New Component item</font>
+  <% end %>
+<% end %>
+
+<a class="btn" href="#" id="page_top">
+  <i class=" fa fa-angle-double-up fa-3x"></i>
+</a>

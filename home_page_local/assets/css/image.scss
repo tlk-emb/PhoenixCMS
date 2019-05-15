@@ -1,0 +1,19 @@
+div.image{
+  div.row{
+    div.card{
+      width: 100px;
+      div.card-body{
+        div.card-title{
+          margin-right: -0.8rem;
+          margin-left: -0.8rem;
+          font-size: small;
+        }
+        span{
+          a{
+            margin-bottom: -1rem;
+          }
+        }
+      }
+    }
+  }
+}

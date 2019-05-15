@@ -1,0 +1,5 @@
+<h2>E-mail編集</h2>
+
+<%= render "form_mail.html", Map.put(assigns, :action, user_path(@conn, :email_update, @user)) %>
+
+<span><%= link "ユーザページへ戻る", to: user_path(@conn, :index) %></span>

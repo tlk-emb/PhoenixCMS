@@ -1,0 +1,11 @@
+<h2><%= @photo.name %></h2>
+
+<ul>
+
+  <img class="img" src="<%= @photo.image %>" alt="original image">
+  <br>
+  <%= @photo.image %>
+
+</ul>
+
+<span><%= link "Back", to: photo_path(@conn, :index) %></span>

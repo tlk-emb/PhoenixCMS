@@ -1,0 +1,3 @@
+<h2>パスワードの再発行</h2>
+
+<%= render "form_reset.html", Map.put(assigns, :action, user_path(@conn, :reset_update, @user, token: @token, claims: @claims)) %>

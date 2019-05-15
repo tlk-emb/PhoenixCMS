@@ -1,0 +1,11 @@
+{application,relx,
+             [{description,"Release assembler for Erlang/OTP Releases"},
+              {vsn,"3.29.0"},
+              {modules,[]},
+              {registered,[]},
+              {applications,[kernel,stdlib,getopt,erlware_commons,bbmustache,
+                             providers]},
+              {maintainers,["Eric Merritt","Tristan Sloughter",
+                            "Jordan Wilberding"]},
+              {licenses,["Apache"]},
+              {links,[{"Github","https://github.com/erlware/relx"}]}]}.

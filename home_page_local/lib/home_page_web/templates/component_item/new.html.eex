@@ -1,0 +1,14 @@
+<h2>New Component item</h2>
+<div style="font-size: small;">●画像の挿入:&lt;img class=&quot;card-img-fluid&quot; src=&quot;/images/&lt;画像の名前&gt;&quot; alt=&quot;image cap&quot;&gt;
+  とするとウィンドウ幅に応じてサイズが変わります
+<br>●タイトルをblankにすると空白あるいはサムネイル画像のみが表示されます
+</div>
+
+<% action = component_item_path(@conn, :create) %>
+<%= form_for @changeset, action, fn f -> %>
+  <%= render "form.html", changeset: @changeset, action: action %>
+<% end %>
+
+<!--<%= render "form.html", Map.put(assigns, :action, component_item_path(@conn, :create)) %>-->
+
+<span><%= link "Back", to: top_path(@conn, :index) %></span>

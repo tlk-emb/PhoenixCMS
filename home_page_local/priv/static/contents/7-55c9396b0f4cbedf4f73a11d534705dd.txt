@@ -1,0 +1,57 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a href="#kokusai" class="nav-link active" data-toggle="tab">国際会議等</a>
+  </li>
+  <li class="nav-item">
+    <a href="#kokunai" class="nav-link" data-toggle="tab">国内活動</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div id="kokusai" class="tab-pane active">
+<ul class="none">
+<li>Organizing Committee</li>
+<ul class="none">
+  <li>2017年 　 <a href="http://www.aspdac.com/aspdac2017/">22nd Asia and South Pacific Design Automation Conference (ASP-DAC 2017)</a> Finance Co-Chairs</li>
+  <li>2016年 　 <a href="http://www.mpsoc-forum.org/">16th International Forum on MPSoC for Software-defined Hardware (MPSoC'16)</a> Local Organization Co-Chairs</li>
+  <li>2015年　　<a href="http://www.mcsoc-forum.org/">IEEE 9thInternational Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC-15)</a> Publicity Co-Chairs</li>
+  <li>2013年 　 <a href="http://www.mpsoc-forum.org/">13th International Forum on Embedded MPSoC and Multicore (MPSoC'13)</a> Proceedings Co-Chair</li>
+</ul>
+<li>Technical Program Committee</li>
+<ul class="none">
+  <li>2018年　　<a href="http://sasimi.jp/new/sasimi2018/">The 21st Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2018)</a> System Level Design Subcommittee Member</li>
+  <li>2017年　　<a href="http://is-candar.org/">The Fifth International Symposium on Computing and Networking (CANDAR'17)</a> Program Committee Member (Track 2: Architecture and Computer System)</li>
+  <li>2016年　　<a href="http://sasimi.jp/new/sasimi2016/">The 20th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2016)</a> System Level Design Subcommittee Member</li>
+  <li>2015年　　<a href="http://paginas.fe.up.pt/~specs/events/euc2015/">13th IEEE/IFIP International Conference on Embedded and Ubiquitous Computing (EUC 2015)</a> Program Committee Member (Power/energy-aware and green embedded and ubiquitous computing)</li>
+</ul>
+</ul>
+</div>
+
+<div id="kokunai" class="tab-pane">
+<ul class="none">
+  <li>2017年〜(現在)　<a href="http://www.sigemb.jp/ESS/2017/">情報処理学会 組込みシステムシンポジウム</a> プログラム委員</li>
+  <li>2015年〜(現在)　<a href="http://toppers.jp/">TOPPERS</a>開発者会議実行委員会 実行委員</li>
+  <li>2014年〜2017年　<a href="http://www.elex.ieice.org/">IEICE Electronics Express (ELEX)</a> Associate Editor</li>
+  <li>2014年〜(現在)　<a href="http://www.sigemb.jp/">情報処理学会 組込みシステム研究会</a> 運営委員</li>
+  <li>2014年〜(現在)　<a href="http://www.kansai.ipsj.or.jp/">情報処理学会関西支部</a> グリーン組込みコンピューティング研究会 運営委員</li>
+  <li>2013年〜2017年　<a href="http://www.sig-sldm.org/">情報処理学会 システムとLSIの設計技術研究会</a> 運営委員・表彰サブワーキンググループ幹事</li>
+  <li>2013年〜2016年 <a href="http://swest.toppers.jp/LED-Camp/">LED-Camp</a>実行委員会 実行委員</li>
+  <ul class="none">
+	  <li>組込み初学者を対象とした短期合宿型教育プログラム！！</li>
+  </ul>
+  <li>2013年〜2015年 <a href="http://www.etrobo.jp/2013/">ETソフトウェアデザインロボットコンテスト（ETロボコン）</a> <a href="http://kansai.etrobo.jp/2013/">関西地区大会</a>実行委員会 実行委員</li>
+  <li>2012年〜2014年 <a href="http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/">京都大学ICTイノベーション</a> WG委員</li>
+  <li>2010年〜2011年 <a href="http://www.sigemb.jp/ESS/2011/">組込みシステムシンポジウム（ESS）</a>実行委員会 運営委員</li>
+  <li>2009年〜2011年 <a href="http://www.nces.is.nagoya-u.ac.jp/NEP/">名古屋大学組込みシステム人材育成プログラム（NEP）</a> Webシステム管理</li>
+  <li>2008年〜(現在)　<a href="http://www.ertl.jp/SWEST/">組込みシステム技術に関するサマーワークショップ（SWEST）</a>実行委員会 実行委員</li>
+  <ul class="none">
+    <li>2016年より プログラム委員長</li>
+  </ul>
+  <li>2007年〜2008年 <a href="http://www.ertl.jp/SSEST/">組込みシステム技術に関するサマースクール（SSEST）</a>実行委員会</li>
+  <ul class="none">
+    <li><a href="http://www.ertl.jp/SSEST/top/index.php?SSEST3">SSEST3</a> 実行委員</li>
+    <li><a href="http://www.ertl.jp/SSEST/top/index.php?SSEST4">SSEST4</a> 実行委員長</li>
+  </ul>
+</ul>
+</div>
+</div>

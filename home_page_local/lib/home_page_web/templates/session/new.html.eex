@@ -1,0 +1,5 @@
+<h2>ログインページ</h2>
+
+<%= render "form_new.html", Map.put(assigns, :action, session_path(@conn, :create)) %>
+
+<span><%= link "パスワードを忘れた(再発行)", to: session_path(@conn, :forget) %></span>

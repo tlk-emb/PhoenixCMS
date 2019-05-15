@@ -1,0 +1,36 @@
+<div class="page-title">User Page</div>
+<div class="container-fluid user-params">
+  <%= for user <- @users do %>
+    <div class="row">
+      <div class="col-12 d-md-none text-left title">Name</div>  <!--小画面-->
+    </div>
+    <div class="row">
+      <div class="col-12 d-md-none text-left param"><%= user.name %></div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-md-none text-left title">Email</div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-md-none text-left param"><%= user.email %></div>
+    </div>
+    <div class="row">
+      <div class="col-1 d-none d-md-block text-right title">Name</div>  <!--大画面-->
+      <div class="col-11 d-none d-md-block text-left param"><%= user.name %></div>
+    </div>
+    <div class="row">
+      <div class="col-1 d-none d-md-block text-right title">Email</div>
+      <div class="col-11 d-none d-md-block text-left param"><%= user.email %></div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-right">
+        <%= link to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" do %>
+          <i class="fa fa-pencil-square"></i> 編集
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+    <!--<span><%= link "詳細", to: user_path(@conn, :show, "user"), class: "btn btn-default btn-xs" %></span>-->
+    <!--<span><%= link "編集", to: user_path(@conn, :edit, "user"), class: "btn btn-default btn-xs" %></span>-->
+
+</div>

@@ -1,0 +1,17 @@
+<h2>画像一覧</h2>
+<div class="container-fluid image">
+  <div class="row">
+    <%= for photo <- @photos do %>
+      <div class="card bg-light border-info">
+        <img class="card-img-top" src="<%= photo.image %>" alt="Card image cap">
+        <div class="card-body">
+          <%= link to: photo_path(@conn, :show, photo.name) do %>
+            <div class="card-title"><%= photo.name %></div>
+          <% end %>
+          <span><%= link "Delete", to: photo_path(@conn, :delete, photo.name), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<br>
+<span><%= link "New Photo", to: photo_path(@conn, :new) %></span>

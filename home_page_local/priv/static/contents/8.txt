@@ -1,0 +1,162 @@
+<!--
+<h3>著書</h3>
+<ol class="none">
+</ol>
+-->
+
+* 学術論文(査読有り)
+* 国際会議
+* 国内シンポジウム・研究会
+* ポスター・デモ展示
+* 講演等・その他
+
+<div class="tab-content">
+    <div id="ronbun" class="tab-pane active">
+        1.  Takuya Hatayama, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**An Allocation Optimization Method for Partially-reliable Scratch-pad Memory in Embedded Systems**," _IPSJ Transactions on System LSI Design Methodology_, Vol. 8, No. 2, pp. 100-104, Aug 2015.
+        2.  <u>Hideki Takase</u>, Gang Zeng, Lovic Gauthier, Hirotaka Kawashima, Noritoshi Atsumi, Tomohiro Tatematsu, Yoshitake Kobayashi, Tekenori Koshiro, Tohru Ishihara, Hiroyuki Tomiyama and Hiroaki Takada, "**An Integrated Framework for Energy Optimization of Embedded Real-Time Applications**," _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_, Vol. E97-A, No. 12, pp. 2477-2487, Dec 2014.
+        3.  Akihiro Suda, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**Nested Loop Parallelization Using Polyhedral Optimization in High-Level Synthesis**," _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_, Vol. E97-A, No. 12, pp. 2498-2506, Dec 2014.
+        4.  Hirotaka Kawashima, Gang Zeng, <u>Hideki Takase</u>, Masato Edahiro and Hiroaki Takada, "**Efficient Algorithms for Extracting Pareto-optimal Hardware Configurations in DEPS Framework**," _IPSJ Transactions on System LSI Design Methodology_, Vol. 5, No. 2, pp. 133-142, Aug 2012.
+        5.  石田利永子，山本雅基，海上智昭，本田晋也，森孝夫，一場利幸，<u>高瀬英希</u>，高田広章，**共同研究と公開講座による組込みソフトウェア技術者育成の取り組み**, _日本工学教育協会 工学教育_, Vol. 60, No. 3, pp. 75-81, 2012年6月.
+        6.  一場利幸，森孝夫，<u>高瀬英希</u>，鴫原一人，本田晋也，高田広章，**命令セットシミュレータの実行制御機構を用いたマルチプロセッサRTOS のテスト効率化手法**, _電子情報通信学会論文誌D_, Vol. J95-D, No. 3, pp. 387-399, 2012年3月.
+        7.  谷口一徹，安藤友樹，<u>高瀬英希</u>，安積卓也，松原豊，村上靖明，菅谷みどり，**学生および若手技術者による組込みシステム技術に関するサマースクールの実践**, _情報処理学会論文誌_, Vol. 52, No. 12, pp. 3221-3237, 2011年12月.
+        8.  立松知紘，<u>高瀬英希</u>，曾剛，川島裕崇，冨山宏之，高田広章，**実行トレースマイニングを用いた組込みシステムにおけるタスク内DVFSのためのチェックポイント抽出**, _情報処理学会論文誌_, Vol. 52, No. 12, pp. 3729-3744, 2011年12月.
+        9.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Partitioning and Allocation of Scratch-Pad Memory for Energy Minimization of Priority-Based Preemptive Multi-Task Systems**," _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_, Vol. E94-A, No. 10, pp. 1954-1964, Oct 2011.
+        10.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Partitioning and Allocation of Scratch-Pad Memory in Priority-Based Multi-Task Systems**," _IPSJ Transactions on System LSI Design Methodology_, Vol. 2 (2009), pp. 180-188, Aug 2009.
+        11.  <u>Hideki Takase</u>, Hiroyuki Tomiyama, Gang Zeng and Hiroaki Takada, "**Energy efficiency of scratch-pad memory in deep submicron domains: an empirical study**," _IEICE Electronics Express_, Vol. 5, No. 23, pp. 1010-1016, Dec 2008.
+    </div>
+
+    <div id="kaigi" class="tab-pane">
+        1.  <u>Hideki Takase</u>, Tomoya Mori, Kazuyoshi Takagi and Naofumi Takagi, "**Design Concept of a Lightweight Runtime Environment for Robot Software Components onto Embedded Devices**," in Proc. of _ACM SIGBED International Conference on Embedded Software 2018 (EMSOFT2018)_, Torino, Italy, (to appear), Oct 2018.
+
+
+
+        2.  <u>Hideki Takase</u>, Kazumi Aono, Yutaka Matsubara, Kazuyoshi Takagi and Naofumi Takagi, "**An Evaluation Framework of OS-Level Power Managements for the big.LITTLE Architecture**," in Proc. of _the 14th IEEE International New Circuits and Systems Conference (NEWCAS)_, Vancouver, BC, Canada, pp. 1-4, Jun 2016.
+
+
+
+        3.  Takuya Hatayama, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**An Allocation Optimization Method for Partially-Reliable Instruction Scratch-Pad Memory in Embedded Systems**," in Proc. of _11th International SoC Design Conference (ISOCC2014)_, Jeju, Korea, pp. 118-119, Nov 2014.
+        4.  Kazumi Aono, Atsushi Iwata, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**An Operation Scenario Model for Energy Harvesting Embedded Systems and an Algorithm to Maximize the Operation Quality**," in Proc. of _2014 IEEE 11th International Conference on Embedded Software and Systems (ICESS2014)_, Paris, France, pp. 554-557, Aug 2014.
+        5.  <u>Hideki Takase</u>, Ryohei Azuma, Kazuyoshi Takagi and Naofumi Takagi, "**A Study of a Software-Centric System Design Environment for Programmable SoCs**," in Proc. of _The 29th International Technical Conference on Circuits/Systems, Computers and Communications (ITC-CSCC 2014)_, Phuket, Thailand, pp. 737-740, Jul 2014.
+        6.  Akihiro Suda, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**Buffering Method for Parallelized Loop with Non-Uniform Dependencies in High-Level Synthesis**," in Proc. of _the 13th International Conference on Algorithms and Arthitectures for Parallel Processing (ICA3PP 2013)_, Vietri sul Mare, Italy, pp. 390-401, Dec 2013.
+        7.  Akihiro Suda, <u>Hideki Takase</u>, Kazuyoshi Takagi and Naofumi Takagi, "**High-Level Synthesis for Nested Loop Kernels with Non-Uniform Dependencies**," in Proc. of _the 18th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2013)_, Sapporo, Japan, pp. 322-327, Oct 2013.
+        8.  Hirotaka Kawashima, Gang Zeng, <u>Hideki Takase</u> and Hiroaki Takada, "**Checkpoint Selection for DEPS Framework Based on Quantitative Evaluation of DEPS Profile**," in Proc. of _the 17th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2012)_, Beppu, Japan, pp. 174-179, Mar 2012.
+        9.  <u>Hideki Takase</u>, Gang Zeng, Lovic Gauthier, Hirotaka Kawashima, Noritoshi Atsumi, Tomohiro Tatematsu, Yoshitake Kobayashi, Shunitsu Kohara, Takenori Koshiro, Tohru Ishihara, Hiroyuki Tomiyama and Hiroaki Takada, "**An Integrated Optimization Framework for Reducing the Energy Consumption of Embedded Real-Time Applications**," in Proc. of _International Symposium on Low Power Electronics and Design 2011 (ISLPED 2011)_, pp. 271-276, Fukuoka, Japan, Aug 2011.
+        10.  Tomohiro Tatematsu, <u>Hideki Takase</u>, Gang Zeng, Hiroyuki Tomiyama and Hiroaki Takada, "**Checkpoint Extraction Using Execution Traces for Intra-Task DVFS in Embedded Systems**," in Proc. of _the 6th International Symposium on Electronic Design, Test and Application (DELTA2011)_, pp. 19-24, Queenstown, New Zealand, Jan 2011.
+        11.  Lovic Gauthier, Tohru Ishihara, <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Minimizing Inter-Task Interferences in Scratch-Pad Memory Usage for Reducing the Energy Consumption of Multi-Task Systems**," in Proc. of _International Conference on Compilers, Architecture, and Synthesis for Embedded Systems (CASES 2010)_, pp. 157-166, Scottsdale, AZ, USA, Oct 2010.
+        12.  Lovic Gauthier, Tohru Ishihara, <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Placing Static and Stack Data into a Scratch-Pad Memory for Reducing the Energy Consumption of Multi-task Applications**," in Proc. of _the 16th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2010)_, pp. 7-12, Taipei, Taiwan, Oct 2010.
+        13.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Partitioning and Allocation of Scratch-Pad Memory for Priority-Based Preemptive Multi-Task Systems**," in Proc. of _2010 Design, Automation and Test in Europe (DATE2010)_, pp. 1124-1129, Dresden, Germany, Mar 2010.
+        14.  <u>Hideki Takase</u>, Takuya Azumi, Ittetsu Taniguchi, Yutaka Matsubara, Hayato Kanai, Shintaro Hosoai and Midori Sugaya, "**History of Summer School on Embedded System Technologies Organized by Students and Young Engineers**," in Proc. of _2009 Workshop on Embedded Systems Education (WESE'09)_, pp. 19-26, Grenoble, France, Oct 2009.
+        15.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Allocation of Scratch-Pad Memory in Priority-Based Multi-Task Systems**," in Proc. of _2009 International Symposium on VLSI Design, Automation and Test (VLSI-DAT)_, pp. 68-71, Hsinchu, Taiwan, Apr 2009.
+        16.  <u>Hideki Takase</u>, Hiroyuki Tomiyama, Gang Zeng and Hiroaki Takada, "**Energy Efficiency of Scratch-Pad Memory at 65 nm and Below: An Empirical Study**," in Proc. of _International Conference on Embedded Software and Systems (ICESS)_, pp. 93-97, Chengdu, China, Jul 2008.
+    </div>
+
+    <div id="sinpo" class="tab-pane">
+        1.  <u>高瀬英希</u>，上野嘉大，山崎進，**関数型言語ElixirのIoTシステムへの導入に向けた基礎評価**, _情報処理学会研究報告_, Vol. 2018-EMB-48, No. 5, pp. 1-8, 東京, 2018年6月.
+        2.  新田泰大，<u>高瀬英希</u>，高木一義，高木直史，**SWORDSフレームワークにおけるSW/HW通信方式の自動選択に向けた検討**, _電子情報通信学会技術研究報告_, Vol. 118, No. 63, RECONF2018-8, pp. 39-44, 大崎, 2018年5月.
+        3.  Hideki Hirose, <u>Hideki Takase</u>, Kazuyoshi Takagi, Naofumi Takagi, "**A Generation Method of ECU-Hardware-Dependent Description of Complex Device Drivers in AUTOSAR**," _組込みシステムワークショップ2017論文集_, Vol. 2017, pp. 5-10, 2018年3月.（査読有り）
+        4.  山崎進，山田麻里衣，<u>高瀬英希</u>，**ウェブアプリ製品系列のUIプロトタイピング向けプロダクトライン開発**, _情報処理学会研究報告_, Vol. 2018-SE-198, No. 37, pp. 1-4, 東京, 2018年3月.
+        5.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**ROSノード軽量実行環境mROSにおけるデバイス内のノード間通信手法**, _情報処理学会研究報告_, Vol. 2018-EMB-47, No. 27, pp. 1-6, 隠岐, 2018年3月.
+        6.  廣瀬秀樹，<u>高瀬英希</u>，高木一義，高木直史，**AUTOSARカーネルにおけるターゲット依存記述のバージョン更新自動化手法**, _情報処理学会研究報告_, Vol. 2018-EMB-47, No. 28, pp. 1-6, 隠岐, 2018年3月.
+        7.  水野有美，<u>高瀬英希</u>，高木一義，高木直史，**(m, k)-firm制約下の弱ハードリアルタイムシステムにおける動的電圧周波数制御**, _情報処理学会研究報告_, Vol. 2018-EMB-47, No. 29, pp. 1-6, 隠岐, 2018年3月.
+        8.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**mROS：組込みデバイス向けROSノード軽量実行環境**, _情報処理学会研究報告_, Vol. 2017-EMB-46, No. 42, pp. 1-6, 熊本, 2018年11月.
+        9.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**組込みデバイスを活用したROSコンポーネントの軽量実行環境の初期検討**, _組込みシステムシンポジウム2017論文集_, Vol. 2015, pp. 5-8, 下呂, 2017年8月.（査読有り）
+        10.  <u>高瀬英希</u>，玉野浩二，西山高浩，**コンフィギュラブルLSIのためのソフトウェア志向のシステムレベル設計環境の初期検討**, _組込みシステムシンポジウム2017論文集_, Vol. 2015, pp. 122-123, 下呂, 2017年8月.
+        11.  <u>高瀬英希</u>，**ソフトウェア志向の組込みシステム協調設計環境**, _第61回システム制御情報学会研究発表講演会_, No. 314-1, pp. 1-6, 京都, 2017年5月.
+        12.  松井健太郎，<u>高瀬英希</u>，高木一義，高木直史，**コア状態を考慮したスラック収集型リアルタイムタスクスケジューリング**, _情報処理学会研究報告_, Vol. 2017-SLDM-179, No. 16, pp. 1-6, 久米島, 2017年3月.
+        13.  谷祐輔，<u>高瀬英希</u>，高木一義，高木直史，**協調設計環境SWORDSフレームワークのツールチェーン実装および設計空間探索への適用**, _情報処理学会研究報告_, Vol. 2017-SLDM-179, No. 18, pp. 1-6, 久米島, 2017年3月.
+        14.  <u>高瀬英希</u>，細合晋太郎，大栄豊，岡山直樹，桐畑鷹輔，谷口一徹，土本幸司，星野利夫，宮崎秀俊，山本健太，山科和史，**若手組込み技術者を対象とした短期合宿型教育実習LED-Camp4の実施報告**, _情報処理学会研究報告_, Vol. 2016-EMB-43, No. 4, pp. 1-6, 福岡, 2016年11月.
+        15.  谷祐輔，<u>高瀬英希</u>，高木一義，高木直史，**SWORDSフレームワークにおけるStream通信への対応および構成情報記述のJSON化**, _情報処理学会研究報告_, Vol. 2016-EMB-42, No. 3, pp. 1-2, 下呂, 2016年8月.
+        16.  <u>高瀬英希</u>，渡辺晴美，**組込みシステム研究会改善活動の取り組み**, _情報処理学会研究報告_, Vol. 2016-EMB-41, No. 6, pp. 1-6, 東京, 2016年6月.
+        17.  廣瀬秀樹，<u>高瀬英希</u>，高木一義，高木直史，**AUTOSARにおける複合デバイスドライバのマイコン依存記述生成手法**, _情報処理学会研究報告_, Vol. 2016-EMB-41, No. 4, pp. 1-8, 東京, 2016年6月.
+        18.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**自律走行ロボットにおけるSLAMのプログラマブルSoCを用いた実現**, _第60回システム制御情報学会研究発表講演会_, No. 111-2, pp. 1-6, 京都, 2016年5月.
+        19.  谷祐輔，<u>高瀬英希</u>，大川猛，高木一義，高木直史，**プログラマブルSoCのためのシステム設計環境におけるSW/HW間通信方式の比較評価**, _情報処理学会研究報告_, Vol. 2016-SLDM-175, No. 24, pp. 1-6, 五島, 2016年3月.
+        20.  畑山拓也，谷祐輔，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCにおけるリアルタイムシステム構築のためのソフトウェア指向の協調設計環境**, _電子情報通信学会技術研究報告_, Vol. 115, No. 343, pp. 27-32, 長崎, 2015年12月.
+        21.  青野和巳，<u>高瀬英希</u>，松原豊，高木一義，高木直史，**同一命令セットヘテロジニアスマルチコア向け消費電力管理手法の評価環境**, _組込みシステムシンポジウム2015論文集_, Vol. 2015, pp. 65-73, 東京, 2015年10月.（査読有り）
+        22.  谷祐輔，畑山拓也，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCのためのシステム設計環境におけるSW/HWインタフェース生成手法**, _電子情報通信学会技術研究報告_, Vol. 115, No. 109, pp. 73-78, 京都, 2015年6月.
+        23.  <u>高瀬英希</u>，岩田淳，高木一義，高木直史，**同一命令セットヘテロジニアスマルチコアのコアペア間におけるタスクスケジューリング**, _情報処理学会研究報告_, Vol. 2015-EMB-37, No. 9, pp. 1-6, 川崎, 2015年6月.
+        24.  岩田淳，<u>高瀬英希</u>，高木一義，高木直史，**同一命令セットヘテロジニアスマルチコアのための消費エネルギーを削減するタスクスケジューリング**, _情報処理学会研究報告_, Vol. 2015-EMB-36, No. 33, pp. 1-6, 奄美大島, 2015年3月.
+        25.  岩田淳，<u>高瀬英希</u>，高木一義，高木直史，**同一命令セットヘテロジニアスマルチコアに適したリアルタイムシステム向けタスクマイグレーション手法**, _情報処理学会研究報告_, Vol. 2014-SLDM-168, No. 4, pp. 1-6, 別府, 2014年11月.
+        26.  <u>高瀬英希</u>，細合晋太郎，岡山直樹，喜多真琴，後藤文康，谷口一徹，長濱みほ，星野利夫，宮崎秀俊，**若手組込み技術者を対象とした教育実習LED-Camp2の実施速報**, _組込みシステムシンポジウム2014論文集_, pp. 149-150, 東京, 2014年10月.
+        27.  畑山拓也，<u>高瀬英希</u>，高木一義，高木直史，**部分的に高信頼なスクラッチパッドメモリを持つ組込みシステムにおける命令配置最適化**, _第27回 回路とシステムワークショップ 論文集_, pp. 410-415, 淡路島, 2014年8月.（査読有り）
+        28.  青野和己，<u>高瀬英希</u>，高木一義，高木直史，**環境電力駆動組込みシステムの動作シナリオのモデル化と動作品質最大化アルゴリズム**, _情報処理学会研究報告_, Vol. 2014-EMB-32, No. 1, pp. 1-6, 石垣島, 2014年3月.
+        29.  <u>高瀬英希</u>，李景洙，石原亨，**排他動作する非均質マルチコアプロセッサとそのリアルタイムOSの実装**, _情報処理学会研究報告_, Vol. 2014-SLDM-165, No. 15, pp. 1-6, 石垣島, 2014年3月.
+        30.  東遼平，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCのためのシステム設計環境におけるフロントエンドの実装と事例評価**, _情報処理学会研究報告_, Vol. 2014-SLDM-165, No. 16, pp. 1-6, 石垣島, 2014年3月.
+        31.  <u>高瀬英希</u>，細合晋太郎，安藤友樹，尾鷲幸代，川上達也，舘伸幸，星野利夫，松原豊，赤山聖子，久住憲嗣，高田広章，**若手組込み技術者を対象とした短期合宿LED-Camp1実施報告**, _情報処理学会研究報告_, Vol. 2014-EMB-32, No. 36, pp. 1-6, 石垣島, 2014年3月.
+        32.  東遼平，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCのためのシステム設計環境の検討とSW-HWインタフェース生成手法の実装**, _情報処理学会研究報告_, Vol. 2014-SLDM-164, No. 34, pp. 1-6, 日吉, 2014年1月.
+        33.  須田瑛大，<u>高瀬英希</u>，高木一義，高木直史，**高位合成における非一様依存性を持つ入れ子ループ向けのバッファ構成手法**, _情報処理学会研究報告_, Vol. 2013-SLDM-163, No. 45, pp. 1-6, 鹿児島, 2013年11月.
+        34.  岩田淳，<u>高瀬英希</u>，高木一義，高木直史，**組込みシステム向けDVFSアルゴリズムのリアルタイムOSへの実装および比較評価**, _第12回情報科学技術フォーラム（FIT2013）講演資料集 第1分冊_, pp. 315-318, 鳥取, 2013年9月.
+        35.  松本耕太朗，<u>高瀬英希</u>，高木一義，高木直史，**組込みマルチコアシステムにおけるタスク割付およびスクラッチパッドメモリ割当の同時最適化**, _DAシンポジウム2013 論文集_, Vol. 2013, No. 3, pp. 55-60, 下呂, 2013年8月.
+        36.  須田瑛大，<u>高瀬英希</u>，高木一義，高木直史，**高位合成における多面体最適化のためのスレッド構成手法**, _情報処理学会研究報告_, Vol. 2013-SLDM-160, No. 21, pp. 1-6, 対馬, 2013年3月.
+        37.  伊藤勇也，<u>高瀬英希</u>，高木一義，高木直史，**浮動小数点演算器アレイの構成のための評価環境**, _電子情報通信学会技術研究報告_, Vol. 112, No. 481, pp. 253-258, 対馬, 2013年3月.
+        38.  荒木達真，<u>高瀬英希</u>，高木一義，高木直史，**高位合成における繰り返し回数未決定ループに対する投機実行手法**, _電子情報通信学会技術研究報告_, Vol. 112, No. 320, pp. 99-104, 博多, 2012年11月.
+        39.  三輪遼平，<u>高瀬英希</u>，曾剛，高田広章，**組込みシステムにおける消費エネルギー削減のためのスラック時間の活用**, _情報処理学会研究報告_, Vol. 2012-EMB-24, No. 13, pp. 1-6, 松島, 2012年3月.
+        40.  <u>高瀬英希</u>，高田広章，**スクラッチパッドメモリの実行時管理機能を有するリアルタイムOSの実装および評価**, _電子情報通信学会技術研究報告_, Vol. 111, No. 324, pp. 97-102, 宮崎, 2011年11月.
+        41.  <u>Hideki Takase</u>, Gang Zeng, Hirotaka Kawashima, Noritoshi Atsumi, Tomohiro Tatematsu, Lovic Gauthier, Tohru Ishihara, Yoshitake Kobayashi, Shunitsu Kohara, Takenori Koshiro, Hiroyuki Tomiyama and Hiroaki Takada, "**An Energy Optimization Framework for Embedded Applications**," _情報処理学会研究報告_, Vol. 2011-EMB-20, No. 3, 宮古島, 2011年3月.
+        42.  川島裕崇，曾剛，渥美紀寿，立松知紘，<u>高瀬英希</u>，高田広章，**DEPSプロファイルの評価法とそれを利用したチェックポイント選定**, _情報処理学会研究報告_, Vol. 2011-EMB-20, No. 43, 宮古島, 2011年3月.
+        43.  一場利幸，<u>高瀬英希</u>，鴫原一人，本田晋也，高田広章，**マルチプロセッサ環境におけるタイミング依存のシナリオを実行可能なシミュレーション機構**, _情報処理学会研究報告_, Vol. 2011-EMB-20, No. 4, 宮古島, 2011年3月.
+        44.  立松知紘，<u>高瀬英希</u>，曾剛，冨山宏之，高田広章，**実行トレースマイニングを用いたタスク内DVFSに有効なチェックポイント抽出手法**, _情報処理学会研究報告_, Vol. 2010-EMB-18, No. 10, 函館, 2010年8月.
+        45.  三輪遼平，<u>高瀬英希</u>，曾剛，冨山宏之，高田広章，**組込みシステムにおける低消費エネルギー志向の効率的なスラック時間の導出**, _情報処理学会研究報告_, Vol. 2010-EMB-18, No. 11, 函館, 2010年8月.
+        46.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**A Scratch-Pad Memory Management Framework for Embedded Real-Time Systems**," _情報処理学会研究報告_, Vol. 2009-SLDM-140, No. 8, 小倉, 2009年5月.
+        47.  <u>高瀬英希</u>，矢頭岳人，及川達裕，岩田英一郎，池田健太郎，畑尚志，川口麻美，飯野敦資，高井日淑，中島広茂，松葉俊信，吉村悠，**第4回組込みシステム技術に関するサマースクール（SSEST4）実施報告**, _電子情報通信学会技術研究報告_, Vol. 108, No. 463, pp. 7-12, 佐渡島, 2009年3月.
+        48.  <u>高瀬英希</u>，冨山宏之，高田広章，**プリエンプティブなマルチタスク環境におけるスクラッチパッドメモリ領域分割法**, _情報処理学会研究報告_, Vol. 2008, No.55(SE-160 EMB-9), pp. 57-64, 東京, 2008年6月.
+        49.  <u>高瀬英希</u>，冨山宏之，高田広章，**マルチタスク環境におけるスクラッチパッドメモリ領域活用法**, _電子情報通信学会技術研究報告_, Vol. 107, No. 558, pp. 109-114, 屋久島, 2008年3月.
+        50.  <u>高瀬英希</u>，曾剛，冨山宏之，高田広章，**リーク電力を考慮したスクラッチパッドメモリの有効性の評価**, _組込みシステムシンポジウム2007論文集_, Vol. 2007, No. 8, pp. 82-89, 東京, 2007年10月.（査読有り）
+    </div>
+
+    <div id="demo" class="tab-pane">
+        1.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**【mROS】組込みマイコン向けROSノード軽量実行環境**, _京都大学第12回ICTイノベーション_, 2018年2月
+        2.  松井健太郎，<u>高瀬英希</u>，高木一義，高木直史，**big.LITTLE向けの省電力とリアルタイム性を両立するタスクスケジューリング**, _京都大学第12回ICTイノベーション_, 2018年2月
+        3.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**組込みマイコンでROSが動く！〜ロボット向け軽量実行環境〜**, _第19回 組込みシステム技術に関するサマーワークショップ（SWEST19）_, 下呂, 2017年8月.
+        4.  廣瀬秀樹，<u>高瀬英希</u>，高木一義，高木直史，**AUTOSARにおけるComplex Device Driversのマイコン依存記述生成手法**, _第19回 組込みシステム技術に関するサマーワークショップ（SWEST19）_, 下呂, 2017年8月.
+        5.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**ロボット用ソフトウェア開発における組込みデバイスの活用**, _京都大学第11回ICTイノベーション_, 2017年2月
+        6.  廣瀬秀樹，<u>高瀬英希</u>，高木一義，高木直史，**車載ソフトウェア開発基盤AUTOSARにおけるマイコン依存記述生成手法**, _京都大学第11回ICTイノベーション_, 2017年2月
+        7.  廣瀬秀樹，<u>高瀬英希</u>，高木一義，高木直史，**AUTOSARにおける複合デバイスドライバのマイコン依存記述およびARXML生成手法**, _第18回 組込みシステム技術に関するサマーワークショップ（SWEST18）_, 下呂, 2016年8月.
+        8.  谷祐輔，畑山拓也，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCのためのソフトウェア指向の組込みシステム開発環境**, _京都大学第10回ICTイノベーション_, 2016年2月
+        9.  谷祐輔，<u>高瀬英希</u>，高木一義，高木直史，**SWORDS：プログラマブルSoCのためのソフトウェア志向の組込みシステム開発環境**, _第17回 組込みシステム技術に関するサマーワークショップ（SWEST17）_, 下呂, 2015年8月.
+        10.  畑山拓也，谷祐輔，<u>高瀬英希</u>，高木一義，高木直史，**組込みシステムにおけるプログラマブルSoCのためのシステム設計環境**, _京都大学第9回ICTイノベーション_, 2015年3月
+        11.  青野和巳，<u>高瀬英希</u>，高木一義，高木直史，**同一命令セットヘテロジニアスマルチコア向けタスクスケジューリング手法**, _京都大学第9回ICTイノベーション_, 2015年3月
+        12.  畑山拓也，東遼平，<u>高瀬英希</u>，高木一義，高木直史，**プログラマブルSoCのためのシステム設計環境とSW/HWインタフェース生成手法**, _第16回 組込みシステム技術に関するサマーワークショップ（SWEST16）_, 下呂, 2014年8月.
+        13.  Kyungsoo LEE, <u>Hideki TAKASE</u> and Tohru ISHIHARA, "**A Holistic Approach to Power Management for Energy Harvesting Embedded Systems**," _University Booth at Design, Automation & Test in Europe 2014 (DATE 2014)_, Dresden, Germany, Mar 2014.
+        14.  岩田淳，<u>高瀬英希</u>，高木一義，高木直史，**組込みシステム向けDVFSアルゴリズムの実環境を考慮した実装および比較評価**, _京都大学第8回ICTイノベーション_, 2013年12月
+        15.  松本耕太朗，<u>高瀬英希</u>，高木一義，高木直史，**組込みマルチコアシステムでのタスク割付とスクラッチパッドメモリ割当の同時最適化**, _京都大学第8回ICTイノベーション_, 2013年12月
+        16.  東遼平，<u>高瀬英希</u>，高木一義，高木直史，**プロセッサ/FPGA統合SoCに対応した協調設計環境の構想**, _第15回 組込みシステム技術に関するサマーワークショップ（SWEST15）_, 下呂, 2013年8月.
+        17.  岩田淳，<u>高瀬英希</u>，高木一義，高木直史，**DVFSアルゴリズムのリアルタイムOSへの実装および比較評価**, _第15回 組込みシステム技術に関するサマーワークショップ（SWEST15）_, 下呂, 2013年8月.
+        18.  須田瑛大，<u>高瀬英希</u>，高木一義，高木直史，**高位合成における多面体モデルを用いた並列性の抽出**, _京都大学ICTイノベーション2013_, 2013年2月
+        19.  <u>高瀬英希</u>，高田広章，**スクラッチパッドメモリの実行時管理機能を有するリアルタイムOS**, _第13回 組込みシステム技術に関するサマーワークショップ（SWEST13）_, pp. 21-24, 下呂, 2011年9月.
+        20.  加藤寿和，<u>高瀬英希</u>，石川拓也，本田晋也，高田広章，**リアルタイムシステムに向いたコア間通信機構の検討**, _第13回 組込みシステム技術に関するサマーワークショップ（SWEST13）_, pp. 17-20, 下呂, 2011年9月.
+        21.  <u>高瀬英希</u>，小原俊逸，深谷哲司，Lovic Gauthier，石原亨，冨山宏之，高田広章，**ソフトウェアとハードウェアの協調による組込みシステムの消費エネルギー最適化**, _第12回 組込みシステム技術に関するサマーワークショップ（SWEST12）_, pp. 60-63, 豊橋市, 2010年9月.
+        22.  <u>高瀬英希</u>，及川達裕，矢頭岳人，飯野敦資，池田健太郎，岩田英一郎，川口麻美，高井日淑，畑尚志，中島広茂，松葉俊信，吉村悠，**第4回組込みシステム技術に関するサマースクール**, _第10回組込みシステム技術に関するサマーワークショップ（SWEST10）_, pp. 100-113, 2008年9月.
+
+
+
+        23.  安積卓也，及川達裕，小田哲也，金川太俊，白石崇，瀬戸敏喜，<u>高瀬英希</u>，細合晋太郎，村上靖明，**第3回組込みシステム技術に関するサマースクール（SSEST3）**, _第9回組込みシステム技術に関するサマーワークショップ（SWEST9）_, pp. 43-46, 2007年8月.
+    </div>
+
+    <div id="kouen" class="tab-pane">
+        1.  ［招待講演］ <u>高瀬英希</u>，**ソフトウェア志向の組込みシステム協調設計環境**　[(講演資料)](http://www.slideshare.net/takasehideki/ss-76324628), _第61回システム制御情報学会研究発表講演会_, 2017年5月.
+        2.  ［招待講演］ <u>高瀬英希</u>，**組込みシステム設計におけるFPGA活用技術の最新動向とSWORDSフレームワーク**, _[2016年度情報処理学会関西支部 定期講演会『IoTの周辺技術』](http://kansai.ipsj.or.jp/2016kouen/)_, 2016年12月
+        3.  ［招待講演］ <u>高瀬英希</u>，**「第3のコンピュータ」をソフトウェア志向で使いこなすシステム設計環境SWORDSフレームワーク**　[(講演資料)](http://www.slideshare.net/takasehideki/ipsjone-20163swords-59455746), _[IPSJ-ONE 2016](http://ipsj-one.org/2016/)（情報処理学会 第78回全国大会）_, 2016年3月
+        4.  ［講演・討論］ **LED-Camp: 若手組込み技術者を対象とした合宿型教育実習**　[(講演資料)](http://sea.jp/SIGEDU/29th_takase.pdf)
+            _[第29回 SEA教育ワークショップ2015](http://www.sea.jp/SIGEDU/2015_29th_ws_rpt.pdf)_，2015年10月．
+        5.  ［講演］ 山崎進，<u>高瀬英希</u>，細合晋太郎，**LED-Camp 3.0 〜コンセプトからの授業改善の報告**, _[第17回組込みシステム技術に関するサマーワークショップ（SWEST17）](http://swest.toppers.jp/)_, 2015年8月.
+        6.  ［パネル討論］ **これからの10年〜岐路に立つ日本の学会活動〜**
+
+              コーディネータ：渡辺晴美（東海大）
+
+              パネリスト：鵜林尚靖（九大），吉村健太郎（日立），<u>高瀬英希</u>（京大），福田浩章（芝浦工大）
+            _[組込みシステムシンポジウム2015（ESS2015）](http://www.sigemb.jp/ESS/2015/)_，2015年10月．
+
+        7.  ［パネル討論］ **ESSロボットチャレンジ10周年：10年を振り返り、今後を語ろう**
+
+              コーディネー
+              パネリスト：近藤隆路（大阪工大），<u>高瀬英希</u>（京大），細合晋太郎（九大），柳美由貴（芝浦工大）
+            _[組込みシステムシンポジウム2014（ESS2014）](http://www.sigemb.jp/ESS/2014/)_，2014年10月．
+
+        8.  ［講演］ 土居意弘，柴田伸一，<u>高瀬英希</u>，**組込みシステム開発におけるFlashAirの活用　〜製品開発の事例・LED-Camp2実習教材のリアルタイムデバッグ〜**, _[第16回組込みシステム技術に関するサマーワークショップ（SWEST16）](http://swest.toppers.jp/)_, 2014年8月.
+        9.  ［セッションコーディネート］ 細合晋太郎，<u>高瀬英希</u>，**組込み技術者向け教育のモチベーション：LED-Campよもやま話**, _[第15回組込みシステム技術に関するサマーワークショップ（SWEST15）](http://swest.toppers.jp/)_, 2013年8月.
+        10.  ［講演］ <u>高瀬英希</u>，**ソフトウェアとハードウェアの協調による組込みシステムの消費エネルギー最適化**, _第2回[名古屋大学組込みシステム研究センター](http://www.nces.is.nagoya-u.ac.jp/)シンポジウム_, 2010年9月.
+        11.  ［セッションコーディネート］ <u>高瀬英希</u>，**若手研究者によるお悩み相談室 〜この先端研究ってホントに産で使えるの？この最新技術ってホントに学で扱えるの？〜**, _[第12回組込みシステム技術に関するサマーワークショップ（SWEST12）](http://www.ertl.jp/SWEST/)_, 2010年9月.
+        12.  ［雑誌記事］ 佐藤洋介，山郷成仁，<u>高瀬英希</u>，鈴木里沙，**ライン・トレース・カーで学ぶ組み込みシステム開発の基礎知識（第1回）モデリング言語を使って仕様書を書く**, _CQ出版社 Interface2009年08月号_, pp. 130-142, 2009年7月.
+        13.  ［技術交流会 話題提供］ 高瀬英希, 松原豊, **SSEST: 若手がやってみた組込み教育**, _[組込みシステム開発技術研究会（CEST）](http://www.ertl.jp/CEST/) 第114回技術交流会_, 名古屋, 2009年5月.
+    </div>
+</div>

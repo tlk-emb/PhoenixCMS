@@ -1,0 +1,11 @@
+<ul>
+<li>組込みシステム向け消費エネルギー最適化技術</li>
+  <li>プログラマブルSoCのためのソフトウェア志向のシステム設計環境</li>
+  <ul>
+  <li><a href="https://github.com/tlk-emb/SWORDS/">SWORDS: SoftWare ORiented Design and Synthesis framework for Zynq (on GitHub)</a></li>
+  </ul>
+  <li>ROS (Robot Operating System)を活用したロボットシステムの開発手法</li>
+  <ul>
+  <li><a href="https://github.com/tlk-emb/mROS/">mROS: a light-weight runtime environment of ROS nodes on embeddded devices (on GitHub)</a></li>
+  </ul>
+</ul>

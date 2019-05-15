@@ -1,0 +1,5 @@
+<ul>
+<li><a href="http://www.kyoto-u.ac.jp/" style="display:inline;">京都大学</a> <a href="http://www.i.kyoto-u.ac.jp/" style="display:inline;">大学院情報学研究科</a><br>　<a href="http://www.cce.i.kyoto-u.ac.jp/" style="display:inline;">通信情報システム専攻</a></li>
+<li> 兼担<br><a href="http://www.kyoto-u.ac.jp/">京都大学</a> <a href="http://www.s-im.t.kyoto-u.ac.jp/ja" style="display:inline;">工学部情報学科</a> <a href="http://www.s-im.t.kyoto-u.ac.jp/com/" style="display:inline;">計算機科学コース</a><br>
+　<a href="http://www.lab3.kuis.kyoto-u.ac.jp/" style="display:inline;">高木研究室</a>　助教</li>
+</ul>
