@@ -20,7 +20,7 @@
 
   <div class="form-group">
     <%= label f, :tab, class: "control-label" %>
-    <%= number_input f, :tab, class: "form-control", max: 10, min: 1 %>
+    <%= number_input f, :tab, class: "form-control", mix: 1, max: 10 %>
     <%= error_tag f, :tab %>
   </div>
 
