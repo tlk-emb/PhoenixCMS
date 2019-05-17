@@ -28,6 +28,6 @@ defmodule HomePage.Contents.ComponentItem do
     |> validate_required([:title, :position, :size])
     |> validate_number(:position, greater_than: 0)
     |> validate_number(:size, greater_than: 0, less_than: 12)
-    |> validate_number(:tab, greater_than: -1, less_than: 10)
+    |> validate_number(:tab, greater_than: 0, less_than: 11)
   end
 end
