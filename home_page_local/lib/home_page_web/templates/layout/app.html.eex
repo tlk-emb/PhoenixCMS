@@ -85,6 +85,7 @@
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/scroll.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/tab.js") %>"></script>
   </body>
   </body>
 </html>

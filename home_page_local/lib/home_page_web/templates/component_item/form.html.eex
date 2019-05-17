@@ -19,6 +19,12 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :tab, class: "control-label" %>
+    <%= number_input f, :tab, class: "form-control", mix: 1, max: 10 %>
+    <%= error_tag f, :tab %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :description, class: "control-label" %>
     <%= textarea f, :description, class: "form-control", rows: 20 %>
     <%= error_tag f, :description %>
