@@ -18540,6 +18540,9 @@ footer {
   font-size: 0.75rem;
   font-family: Helvetica, Arial, sans-serif; }
 
+div.no-display {
+  display: none; }
+
 header {
   padding: 0rem; }
   header h1 {
@@ -18608,15 +18611,15 @@ div.item div.row div.blank {
 div.item div.row div.row:last-child {
   margin-bottom: 1.0rem; }
 
-#page_top {
+#scroll_top_btn {
   display: block;
   position: fixed;
   right: 2%;
   bottom: 1%;
-  border-radius: 50%;
+  border-radius: 20%;
   background: #00bb80;
   opacity: 0.8; }
-  #page_top i.fa {
+  #scroll_top_btn i.fa {
     margin-top: -0.5rem;
     color: #f3df88; }
 

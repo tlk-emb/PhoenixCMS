@@ -1,6 +1,6 @@
 //スピードなどの設定
 var scrollOptions = {
-    pageTopBtn : 'page_top', // トップへ戻るボタンのID名（”名”のみで＃はつけない）
+    pageTopBtn : 'scroll_top_btn', // トップへ戻るボタンのID名（”名”のみで＃はつけない）
     hamburger : "navmenu1", // ハンバーガーメニューのID名
     showScroll : 200, // ボタンの出現するスクロール位置 PX単位
     scrollSpeed : 10, //早い→5　普通→10 ゆっくり→20
@@ -10,33 +10,33 @@ var scrollOptions = {
 };
 
 //トップボタンからのスクロール
-window.onload = function(){
+window.addEventListener("load", function(){
 
 var btn = document.getElementById(scrollOptions.pageTopBtn);
 
 // クリックイベント
 btn.onclick = function(){
     // 現在のスクロール位置を取得する
-    var x = document.body.scrollLeft || document.documentElement.scrollLeft;
-    var y = document.body.scrollTop  || document.documentElement.scrollTop;
+    var x_window = document.body.scrollLeft || document.documentElement.scrollLeft;
+    var y_window = document.body.scrollTop  || document.documentElement.scrollTop;
     // スクロール位置を pageTop() 関数へ渡して呼び出す
-    pageTop(x, y);
+    pageTop(x_window, y_window);
     return false;
 }
 
 // ページトップへ戻るアニメーション
 var topScroll_timer;
-function pageTop(x, y){
-    if (y >= 1) {
-        var scTop = Math.floor(y - (y / (scrollOptions.scrollSpeed * 2)));
-        window.scrollTo(x, scTop);
-        topScroll_timer = setTimeout(function(){pageTop(x, scTop)}, scrollOptions.scrollSpeed);
+function pageTop(x_w, y_w){
+    if (y_w >= 1) {
+        var scTop = Math.floor(y_w - (y_w / (scrollOptions.scrollSpeed * 2)));
+        window.scrollTo(x_w, scTop);
+        topScroll_timer = setTimeout(function(){pageTop(x_w, scTop)}, scrollOptions.scrollSpeed);
         // ↑ y の値が1以下になるまで y/定数分だけスクロールアップするのを
         // scrollSpeed の設定時間ごとに繰り返す
     } else {
         clearTimeout(topScroll_timer);
         // ↑ y の値が1以下になったらタイマーを止めて数値を引くのをやめる
-        window.scrollTo(x, 0);
+        window.scrollTo(x_w, 0);
     }
 }
 
@@ -96,7 +96,7 @@ function fadeOutTimer(opaValue){
         btn.style.opacity = 0;
     }
 }
-}
+})
 
 //ナビゲーションバーからのスクロール
 function navJump(position){

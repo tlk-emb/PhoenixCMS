@@ -2,7 +2,7 @@
   <div class="row">
     <% current_id = current_user(@conn).id %>
     <% line_map = how_line(@component_items, 1, %{}, []) %>
-    <% description_path = "/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>
+    <% description_path = "/Users/admin/projects/local/home_page_local/priv/static/contents/" %> <!--"/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>-->
     <% image_path = "/images/uploaded/" %>
 
     <%= for item <- @component_items do %>
@@ -32,9 +32,9 @@
           <%= 11 -> %>
         <!-- position_nav_jump idはナビゲーションバーからのスクロールに使用
             line_* クラスは同一行に何個のコンテンツが並ぶかを表し、マージンの調整に使用-->
-        <div class="card rounded-0 border-warning col-12  col-md-12 separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+        <div class="card rounded-0 border-dark col-12  col-md-12 separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
           <%= _ -> %>
-        <div class="card rounded-0 border-warning col-12  col-md-<%= item.size %> separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+        <div class="card rounded-0 border-dark col-12  col-md-<%= item.size %> separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
         <% end %>
 
             <div class="card-block" id="line-<%= line_map["#{item.line}"] %>">
@@ -55,8 +55,41 @@
                     <%= case description do %>
                       <%= nil -> %>
                       <%= t -> %>
-                        <%= raw(t) %>
-                    <% end %>
+                        <%= case item.tab do %>
+                        <%= 1 -> %>
+                          <%= parse_markdown(t)
+                              |> raw()%>
+                        <%= nil -> %>
+                          <%= parse_markdown(t)
+                              |> raw()%>
+                        <!-- tabの処理だけhtml,内容はmarkdownで処理させるためのゴリ押し -->
+                        <%= tab -> %>
+                        <%=   text = String.split(t, [~s{class="tab-pane active">}, ~s{class="tab-pane">}, "</div>"])
+                                    |> Enum.reject(fn(x) -> x == "" end)
+                                    |> Enum.reject(fn(x) -> x == " " end)
+                                    |> Enum.reject(fn(x) -> x == "　" end)
+                                    |> Enum.reject(fn(x) -> x == "\n" end)
+                              list_create(tab * 2)
+                              |> Enum.map(fn(x) ->
+                                            case x do
+                                              1 ->
+                                                ~s{#{Enum.at(text, 0)}} <> ~s{class="tab-pane active">}
+                                              y when rem(y, 2) == 0 ->
+                                                ~s{#{Enum.at(text, y - 1)}}
+                                                |> String.split("                          ")# 何故かこれだけの空白が最初についてくるので除く
+                                                |> tl
+                                                |> hd
+                                                |> parse_markdown()
+                                              z ->
+                                                "</div>" <> ~s{#{Enum.at(text, z - 1)}} <> ~s{class="tab-pane">}
+                                            end
+                                          end)
+                              |> Enum.join("")
+                              |> raw() %>
+                            </div></div>
+                        <!-- ゴリ押し　-->
+                        <% end %>
+                      <% end %>
                   <%= {:error, _} -> %>
                 <% end %>
               </p>

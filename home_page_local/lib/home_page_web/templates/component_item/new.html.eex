@@ -9,6 +9,5 @@
   <%= render "form.html", changeset: @changeset, action: action %>
 <% end %>
 
-<!--<%= render "form.html", Map.put(assigns, :action, component_item_path(@conn, :create)) %>-->
 
 <span><%= link "Back", to: top_path(@conn, :index) %></span>

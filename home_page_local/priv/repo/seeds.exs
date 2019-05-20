@@ -129,7 +129,8 @@ HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   size: 4,
   lock: true,
   line: 7,
-  category: "リンク"
+  category: "リンク",
+  tab: 1
 }
 
 

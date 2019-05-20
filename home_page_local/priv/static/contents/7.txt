@@ -1,42 +1,63 @@
-* 国際会議等
-* 国内活動
+<ul class="nav nav-tabs"><li class="nav-item">
+                            <a href="#7_tab1" class="nav-link active" data-toggle="tab">国際会議等</a>
+                          </li><li class="nav-item">
+                          <a href="#7_tab2" class="nav-link" data-toggle="tab">国内活動</a>
+                        </li></ul><div class="tab-content"><div id="7_tab1" class="tab-pane active">
+                          * Organizing Committee
 
-<div class="tab-content">
-    <div id="kokusai" class="tab-pane active">
-        * Organizing Committee
+* 2017年 　 [22nd Asia and South Pacific Design Automation Conference (ASP-DAC 2017)](http://www.aspdac.com/aspdac2017/) Finance Co-Chairs
+* 2016年 　 [16th International Forum on MPSoC for Software-defined Hardware (MPSoC'16)](http://www.mpsoc-forum.org/) Local Organization Co-Chairs
+* 2015年　　[IEEE 9thInternational Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC-15)](http://www.mcsoc-forum.org/) Publicity Co-Chairs
+* 2013年 　 [13th International Forum on Embedded MPSoC and Multicore (MPSoC'13)](http://www.mpsoc-forum.org/) Proceedings Co-Chair
+* Technical Program Committee
 
-        * 2017年 　 [22nd Asia and South Pacific Design Automation Conference (ASP-DAC 2017)](http://www.aspdac.com/aspdac2017/) Finance Co-Chairs
-        * 2016年 　 [16th International Forum on MPSoC for Software-defined Hardware (MPSoC'16)](http://www.mpsoc-forum.org/) Local Organization Co-Chairs
-        * 2015年　　[IEEE 9thInternational Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC-15)](http://www.mcsoc-forum.org/) Publicity Co-Chairs
-        * 2013年 　 [13th International Forum on Embedded MPSoC and Multicore (MPSoC'13)](http://www.mpsoc-forum.org/) Proceedings Co-Chair
-        * Technical Program Committee
+* 2018年　　[The 21st Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2018)](http://sasimi.jp/new/sasimi2018/) System Level Design Subcommittee Member
+* 2017年　　[The Fifth International Symposium on Computing and Networking (CANDAR'17)](http://is-candar.org/) Program Committee Member (Track 2: Architecture and Computer System)
+* 2016年　　[The 20th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2016)](http://sasimi.jp/new/sasimi2016/) System Level Design Subcommittee Member
+* 2015年　　[13th IEEE/IFIP International Conference on Embedded and Ubiquitous Computing (EUC 2015)](http://paginas.fe.up.pt/~specs/events/euc2015/) Program Committee Member (Power/energy-aware and green embedded and ubiquitous computing)
+                  
 
-        * 2018年　　[The 21st Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2018)](http://sasimi.jp/new/sasimi2018/) System Level Design Subcommittee Member
-        * 2017年　　[The Fifth International Symposium on Computing and Networking (CANDAR'17)](http://is-candar.org/) Program Committee Member (Track 2: Architecture and Computer System)
-        * 2016年　　[The 20th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2016)](http://sasimi.jp/new/sasimi2016/) System Level Design Subcommittee Member
-        * 2015年　　[13th IEEE/IFIP International Conference on Embedded and Ubiquitous Computing (EUC 2015)](http://paginas.fe.up.pt/~specs/events/euc2015/) Program Committee Member (Power/energy-aware and green embedded and ubiquitous computing)
-    </div>
 
-    <div id="kokunai" class="tab-pane">
-        * 2017年〜(現在)　[情報処理学会 組込みシステムシンポジウム](http://www.sigemb.jp/ESS/2017/) プログラム委員
-        * 2015年〜(現在)　[TOPPERS](http://toppers.jp/)開発者会議実行委員会 実行委員
-        * 2014年〜2017年　[IEICE Electronics Express (ELEX)](http://www.elex.ieice.org/) Associate Editor
-        * 2014年〜(現在)　[情報処理学会 組込みシステム研究会](http://www.sigemb.jp/) 運営委員
-        * 2014年〜(現在)　[情報処理学会関西支部](http://www.kansai.ipsj.or.jp/) グリーン組込みコンピューティング研究会 運営委員
-        * 2013年〜2017年　[情報処理学会 システムとLSIの設計技術研究会](http://www.sig-sldm.org/) 運営委員・表彰サブワーキンググループ幹事
-        * 2013年〜2016年 [LED-Camp](http://swest.toppers.jp/LED-Camp/)実行委員会 実行委員
 
-        * 組込み初学者を対象とした短期合宿型教育プログラム！！
-        * 2013年〜2015年 [ETソフトウェアデザインロボットコンテスト（ETロボコン）](http://www.etrobo.jp/2013/) [関西地区大会](http://kansai.etrobo.jp/2013/)実行委員会 実行委員
-        * 2012年〜2014年 [京都大学ICTイノベーション](http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/) WG委員
-        * 2010年〜2011年 [組込みシステムシンポジウム（ESS）](http://www.sigemb.jp/ESS/2011/)実行委員会 運営委員
-        * 2009年〜2011年 [名古屋大学組込みシステム人材育成プログラム（NEP）](http://www.nces.is.nagoya-u.ac.jp/NEP/) Webシステム管理
-        * 2008年〜(現在)　[組込みシステム技術に関するサマーワークショップ（SWEST）](http://www.ertl.jp/SWEST/)実行委員会 実行委員
 
-        * 2016年より プログラム委員長
-        * 2007年〜2008年 [組込みシステム技術に関するサマースクール（SSEST）](http://www.ertl.jp/SSEST/)実行委員会
 
-        * [SSEST3](http://www.ertl.jp/SSEST/top/index.php?SSEST3) 実行委員
-        * [SSEST4](http://www.ertl.jp/SSEST/top/index.php?SSEST4) 実行委員長
-    </div>
-</div>
+
+
+
+
+
+
+
+
+                          </div><div id="7_tab2" class="tab-pane">
+                          * 2017年〜(現在)　[情報処理学会 組込みシステムシンポジウム](http://www.sigemb.jp/ESS/2017/) プログラム委員
+* 2015年〜(現在)　[TOPPERS](http://toppers.jp/)開発者会議実行委員会 実行委員
+* 2014年〜2017年　[IEICE Electronics Express (ELEX)](http://www.elex.ieice.org/) Associate Editor
+* 2014年〜(現在)　[情報処理学会 組込みシステム研究会](http://www.sigemb.jp/) 運営委員
+* 2014年〜(現在)　[情報処理学会関西支部](http://www.kansai.ipsj.or.jp/) グリーン組込みコンピューティング研究会 運営委員
+* 2013年〜2017年　[情報処理学会 システムとLSIの設計技術研究会](http://www.sig-sldm.org/) 運営委員・表彰サブワーキンググループ幹事
+* 2013年〜2016年 [LED-Camp](http://swest.toppers.jp/LED-Camp/)実行委員会 実行委員
+
+* 組込み初学者を対象とした短期合宿型教育プログラム！！
+* 2013年〜2015年 [ETソフトウェアデザインロボットコンテスト（ETロボコン）](http://www.etrobo.jp/2013/) [関西地区大会](http://kansai.etrobo.jp/2013/)実行委員会 実行委員
+* 2012年〜2014年 [京都大学ICTイノベーション](http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/) WG委員
+* 2010年〜2011年 [組込みシステムシンポジウム（ESS）](http://www.sigemb.jp/ESS/2011/)実行委員会 運営委員
+* 2009年〜2011年 [名古屋大学組込みシステム人材育成プログラム（NEP）](http://www.nces.is.nagoya-u.ac.jp/NEP/) Webシステム管理
+* 2008年〜(現在)　[組込みシステム技術に関するサマーワークショップ（SWEST）](http://www.ertl.jp/SWEST/)実行委員会 実行委員
+
+* 2016年より プログラム委員長
+* 2007年〜2008年 [組込みシステム技術に関するサマースクール（SSEST）](http://www.ertl.jp/SSEST/)実行委員会
+
+* [SSEST3](http://www.ertl.jp/SSEST/top/index.php?SSEST3) 実行委員
+* [SSEST4](http://www.ertl.jp/SSEST/top/index.php?SSEST4) 実行委員長
+
+
+
+
+
+
+
+
+
+
+                          </div></div>

@@ -17,20 +17,32 @@
     <%= number_input f, :position, class: "form-control" %>
     <%= error_tag f, :position %>
   </div>
-
+  ※タブ数を変えると未保存の記述が消えます。一旦保存してください
   <div class="form-group">
-    <%= label f, :tab, class: "control-label" %>
-    <%= number_input f, :tab, class: "form-control", mix: 1, max: 10 %>
+    <%= label f, :tab, class: "control-label tab", id: "<%= #{@changeset.data.id}.txt "  %>
+    <%= number_input f, :tab, class: "form-control", min: 1, max: 10, id: "tab" %>
     <%= error_tag f, :tab %>
   </div>
 
-  <div class="form-group">
+  <!-- タブの数によって動的にdescriptionフォームを生成したいので
+      このdescriptionフォームは使用しないが、
+      descriptionの内容をjs側から取得するために非表示で置いておく
+      同じフィールドに対応したフォームが複数ある場合、
+      下に置かれた物の変更内容が適用されるのでこれよりも下に
+      動的生成する　-->
+  <div class="form-group no-display">
     <%= label f, :description, class: "control-label" %>
-    <%= textarea f, :description, class: "form-control", rows: 20 %>
+    <div id="description">
+    <%= @changeset.data.description %>
+    </div>
+    <textarea class="form-control" name="component_item[description]"></textarea>
     <%= error_tag f, :description %>
   </div>
+  <div class="no-display" id="item_id">
+    <%= @changeset.data.id %>
+  </div>
 
-  <div class="form-group">
+  <div class="form-group" id="size">
     <%= label f, :size, class: "control-label" %>
     <%= number_input f, :size, class: "form-control" %>
     <%= error_tag f, :size %>
@@ -51,4 +63,5 @@
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
+
 <% end %>

@@ -24,4 +24,9 @@ defmodule HomePageWeb.TopView do
     Earmark.as_html!(markdown)
   end
 
+  defp list_create(num) do
+    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    |> Enum.reject(fn(x) -> x > num end)
+  end
+
 end

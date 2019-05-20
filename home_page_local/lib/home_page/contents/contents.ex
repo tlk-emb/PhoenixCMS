@@ -69,6 +69,7 @@ defmodule HomePage.Contents do
 
   def build_component_item() do
     %ComponentItem{
+      tab: 1
     }
   end
 

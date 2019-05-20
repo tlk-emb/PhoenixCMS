@@ -68,9 +68,9 @@
           <%= 11 -> %>
         <!-- position_nav_jump idはナビゲーションバーからのスクロールに使用
             line_* クラスは同一行に何個のコンテンツが並ぶかを表し、マージンの調整に使用-->
-        <div class="card rounded-0 border-warning col-12  col-md-12 separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+        <div class="card rounded-0 border-dark col-12  col-md-12 separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
           <%= _ -> %>
-        <div class="card rounded-0 border-warning col-12  col-md-<%= item.size %> separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
+        <div class="card rounded-0 border-dark col-12  col-md-<%= item.size %> separate line-<%= line_map["#{item.line}"] %>" id="<%= item.position %>_nav_jump">
         <% end %>
 
             <div class="card-block" id="line-<%= line_map["#{item.line}"] %>">
@@ -91,10 +91,41 @@
                     <%= case description do %>
                       <%= nil -> %>
                       <%= t -> %>
-                        <%= parse_markdown(t)
-                            |> raw()
-                         %>
-                    <% end %>
+                        <%= case item.tab do %>
+                        <%= 1 -> %>
+                          <%= parse_markdown(t)
+                              |> raw()%>
+                        <%= nil -> %>
+                          <%= parse_markdown(t)
+                              |> raw()%>
+                        <!-- tabの処理だけhtml,内容はmarkdownで処理させるためのゴリ押し -->
+                        <%= tab -> %>
+                        <%=   text = String.split(t, [~s{class="tab-pane active">}, ~s{class="tab-pane">}, "</div>"])
+                                    |> Enum.reject(fn(x) -> x == "" end)
+                                    |> Enum.reject(fn(x) -> x == " " end)
+                                    |> Enum.reject(fn(x) -> x == "　" end)
+                                    |> Enum.reject(fn(x) -> x == "\n" end)
+                              list_create(tab * 2)
+                              |> Enum.map(fn(x) ->
+                                            case x do
+                                              1 ->
+                                                ~s{#{Enum.at(text, 0)}} <> ~s{class="tab-pane active">}
+                                              y when rem(y, 2) == 0 ->
+                                                ~s{#{Enum.at(text, y - 1)}}
+                                                |> String.split("                          ")# 何故かこれだけの空白が最初についてくるので除く
+                                                |> tl
+                                                |> hd
+                                                |> parse_markdown()
+                                              z ->
+                                                "</div>" <> ~s{#{Enum.at(text, z - 1)}} <> ~s{class="tab-pane">}
+                                            end
+                                          end)
+                              |> Enum.join("")
+                              |> raw() %>
+                            </div></div>
+                        <!-- ゴリ押し　-->
+                        <% end %>
+                      <% end %>
                   <%= {:error, _} -> %>
                 <% end %>
               </p>
@@ -125,10 +156,9 @@
 <%= if current_user(@conn).id != -1 do %>
   <%= link to: component_item_path(@conn, :new),
     class: "btn btn-info" do %>
-    <i class=" fa fa-plus fa-2x"></i><i class=" fa fa-plus fa-xs"></i><font size="5"> New Component item</font>
+    <i class=" fa fa-plus fa-2x"></i><i class=" fa fa-plus fa-xs"></i><font size="5"> New Item</font>
   <% end %>
 <% end %>
-
-<a class="btn" href="#" id="page_top">
+<a class="btn" href="#" id="scroll_top_btn">
   <i class=" fa fa-angle-double-up fa-3x"></i>
 </a>
