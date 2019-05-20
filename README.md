@@ -1,2 +1,2 @@
-# koji_CMS
+# PhoenixCMS
 CMS with elixir + phoenix on AWS
