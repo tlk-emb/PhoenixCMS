@@ -105,6 +105,6 @@
   <font size="5"> 戻る</font>
 <% end %>
 
-<a class="btn" href="#" id="page_top">
+<a class="btn" href="#" id="scroll_top_btn">
   <i class=" fa fa-angle-double-up fa-3x"></i>
 </a>

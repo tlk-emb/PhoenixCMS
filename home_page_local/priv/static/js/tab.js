@@ -2,12 +2,40 @@
   var tab_value = tab.val();
   $(window).on("load", function(){
     tab_set(tab_value);
+    html_preview(tab_value);
+    //textエリアの内容が変化したときにプレビューを更新
+    $("#notab_description").on("input", function(event){
+      $("#description_html").remove();
+      html_preview(tab_value);
+    });
+    $(".tab_html").each(function(index, object){
+      $("#tab" + Number(index + 1) + "_description").on("input", function(event){
+        $(".tab_html").remove();
+        html_preview(tab_value);
+      });
+    });
   });
+  //タブ数が変わるとhtml構造が変わるので再記述
   tab.on("input", function(event) {
     //タブの数をリセットしてから再度生成
-    $('.tab_group').remove();
+    $(".tab_group").remove();
     var tab_value = tab.val();
-      tab_set(tab_value);
+    tab_set(tab_value);
+    //プレビューも一旦削除して作り直す
+    $("#description_html").remove();
+    $(".tab_html").remove();
+    html_preview(tab_value);
+    //textエリアの内容が変化したときにプレビューを更新
+    $("#notab_description").on("input", function(event){
+      $("#description_html").remove();
+      html_preview(tab_value);
+    });
+    $(".tab_html").each(function(index, object){
+      $("#tab" + Number(index + 1) + "_description").on("input", function(event){
+        $(".tab_html").remove();
+        html_preview(tab_value);
+      });
+    });
   });
 
 function tab_set(tab_value){
@@ -19,8 +47,8 @@ function tab_set(tab_value){
     });
     var text = $("#description").html();
     description.html(
-      '<label class="control-label" for="component_item_description">Description</label>'
-      + '<textarea class="form-control" id="component_item_description" name="component_item[description]" rows="20">'
+      '<label class="control-label" for="component_item_description" id="description_label">Description</label>'
+      + '<textarea class="form-control" id="notab_description" name="component_item[description]" rows="20">'
       +text+'</textarea>'
     );
     description.insertBefore("#size");
@@ -43,8 +71,8 @@ function tab_set(tab_value){
         "class": "form-group tab_group"
       });
       description.html(
-      '<label class="control-label" for="component_item_tab' + Number(step) + '_text">Tab-Text' + Number(step)
-      + '</label> <textarea class="form-control" name="component_item[tab' + Number(step) + '_text]" rows="20">'
+      '<label class="control-label" for="component_item_tab' + Number(step) + '_text" id="tab' + Number(step) + '_label">Tab-Text' + Number(step)
+      + '</label> <textarea class="form-control tab_description" name="component_item[tab' + Number(step) + '_text]" rows="20" id="tab' + Number(step) + '_description">'
       + desc_text + '</textarea>'
       );
       //サイズ入力欄の上に挿入
@@ -69,13 +97,51 @@ function tab_set(tab_value){
         "class": "form-group tab_group"
       });
       description.html(
-      '<label class="control-label" for="component_item_tab' + Number(step) + '_text">Tab-Text' + Number(step)
-      + '</label> <textarea class="form-control" name="component_item[tab' + Number(step) + '_text]" rows="20">'
+      '<label class="control-label" for="component_item_tab' + Number(step) + '_text" id="tab' + Number(step) + '_label">Tab-Text' + Number(step)
+      + '</label> <textarea class="form-control tab_description" name="component_item[tab' + Number(step) + '_text]" rows="20" id="tab' + Number(step) + '_description">'
       + desc_text + '</textarea>'
       );
       //サイズ入力欄の上に挿入
       title.insertBefore("#size");
       description.insertBefore("#size");
+    }
+  }
+}
+//texiarea内に記述したマークダウンをhtmlに変換しリアルタイム表示
+function html_preview(tab_value){
+  if(tab_value <= 1 || tab_value == null){
+    var markdown = $("#notab_description").val();
+    if(markdown && markdown.replace(/\s+/g, "") != ""){
+      var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+    }else{
+      var preview = ""
+    }
+    var dom = $('<div id="description_html"></div>');
+    dom.html(preview);
+    dom.insertBefore("#description_label");
+  }else if(Number(tab_value) > 10){
+    for (step = 1; step <= 10; step++){
+      var markdown = $("#tab" + Number(step) + "_description").val();
+      if(markdown && markdown.replace(/\s+/g, "") != ""){
+        var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+      }else{
+        var preview = ""
+      }
+      var dom = $('<div class="tab_html"></div>');
+      dom.html(preview);
+      dom.insertBefore("#tab" + Number(step) + "_label");
+    }
+  }else{
+    for (step = 1; step <= Number(tab_value); step++){
+      var markdown = $("#tab" + Number(step) + "_description").val();
+      if(markdown && markdown.replace(/\s+/g, "") != ""){
+        var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+      }else{
+        var preview = ""
+      }
+      var dom = $('<div class="tab_html"></div>');
+      dom.html(preview);
+      dom.insertBefore("#tab" + Number(step) + "_label");
     }
   }
 }

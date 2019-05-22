@@ -10,7 +10,6 @@
 5.  2008年 8月　平成20年度 情報処理学会SLDM研究会 優秀論文賞
 6.  2008年 8月　第134回システムLSI設計技術研究会 優秀発表学生賞
 7.  2008年 7月　情報処理学会 2007年度コンピュータサイエンス領域 奨励賞, 高瀬 英希，冨山 宏之，高田 広章, "マルチタスク環境におけるスクラッチパッドメモリ領域活用法".
-
                           </div><div id="9_tab2" class="tab-pane">
                           1.  2017年11月　第7回TOPPERS活用アイデア・アプリケーション開発コンテスト がじぇるねIoT部門 銀賞，森智也
 2.  2017年11月　第7回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門 学生賞，廣瀬秀樹
@@ -20,6 +19,4 @@
 6.  2015年10月　組込みシステムシンポジウム 奨励賞，青野和巳, 高瀬英希, 松原豊, 高木一義, 高木直史
 7.  2013年 8月　第158回システムLSI設計技術研究会 優秀発表学生賞，荒木達真
 8.  2010年10月　Outstanding Paper Award, Lovic Gauthier, Tohru Ishihara, Hideki Takase, Hiroyuki Tomiyama, Hiroaki Takada, Workshop on Synthesis and System Integration of Mixed Information Technologies (SASIMI).
-
-
                           </div></div>

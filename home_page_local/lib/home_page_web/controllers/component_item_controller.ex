@@ -177,9 +177,9 @@ defmodule HomePageWeb.ComponentItemController do
 # htmlからDB(txt)に渡す
   defp tab_encord(params, id) do
     ~s{<ul class="nav nav-tabs">}
-    <> (params["tab"]#タブの数だけ要素数があるリスト
+    <> (params["tab"]
         |> String.to_integer()
-        |> list_create()
+        |> list_create()#タブの数だけ要素数があるリスト
         |> Enum.map(fn(x) ->
                       case x do
                         1 ->
@@ -195,9 +195,9 @@ defmodule HomePageWeb.ComponentItemController do
         |> Enum.join(""))
     <> "</ul>"
     <> ~s{<div class="tab-content">}
-    <> (params["tab"]#タブの数だけ要素数があるリスト
+    <> (params["tab"]
         |> String.to_integer()
-        |> list_create()
+        |> list_create()#タブの数だけ要素数があるリスト
         |> Enum.map(fn(x) ->
                       case x do
                         1 ->
