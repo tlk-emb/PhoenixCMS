@@ -18530,8 +18530,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   background-color: #fefef0; }
-  body nav.navbar {
-    background-color: #00bb80; }
 
 footer {
   background-color: #d0c4ba;
@@ -18544,17 +18542,36 @@ div.no-display {
   display: none; }
 
 header {
-  padding: 0rem; }
+  background-color: #50433a;
+  padding: 0rem;
+  background-color: #50433a; }
+  header div.btn-link-toolbar {
+    background-color: #00cb90; }
+    header div.btn-link-toolbar a.tool-btn {
+      border-width: 0px 2px 2px 0px;
+      color: #fff;
+      border-color: #50433a; }
+    header div.btn-link-toolbar a.tool-btn-lastrow {
+      border-width: 0px 0px 2px 0px; }
+    header div.btn-link-toolbar a.tool-btn-bottom {
+      border-width: 0px 2px 0px 0px;
+      margin-right: 0px;
+      color: #fff;
+      border-color: #50433a;
+      border-bottom: #00cb90; }
+    header div.btn-link-toolbar a.tool-btn-bottom-last {
+      border-width: 0px 0px 0px 0px; }
+  header a.home_title {
+    padding-bottom: 0rem; }
   header h1 {
     color: #fefef0;
     font-size: 1.5rem; }
   header nav.navbar {
-    margin-right: auto;
-    background: linear-gradient(180deg, #50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%); }
-    header nav.navbar button.navbar-toggler {
+    margin-right: auto; }
+    header nav.navbar button.humberger {
       background-color: #60534a;
       margin-bottom: 0.5rem; }
-      header nav.navbar button.navbar-toggler span.navbar-toggler-icon {
+      header nav.navbar button.humberger span.navbar-toggler-icon {
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         margin-top: -0.7rem;
@@ -18625,6 +18642,8 @@ div.item div.row div.row:last-child {
 
 main {
   margin: 1rem; }
+  main div.btn-toolbar {
+    margin-bottom: 1rem; }
 
 div.page-title {
   font-size: 2rem;

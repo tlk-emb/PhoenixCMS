@@ -4,6 +4,14 @@
     <% line_map = how_line(@component_items, 1, %{}, []) %>
     <% description_path = "/Users/admin/projects/local/home_page_local/priv/static/contents/" %> <!--"/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>-->
     <% image_path = "/images/uploaded/" %>
+    <% category =
+        case length(@component_items) do
+           0 ->
+             current_category_preview(@conn)
+           _ ->
+             hd(@component_items).category
+    end %>
+
 
     <%= for item <- @component_items do %>
       <%= case item.line do %>
@@ -100,7 +108,7 @@
   </div>
 </div>
 
-<%= link to: top_path(@conn, :index),
+<%= link to: category_path(@conn, :show, category),
   class: "btn btn-info" do %>
   <font size="5"> 戻る</font>
 <% end %>

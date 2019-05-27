@@ -4,6 +4,7 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
+  <br>
 
   <div class="form-group">
     <%= label f, :title, class: "control-label" %>
@@ -11,6 +12,12 @@
     <%= error_tag f, :title %>
   </div>
 
+  <div class="form-group">
+    <%= label f, :position, class: "control-label" %>
+    <%= number_input f, :position, class: "form-control" %>
+    <%= error_tag f, :position %>
+  </div>
+  
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>

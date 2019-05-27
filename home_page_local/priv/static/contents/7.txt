@@ -16,25 +16,14 @@
 * 2016年　　[The 20th Workshop on Synthesis And System Integration of Mixed Information Technologies (SASIMI 2016)](http://sasimi.jp/new/sasimi2016/) System Level Design Subcommittee Member
 * 2015年　　[13th IEEE/IFIP International Conference on Embedded and Ubiquitous Computing (EUC 2015)](http://paginas.fe.up.pt/~specs/events/euc2015/) Program Committee Member (Power/energy-aware and green embedded and ubiquitous computing)
 
-  <li>Akihiro Suda, <U>Hideki Takase</U>, Kazuyoshi Takagi and Naofumi Takagi, "<b>Nested Loop Parallelization Using Polyhedral Optimization in High-Level Synthesis</b>," <i>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences</i>, Vol. E97-A, No. 12, pp. 2498-2506, Dec 2014.</li>
 
-  <li>Hirotaka Kawashima, Gang Zeng, <U>Hideki Takase</U>, Masato Edahiro and Hiroaki Takada, "<b>Efficient Algorithms for Extracting Pareto-optimal Hardware Configurations in DEPS Framework</b>," <i>IPSJ Transactions on System LSI Design Methodology</i>, Vol. 5, No. 2, pp. 133-142, Aug 2012.</li>
 
-  <li>石田利永子，山本雅基，海上智昭，本田晋也，森孝夫，一場利幸，<U>高瀬英希</U>，高田広章，<b>共同研究と公開講座による組込みソフトウェア技術者育成の取り組み</b>, <i>日本工学教育協会 工学教育</i>, Vol. 60, No. 3, pp. 75-81, 2012年6月.</li>
 
-  <li>一場利幸，森孝夫，<U>高瀬英希</U>，鴫原一人，本田晋也，高田広章，<b>命令セットシミュレータの実行制御機構を用いたマルチプロセッサRTOS のテスト効率化手法</b>, <i>電子情報通信学会論文誌D</i>, Vol. J95-D, No. 3, pp. 387-399, 2012年3月.</li>
 
-  <li>谷口一徹，安藤友樹，<U>高瀬英希</U>，安積卓也，松原豊，村上靖明，菅谷みどり，<b>学生および若手技術者による組込みシステム技術に関するサマースクールの実践</b>, <i>情報処理学会論文誌</i>, Vol. 52, No. 12, pp. 3221-3237, 2011年12月.</li>
 
-  <li>立松知紘，<U>高瀬英希</U>，曾剛，川島裕崇，冨山宏之，高田広章，<b>実行トレースマイニングを用いた組込みシステムにおけるタスク内DVFSのためのチェックポイント抽出</b>, <i>情報処理学会論文誌</i>, Vol. 52, No. 12, pp. 3729-3744, 2011年12月.</li>
 
-  <li><U>Hideki Takase</U>, Hiroyuki Tomiyama and Hiroaki Takada, "<b>Partitioning and Allocation of Scratch-Pad Memory for Energy Minimization of Priority-Based Preemptive Multi-Task Systems</b>," <i>IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences</i>, Vol. E94-A, No. 10, pp. 1954-1964, Oct 2011.</li>
 
-  <li><U>Hideki Takase</U>, Hiroyuki Tomiyama and Hiroaki Takada, "<b>Partitioning and Allocation of Scratch-Pad Memory in Priority-Based Multi-Task Systems</b>," <i>IPSJ Transactions on System LSI Design Methodology</i>, Vol. 2 (2009), pp. 180-188, Aug 2009.</li>
 
-  <li><U>Hideki Takase</U>, Hiroyuki Tomiyama, Gang Zeng and Hiroaki Takada, "<b>Energy efficiency of scratch-pad memory in deep submicron domains: an empirical study</b>," <i>IEICE Electronics Express</i>, Vol. 5, No. 23, pp. 1010-1016, Dec 2008.</li>
-
-</ol>
 
 
                           </div><div id="7_tab2" class="tab-pane">
@@ -50,4 +39,16 @@
 
 * [SSEST3](http://www.ertl.jp/SSEST/top/index.php?SSEST3) 実行委員
 * [SSEST4](http://www.ertl.jp/SSEST/top/index.php?SSEST4) 実行委員長
+
+
+
+
+
+
+
+
+
+
+
+
                           </div></div>

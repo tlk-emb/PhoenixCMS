@@ -14,8 +14,8 @@ defmodule HomePage.Contents.ComponentItem do
     field :line, :integer #何行目か
     field :lock, :boolean
     field :thumbnail, :string
-    field :category, :string
     field :tab, :integer
+    field :category, :string
 
     field :tab1_title, :string, virtual: true
     field :tab1_text, :string, virtual: true
@@ -46,8 +46,8 @@ defmodule HomePage.Contents.ComponentItem do
   @doc false
   def changeset(component_item, attrs) do
     component_item
-    |> cast(attrs, [:title, :position, :description, :size, :line, :lock, :thumbnail, :user_id, :tab])
-    |> validate_required([:title, :position, :size])
+    |> cast(attrs, [:title, :position, :description, :size, :line, :lock, :thumbnail, :user_id, :tab, :category])
+    |> validate_required([:title, :position, :size, :tab])
     |> validate_number(:position, greater_than: 0)
     |> validate_number(:size, greater_than: 0, less_than: 12)
     |> validate_number(:tab, greater_than: 0, less_than: 11)

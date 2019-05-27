@@ -12,6 +12,8 @@ defmodule HomePage.Contents do
 
   alias HomePage.Accounts.User
 
+  alias HomePage.Pages.Category
+
   @doc """
   Returns the list of component_items.
 
@@ -67,9 +69,27 @@ defmodule HomePage.Contents do
     |> Repo.one()
   end
 
+  def position_asc_updated_desc() do
+    ComponentItem
+    |> order_by(asc: :position, desc: :updated_at)
+  end
+  def position_asc_inserted_desc() do
+    ComponentItem
+    |> order_by(asc: :position, desc: :inserted_at)
+  end
+
+  def get_category_matched(items, category) do
+    query = from item in items,
+      where: item.category == ^category
+    query
+    |> Repo.all()
+  end
+
   def build_component_item() do
     %ComponentItem{
-      tab: 1
+      title: "undifined",
+      tab: 1,
+      size: 1
     }
   end
 
@@ -85,11 +105,12 @@ defmodule HomePage.Contents do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_component_item(%User{} = user, %{"description" => text} = attrs) do
+  def create_component_item(%User{} = user, %{"category" => category} = attrs) do
     # 一つ目のitemは強制的にpositionを1にする
-    items = ComponentItem
-            |> Repo.all()
-    attrs = %{attrs | "description" => ""}#descriptionフィールドはいらないかも？
+    items =
+      ComponentItem
+      |> get_category_matched(category)
+    attrs = %{attrs | "description" => ""}
     case items do
       i when i == [] ->
         %ComponentItem{}
@@ -105,11 +126,10 @@ defmodule HomePage.Contents do
     end
   end
 
-  def create_blank_items(%User{} = user) do
+  def create_blank_items(%User{} = user, %{"category" => category}) do
     component_items =
-      ComponentItem
-      |> order_by(asc: :position, desc: :inserted_at)
-      |> Repo.all()
+      position_asc_inserted_desc()
+      |> get_category_matched(category)
     component_items
     |> blank_check(component_items)
     |> blank_size_set(0, user) #リストでの操作に加えDBにも挿入
@@ -138,25 +158,29 @@ defmodule HomePage.Contents do
   end
  # positionを引き上げる処理
   def position_up(%{} = attrs) do
-    items =
-      ComponentItem
-      |> order_by(asc: :position, desc: :updated_at)
-      |> Repo.all()
-      |> Enum.reject(fn(x) -> x.position < String.to_integer(attrs["position"]) end)
-    #　update後のpositionが重複しているとき
-    case items do
-      [_ | tail] ->
-        tail
-        |> Enum.map(fn(x) ->
-                    x
-                    |> ComponentItem.changeset(%{"position" => x.position + 1})
-                    |> Repo.update()
-                  end)
-      _ -> nil
-    end
+    #各カテゴリー毎にpositionを振り分ける
+    Category
+    |> Repo.all()
+    |> Enum.map(fn(x) ->
+      items =
+        position_asc_updated_desc()
+        |> get_category_matched(x.title)
+        |> Enum.reject(fn(x) -> x.position < String.to_integer(attrs["position"]) end)
+      #　update後のpositionが重複しているとき
+      case items do
+        [_ | tail] ->
+          tail
+          |> Enum.map(fn(x) ->
+                      x
+                      |> ComponentItem.changeset(%{"position" => x.position + 1})
+                      |> Repo.update()
+                    end)
+        _ -> nil
+      end
+    end)
   end
  # positionを引き下げる処理
-  def position_down(items, count) do
+  def position_down(items, category, count) do
     # count初期値0
     case count do
       # 先頭positionが1じゃないとき1まで引き下げる
@@ -169,13 +193,12 @@ defmodule HomePage.Contents do
                         |> ComponentItem.changeset(%{"position" => x.position - (hp - 1)})
                         |> Repo.update()
                       end)
-            ComponentItem
-            |> order_by(asc: :position)
-            |> Repo.all()
-            |>position_down(1)
+            position_asc_updated_desc()
+            |> get_category_matched(category)
+            |> position_down(category, 1)
           _ ->
             items
-            |> position_down(1)
+            |> position_down(category, 1)
         end
 
       # positionに隙間ができたとき引き下げる
@@ -188,9 +211,12 @@ defmodule HomePage.Contents do
                         |> ComponentItem.changeset(%{"position" => x.position  - (tp - hp) + 1})
                         |> Repo.update()
                       end)
+            position_asc_updated_desc()
+            |> get_category_matched(category)
+            |> position_down(category, 1)
           [head | tail] ->
-            tail
-            |> position_down(1)
+              tail
+              |> position_down(category, 1)
           _ ->
             nil
         end
@@ -203,9 +229,8 @@ defmodule HomePage.Contents do
       |> last(:inserted_at)
       |> Repo.one()
     items =
-      ComponentItem
-      |> order_by(asc: :position, desc: :inserted_at)
-      |> Repo.all()
+      position_asc_inserted_desc()
+      |> get_category_matched(target.category)
       |> Enum.reject(fn(x) -> x.position < target.position end)
     target
     |> ComponentItem.changeset(%{"description" => "#{target.id}.txt"})
@@ -251,6 +276,16 @@ defmodule HomePage.Contents do
               end
         end
     end
+  end
+
+  # categoryがeditで名前が変わった時、対応するアイテムのcategoryの名前も変える
+  def renew_category(items, new_category) do
+    items
+    |> Enum.map(fn(x) ->
+                x
+                |> ComponentItem.changeset(%{"category" => new_category})
+                |> Repo.update()
+                end)
   end
 
   @doc """

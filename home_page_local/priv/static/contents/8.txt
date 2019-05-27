@@ -20,6 +20,8 @@
 9.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Partitioning and Allocation of Scratch-Pad Memory for Energy Minimization of Priority-Based Preemptive Multi-Task Systems**," _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_, Vol. E94-A, No. 10, pp. 1954-1964, Oct 2011.
 10.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Partitioning and Allocation of Scratch-Pad Memory in Priority-Based Multi-Task Systems**," _IPSJ Transactions on System LSI Design Methodology_, Vol. 2 (2009), pp. 180-188, Aug 2009.
 11.  <u>Hideki Takase</u>, Hiroyuki Tomiyama, Gang Zeng and Hiroaki Takada, "**Energy efficiency of scratch-pad memory in deep submicron domains: an empirical study**," _IEICE Electronics Express_, Vol. 5, No. 23, pp. 1010-1016, Dec 2008.
+
+
                           </div><div id="8_tab2" class="tab-pane">
                           1.  <u>Hideki Takase</u>, Tomoya Mori, Kazuyoshi Takagi and Naofumi Takagi, "**Design Concept of a Lightweight Runtime Environment for Robot Software Components onto Embedded Devices**," in Proc. of _ACM SIGBED International Conference on Embedded Software 2018 (EMSOFT2018)_, Torino, Italy, (to appear), Oct 2018.
 
@@ -43,6 +45,8 @@
 14.  <u>Hideki Takase</u>, Takuya Azumi, Ittetsu Taniguchi, Yutaka Matsubara, Hayato Kanai, Shintaro Hosoai and Midori Sugaya, "**History of Summer School on Embedded System Technologies Organized by Students and Young Engineers**," in Proc. of _2009 Workshop on Embedded Systems Education (WESE'09)_, pp. 19-26, Grenoble, France, Oct 2009.
 15.  <u>Hideki Takase</u>, Hiroyuki Tomiyama and Hiroaki Takada, "**Allocation of Scratch-Pad Memory in Priority-Based Multi-Task Systems**," in Proc. of _2009 International Symposium on VLSI Design, Automation and Test (VLSI-DAT)_, pp. 68-71, Hsinchu, Taiwan, Apr 2009.
 16.  <u>Hideki Takase</u>, Hiroyuki Tomiyama, Gang Zeng and Hiroaki Takada, "**Energy Efficiency of Scratch-Pad Memory at 65 nm and Below: An Empirical Study**," in Proc. of _International Conference on Embedded Software and Systems (ICESS)_, pp. 93-97, Chengdu, China, Jul 2008.
+
+
                           </div><div id="8_tab3" class="tab-pane">
                           1.  <u>高瀬英希</u>，上野嘉大，山崎進，**関数型言語ElixirのIoTシステムへの導入に向けた基礎評価**, _情報処理学会研究報告_, Vol. 2018-EMB-48, No. 5, pp. 1-8, 東京, 2018年6月.
 2.  新田泰大，<u>高瀬英希</u>，高木一義，高木直史，**SWORDSフレームワークにおけるSW/HW通信方式の自動選択に向けた検討**, _電子情報通信学会技術研究報告_, Vol. 118, No. 63, RECONF2018-8, pp. 39-44, 大崎, 2018年5月.
@@ -94,6 +98,8 @@
 48.  <u>高瀬英希</u>，冨山宏之，高田広章，**プリエンプティブなマルチタスク環境におけるスクラッチパッドメモリ領域分割法**, _情報処理学会研究報告_, Vol. 2008, No.55(SE-160 EMB-9), pp. 57-64, 東京, 2008年6月.
 49.  <u>高瀬英希</u>，冨山宏之，高田広章，**マルチタスク環境におけるスクラッチパッドメモリ領域活用法**, _電子情報通信学会技術研究報告_, Vol. 107, No. 558, pp. 109-114, 屋久島, 2008年3月.
 50.  <u>高瀬英希</u>，曾剛，冨山宏之，高田広章，**リーク電力を考慮したスクラッチパッドメモリの有効性の評価**, _組込みシステムシンポジウム2007論文集_, Vol. 2007, No. 8, pp. 82-89, 東京, 2007年10月.（査読有り）
+
+
                           </div><div id="8_tab4" class="tab-pane">
                           1.  森智也，<u>高瀬英希</u>，高木一義，高木直史，**【mROS】組込みマイコン向けROSノード軽量実行環境**, _京都大学第12回ICTイノベーション_, 2018年2月
 2.  松井健太郎，<u>高瀬英希</u>，高木一義，高木直史，**big.LITTLE向けの省電力とリアルタイム性を両立するタスクスケジューリング**, _京都大学第12回ICTイノベーション_, 2018年2月
@@ -121,6 +127,8 @@
 
 
 23.  安積卓也，及川達裕，小田哲也，金川太俊，白石崇，瀬戸敏喜，<u>高瀬英希</u>，細合晋太郎，村上靖明，**第3回組込みシステム技術に関するサマースクール（SSEST3）**, _第9回組込みシステム技術に関するサマーワークショップ（SWEST9）_, pp. 43-46, 2007年8月.
+
+
                           </div><div id="8_tab5" class="tab-pane">
                           1.  ［招待講演］ <u>高瀬英希</u>，**ソフトウェア志向の組込みシステム協調設計環境**　[(講演資料)](http://www.slideshare.net/takasehideki/ss-76324628), _第61回システム制御情報学会研究発表講演会_, 2017年5月.
 2.  ［招待講演］ <u>高瀬英希</u>，**組込みシステム設計におけるFPGA活用技術の最新動向とSWORDSフレームワーク**, _[2016年度情報処理学会関西支部 定期講演会『IoTの周辺技術』](http://kansai.ipsj.or.jp/2016kouen/)_, 2016年12月
@@ -147,4 +155,6 @@
 11.  ［セッションコーディネート］ <u>高瀬英希</u>，**若手研究者によるお悩み相談室 〜この先端研究ってホントに産で使えるの？この最新技術ってホントに学で扱えるの？〜**, _[第12回組込みシステム技術に関するサマーワークショップ（SWEST12）](http://www.ertl.jp/SWEST/)_, 2010年9月.
 12.  ［雑誌記事］ 佐藤洋介，山郷成仁，<u>高瀬英希</u>，鈴木里沙，**ライン・トレース・カーで学ぶ組み込みシステム開発の基礎知識（第1回）モデリング言語を使って仕様書を書く**, _CQ出版社 Interface2009年08月号_, pp. 130-142, 2009年7月.
 13.  ［技術交流会 話題提供］ 高瀬英希, 松原豊, **SSEST: 若手がやってみた組込み教育**, _[組込みシステム開発技術研究会（CEST）](http://www.ertl.jp/CEST/) 第114回技術交流会_, 名古屋, 2009年5月.
+
+
                           </div></div>

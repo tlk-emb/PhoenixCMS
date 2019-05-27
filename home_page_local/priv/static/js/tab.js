@@ -1,5 +1,6 @@
   var tab = $("#tab");
   var tab_value = tab.val();
+
   $(window).on("load", function(){
     tab_set(tab_value);
     html_preview(tab_value);
@@ -13,6 +14,27 @@
         $(".tab_html").remove();
         html_preview(tab_value);
       });
+    });
+    //tab入力を処理する
+    $("#notab_description").on('keydown', function(e){
+      if (e.keyCode === 9) {
+          e.preventDefault();
+          var elem = e.target;
+          var val = elem.value;
+          var pos = elem.selectionStart;
+          elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
+          elem.setSelectionRange(pos + 1, pos + 1);
+      }
+    });
+    $(".tab_description").on('keydown', function(e){
+      if (e.keyCode === 9) {
+          e.preventDefault();
+          var elem = e.target;
+          var val = elem.value;
+          var pos = elem.selectionStart;
+          elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
+          elem.setSelectionRange(pos + 1, pos + 1);
+      }
     });
   });
   //タブ数が変わるとhtml構造が変わるので再記述
@@ -35,6 +57,27 @@
         $(".tab_html").remove();
         html_preview(tab_value);
       });
+    });
+    //tab入力を処理する
+    $("#notab_description").on('keydown', function(e){
+      if (e.keyCode === 9) {
+          e.preventDefault();
+          var elem = e.target;
+          var val = elem.value;
+          var pos = elem.selectionStart;
+          elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
+          elem.setSelectionRange(pos + 1, pos + 1);
+      }
+    });
+    $(".tab_description").on('keydown', function(e){
+      if (e.keyCode === 9) {
+          e.preventDefault();
+          var elem = e.target;
+          var val = elem.value;
+          var pos = elem.selectionStart;
+          elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
+          elem.setSelectionRange(pos + 1, pos + 1);
+      }
     });
   });
 

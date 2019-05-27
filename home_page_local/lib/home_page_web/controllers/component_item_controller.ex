@@ -4,6 +4,7 @@ defmodule HomePageWeb.ComponentItemController do
   import Phoenix.HTML #raw
 
   alias HomePage.Contents
+  alias HomePage.Pages
   alias HomePage.Repo
   alias Ecto.Changeset
   #alias HomePage.Contents.ComponentItem
@@ -32,9 +33,9 @@ defmodule HomePageWeb.ComponentItemController do
   def create(conn, %{"component_item" => component_item_params}) do
     path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
     case Contents.create_component_item(Guardian.Plug.current_resource(conn), component_item_params) do #現在のユーザ情報と、createするitem情報
-      {:ok, _component_item} ->
-        Contents.create_blank_items(Guardian.Plug.current_resource(conn))
+      {:ok, _} ->
         created = Contents.get_last_inserted()
+        Contents.create_blank_items(Guardian.Plug.current_resource(conn), component_item_params)
         case component_item_params["tab"] do #タブの数によってdescriptionの処理がかわる
           "1" ->
             File.write(path <> "#{created.id}.txt",
@@ -148,6 +149,8 @@ defmodule HomePageWeb.ComponentItemController do
   def update(conn, %{"id" => id, "component_item" => component_item_params}) do
     path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
     component_item = Contents.get_component_item!(id)
+    category = component_item_params["category"]
+    pre_category = component_item.category
     case Contents.update_component_item(component_item, component_item_params) do
       {:ok, _component_item} ->
         case component_item_params["tab"] do #タブの数によってdescriptionの処理がかわる
@@ -159,13 +162,23 @@ defmodule HomePageWeb.ComponentItemController do
             File.write(path <> "#{id}.txt", description)
         end
         Contents.position_up(component_item_params)
-        Contents.list_component_items()
-        |> Contents.position_down(0)
-        Contents.list_component_items()
-        |> Contents.line_set(0, 1)
+        #position_downは再帰関数なので初期リストを呼び出し側で与える
+        changed = [category, pre_category]
+        changed
+        |> Enum.map(fn(x) ->
+                    Contents.position_asc_updated_desc()
+                    |> Contents.get_category_matched(x)
+                    |> Contents.position_down(x, 0)
+                    end)
+        changed
+        |> Enum.map(fn(x) ->
+                    Contents.position_asc_updated_desc()
+                    |> Contents.get_category_matched(x)
+                    |> Contents.line_set(0, 1)
+                    end)
         conn
         |> put_flash(:info, "[#{component_item.title}] を更新しました.")
-        |> redirect(to: top_path(conn, :index))
+        |> redirect(to: category_path(conn, :show, category))
       {:error, %Ecto.Changeset{} = changeset} ->
         changeset = changeset
                     |> Changeset.put_change(:description, component_item_params["description"])
@@ -222,17 +235,44 @@ defmodule HomePageWeb.ComponentItemController do
 # createやdeleteのあとに行うupdate
   def after_create_update(conn, _params) do
     Contents.position_up_after_create()#ここでdescriptionはテキストファイルの名前に変換
-    Contents.list_component_items()
+    category = Contents.get_last_updated().category
+    Contents.position_asc_updated_desc()
+    |> Contents.get_category_matched(category)
+    |> Contents.position_down(category, 0)
+    Contents.position_asc_updated_desc()
+    |> Contents.get_category_matched(category)
     |> Contents.line_set(0,1)
     conn
-    |> redirect(to: top_path(conn, :index))
+    |> redirect(to: category_path(conn, :show, category))
   end
   def after_delete_update(conn, _params) do
-    items = Contents.list_component_items()
-    Contents.position_down(items, 0)
-    Contents.line_set(items, 0, 1)
+    #消したアイテムのカテゴリが何かはわからないので全てのカテゴリを走査する
+    Category
+    |> Repo.all()
+    |> Enum.map(fn(x) ->
+      Contents.position_asc_updated_desc
+      |> Contents.get_category_matched(x.title)
+      |> Contents.position_down(x.title, 0)
+      Contents.position_asc_updated_desc
+      |> Contents.get_category_matched(x.title)
+      |> Contents.line_set(0, 1)
+    end)
+    category = Contents.get_last_updated().category
     conn
-    |> redirect(to: top_path(conn, :index))
+    |> redirect(to: category_path(conn, :show, category))
+  end
+
+  # 全てのコンテンツに対してcategoryが消えていたらundifinedにする処理をかける
+  def after_category_delete_update(conn, _params) do
+    Contents.list_component_items
+    |> Enum.map(fn(x) ->
+                  case Pages.get_category_id(x.category) do
+                    nil -> Contents.update_component_item(x, %{"category" => "undifined", "description" => ""})#
+                    _ ->
+                  end
+                end)
+    conn
+    |> redirect(to: category_path(conn, :index))
   end
 
   def delete(conn, %{"id" => id}) do

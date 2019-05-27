@@ -37,6 +37,36 @@ defmodule HomePage.Pages do
   """
   def get_category!(id), do: Repo.get!(Category, id)
 
+  def build_category() do
+    p = Category
+        |> last(:position)
+        |> Repo.one()
+    %Category{
+      position: p.position + 1
+    }
+  end
+
+  #position順に並べ、重複してるものは最後に更新/作成したものが先に来る
+  def get_pos_asc_ins_desc() do
+    Category
+    |> order_by(asc: :position, desc: :inserted_at)
+    |> Repo.all()
+  end
+  def get_pos_asc_upd_desc() do
+    Category
+    |> order_by(asc: :position, desc: :updated_at)
+    |> Repo.all()
+  end
+
+  def get_category_id(category) do
+    c = Category
+        |> Repo.get_by(title: category)
+    case c do
+      nil -> nil
+      n -> n.id
+    end
+  end
+
   @doc """
   Creates a category.
 

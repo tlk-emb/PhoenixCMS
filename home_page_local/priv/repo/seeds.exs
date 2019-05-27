@@ -12,15 +12,22 @@ HomePage.Repo.insert! %HomePage.Accounts.User{
   email: "kawakami.koji.88v@st.kyoto-u.ac.jp",
   password: Bcrypt.hash_pwd_salt("testtest")
 }
-
+#カテゴリが削除されたアイテムはundifinedとなる
 HomePage.Repo.insert! %HomePage.Pages.Category{
-  title: "プロフィール"
+  title: "undifined",
+  position: 0
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
-  title: "活動"
+  title: "プロフィール",
+  position: 1
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
-  title: "リンク"
+  title: "活動",
+  position: 2
+}
+HomePage.Repo.insert! %HomePage.Pages.Category{
+  title: "リンク",
+  position: 3
 }
 
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
@@ -31,7 +38,8 @@ HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   size: 4,
   lock: true,
   line: -1,
-  category: "プロフィール"
+  category: "プロフィール",
+  tab: 1
 }
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
@@ -91,44 +99,44 @@ HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
   title: "活動",
-  position: 7,
+  position: 1,
   description: "7.txt",
   size: 11,
   lock: true,
-  line: -5,
+  line: -1,
   category: "活動",
   tab: 2
 }
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
   title: "論文・発表",
-  position: 8,
+  position: 2,
   description: "8.txt",
   size: 11,
   lock: true,
-  line: -6,
+  line: -2,
   category: "活動",
   tab: 5
 }
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
   title: "受賞",
-  position: 9,
+  position: 3,
   description: "9.txt",
   size: 7,
   lock: true,
-  line: -7,
+  line: -3,
   category: "活動",
   tab: 2
 }
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
   title: "リンク",
-  position: 10,
+  position: 1,
   description: "10.txt",
   size: 4,
   lock: true,
-  line: 7,
+  line: -1,
   category: "リンク",
   tab: 1
 }

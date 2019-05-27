@@ -11,3 +11,4 @@
 * [組込みシステム技術に関するサマースクール（SSEST）](http://www.ertl.jp/SSEST/)
 * [ETソフトウェアデザインロボットコンテスト（ETロボコン）](http://www.etrobo.jp/) [関西地区大会](http://kansai.etrobo.jp/)
 * [京都大学ICTイノベーション](http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/)
+            
