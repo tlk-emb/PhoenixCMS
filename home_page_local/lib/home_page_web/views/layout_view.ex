@@ -18,6 +18,33 @@ defmodule HomePageWeb.LayoutView do
   def top_category_title() do
     Pages.get_category!(2).title
   end
+  def current_category(conn) do #現在のカテゴリ名を取得
+    category = conn.request_path
+          |> URI.decode()
+          |> String.split("index/")
+    case length(category) do
+        1 -> "undifined"
+        _ ->
+          category
+          |> tl
+          |> hd
+    end
+  end
+  def next_category(position) do
+    case Pages.get_category_by_pos(position + 1) do
+      nil ->
+        nil
+      c -> c.title
+    end
+  end
+  def under_category(position) do
+    case Pages.get_category_by_pos(position + 4) do
+      nil ->
+        nil
+      c -> c.title
+    end
+  end
+
   def category_list() do
     #1列に4個ヘッダに並ぶので、4で割った余りの数が最下段(0なら最下段は4つ)
     #最下段以外のカテゴリには下にボーダーを引くので区別する

@@ -18,7 +18,7 @@
       <h1>高瀬 英希　(TAKASE hideki)</h1>
       <% end %>-->
       <nav class="navbar navbar-dark">
-          <%= link to: category_path(@conn, :show, top_category_title()), class: "navbar-brand home_title" do %>
+          <%= link to: category_path(@conn, :show, top_category_title()), class: "navbar-brand home-title" do %>
             <h1>高瀬 英希 (TAKASE hideki)</h1>
           <% end %>
 
@@ -53,21 +53,24 @@
         </nav>
       <div class="container-fluid">
         <div class="btn-link-toolbar row" role="toolbar" aria-label="Links on Toolbar">
+          <% current_category = current_category(@conn) %>
           <%= for category <- category_list() do %>
             <%= case category.title do %>
               <%= "undifined" -> %>
-              <%= _ -> %>
+              <%= t when t == current_category -> %>
                 <%= case category.position do %>
                   <%= p when p > 0 -> %>
                     <%= case p do %>
                       <%= pp when rem(pp, 4) == 0 -> %>
                         <%= link to: category_path(@conn, :show, category.title),
-                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow col-3" do %>
+                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom tool-btn-pushed col-3",
+                        disabled: "disabled" do %>
                           <%= category.title %>
                         <% end %>
                       <%= _ -> %>
                         <%= link to: category_path(@conn, :show, category.title),
-                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn col-3" do %>
+                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-pushed col-3",
+                        disabled: "disabled" do %>
                           <%= category.title %>
                         <% end %>
                     <% end %>
@@ -75,14 +78,77 @@
                     <%= case q do %>
                       <%= qq when rem(abs(qq), 4) == 0 -> %>
                         <%= link to: category_path(@conn, :show, category.title),
-                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom-last col-3" do %>
+                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow-last tool-btn-pushed col-3",
+                        disabled: "disabled" do %>
                         <%= category.title %>
                         <% end %>
                       <%= _ -> %>
                         <%= link to: category_path(@conn, :show, category.title),
-                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom col-3" do %>
+                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow tool-btn-lastrow-pushed col-3",
+                        disabled: "disabled" do %>
                         <%= category.title %>
                       <% end %>
+                    <% end %>
+                <% end %>
+              <%= _ -> %>
+                <%= case category.position do %>
+                  <%= p when p > 0 -> %>
+                    <%= case p do %>
+                      <%= pp when rem(pp, 4) == 0 -> %>
+                        <%= case under_category(pp) do %>
+                          <%= cc when cc == current_category -> %>
+                            <%= link to: category_path(@conn, :show, category.title),
+                            class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom tool-btn-above-pushed col-3" do %>
+                              <%= category.title %>
+                            <% end %>
+                          <%= _ -> %>
+                            <%= link to: category_path(@conn, :show, category.title),
+                            class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom col-3" do %>
+                              <%= category.title %>
+                            <% end %>
+                        <% end %>
+                      <%= p -> %>
+                        <%= case next_category(p) do %>
+                          <%= c when c == current_category -> %>
+                            <%= link to: category_path(@conn, :show, category.title),
+                            class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-beside-pushed col-3" do %>
+                              <%= category.title %>
+                            <% end %>
+                          <%= _ -> %>
+                            <%= case under_category(p) do %>
+                              <%= cc when cc == current_category -> %>
+                                <%= link to: category_path(@conn, :show, category.title),
+                                class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-above-pushed col-3" do %>
+                                  <%= category.title %>
+                                <% end %>
+                              <%= _ -> %>
+                                <%= link to: category_path(@conn, :show, category.title),
+                                class: "btn btn-outline-success rounded-0 btn-sm tool-btn col-3" do %>
+                                  <%= category.title %>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                    <% end %>
+                  <%= q when q < 0 -> %>
+                    <%= case q do %>
+                      <%= qq when rem(abs(qq), 4) == 0 -> %>
+                        <%= link to: category_path(@conn, :show, category.title),
+                        class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow-last col-3" do %>
+                        <%= category.title %>
+                        <% end %>
+                      <%= _ -> %>
+                        <%= case next_category(-q) do %>
+                          <%= c when c == current_category -> %>
+                            <%= link to: category_path(@conn, :show, category.title),
+                            class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow tool-btn-beside-pushed col-3" do %>
+                              <%= category.title %>
+                            <% end %>
+                          <%= _ -> %>
+                            <%= link to: category_path(@conn, :show, category.title),
+                            class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow col-3" do %>
+                              <%= category.title %>
+                            <% end %>
+                        <% end %>
                     <% end %>
                 <% end %>
             <% end %>

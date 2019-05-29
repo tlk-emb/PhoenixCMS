@@ -36,6 +36,10 @@ defmodule HomePage.Pages do
 
   """
   def get_category!(id), do: Repo.get!(Category, id)
+  def get_category_by_pos(position) do
+    Category
+    |> Repo.get_by(position: position)
+  end
 
   def build_category() do
     p = Category

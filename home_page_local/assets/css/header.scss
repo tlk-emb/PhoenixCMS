@@ -7,27 +7,44 @@ header {
   //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%);
   padding: 0rem;
   background-color: #50433a;
+  a.home-title{
+    margin-bottom: -0.7rem;
+  }
   div.btn-link-toolbar{
     background-color: #00cb90;
     a.tool-btn{
       //border-style: solid;
-      border-width: 0px 2px 2px 0px;
+      border-width: 2px 2px 2px 0px;
       color: #fff;
       border-color: #50433a;
-    }
-    a.tool-btn-lastrow{
-      border-width: 0px 0px 2px 0px;
     }
     a.tool-btn-bottom{
-      //border-style: solid;
-      border-width: 0px 2px 0px 0px;
-      margin-right: 0px;
-      color: #fff;
-      border-color: #50433a;
-      border-bottom: #00cb90;
+      border-width: 2px 0px 2px 0px;
     }
-    a.tool-btn-bottom-last{
+    a.tool-btn-lastrow{
+      //border-style: solid;
+      border-width: 0px 2px 2px 0px;
+      border-color: #50433a;
+      border-bottom: #fcfcfc;
+    }
+    a.tool-btn-lastrow-last{
       border-width: 0px 0px 0px 0px;
+    }
+    a.tool-btn-pushed{
+      color: #55a;
+      background-color: #aacb90;
+      border-color: #50873a;
+    }
+    a.tool-btn-lastrow-pushed{
+      color: #50405a;
+      background-color: #aacb90;
+      border-color: #50873a;
+    }
+    a.tool-btn-beside-pushed{
+      border-right-color: #50873a;
+    }
+    a.tool-btn-above-pushed{
+      border-bottom-color: #50873a;
     }
   }
   a.home_title{

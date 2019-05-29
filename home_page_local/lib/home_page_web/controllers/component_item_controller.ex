@@ -5,6 +5,7 @@ defmodule HomePageWeb.ComponentItemController do
 
   alias HomePage.Contents
   alias HomePage.Pages
+  alias HomePage.Pages.Category
   alias HomePage.Repo
   alias Ecto.Changeset
   #alias HomePage.Contents.ComponentItem

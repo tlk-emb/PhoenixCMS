@@ -26,12 +26,14 @@ defmodule HomePageWeb.CategoryView do
 
   def current_category(conn) do #リンク先のクエリにカテゴリ名が必要
     conn.request_path
+    |> URI.decode()
     |> String.split("index/")
     |> tl
     |> hd
   end
   def current_category_preview(conn) do #リンク先のクエリにカテゴリ名が必要
     conn.request_path
+    |> URI.decode()
     |> String.split("preview/")
     |> tl
     |> hd
