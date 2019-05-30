@@ -18545,11 +18545,12 @@ header {
   background-color: #50433a;
   padding: 0rem;
   background-color: #50433a; }
-  header a.home-title {
-    margin-bottom: -0.7rem; }
+  header h1.home-title {
+    margin-bottom: 0rem; }
   header div.btn-link-toolbar {
     background-color: #00cb90; }
     header div.btn-link-toolbar a.tool-btn {
+      font-size: 14px;
       border-width: 2px 2px 2px 0px;
       color: #fff;
       border-color: #50433a; }
@@ -18580,10 +18581,10 @@ header {
     font-size: 1.5rem; }
   header nav.navbar {
     margin-right: auto; }
-    header nav.navbar button.humberger {
+    header nav.navbar button.hamburger {
       background-color: #60534a;
       margin-bottom: 0.5rem; }
-      header nav.navbar button.humberger span.navbar-toggler-icon {
+      header nav.navbar button.hamburger span.navbar-toggler-icon {
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         margin-top: -0.7rem;

@@ -7,13 +7,14 @@ header {
   //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%);
   padding: 0rem;
   background-color: #50433a;
-  a.home-title{
-    margin-bottom: -0.7rem;
+  h1.home-title{
+    margin-bottom: 0rem;
   }
   div.btn-link-toolbar{
     background-color: #00cb90;
     a.tool-btn{
       //border-style: solid;
+      font-size: 14px;
       border-width: 2px 2px 2px 0px;
       color: #fff;
       border-color: #50433a;
@@ -60,7 +61,7 @@ header {
     margin-right: auto;
     //margin-bottom: 0.6rem;
     //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%);
-    button.humberger{
+    button.hamburger{
       background-color: #60534a;
       margin-bottom: 0.5rem;
       span.navbar-toggler-icon{

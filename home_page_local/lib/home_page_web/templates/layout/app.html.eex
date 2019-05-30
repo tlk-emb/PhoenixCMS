@@ -9,7 +9,7 @@
 
     <title>TAKASE's webpage</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link rel="shortcut icon" type="image/x-icon" href="<%= static_path(@conn, "/images/favicon.ico") %>">
+    <link rel="shortcut icon" href="<%= static_path(@conn, "/images/favicon.ico") %>">
   </head>
 
   <body>
@@ -18,9 +18,7 @@
       <h1>高瀬 英希　(TAKASE hideki)</h1>
       <% end %>-->
       <nav class="navbar navbar-dark">
-          <%= link to: category_path(@conn, :show, top_category_title()), class: "navbar-brand home-title" do %>
-            <h1>高瀬 英希 (TAKASE hideki)</h1>
-          <% end %>
+      <h1 class="home-title navbar-brand">高瀬 英希 (TAKASE hideki)</h1>
 
         <!-- md以下でハンバーガーメニューを表示 -->
           <% path =
@@ -29,7 +27,7 @@
               |> length() %>
           <%= case path do %>
             <%= 2 -> %>
-              <button class="navbar-toggler  d-md-none humberger" type="button"
+              <button class="navbar-toggler  d-md-none hamburger" type="button"
                 data-toggle="collapse"
                 data-target="#navmenu1"
                 aria-controls="navmenu1"
@@ -203,6 +201,7 @@
     <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/scroll.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/tab.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/header_size.js") %>"></script>
   </body>
   </body>
 </html>
