@@ -1,2 +1,11 @@
 # PhoenixCMS
 CMS with elixir + phoenix on AWS
+
+ローカル環境でのプロジェクトです
+リモートにデプロイする際にはいくつかのファイルを編集する必要があります
+・config/prod.exsが参照している環境変数がDBの設定に合うように.bashrcに記述して下さい
+・lib/home_page/email.ex内のurlをリモート環境のIPアドレスに合わせてください
+・lib/home_page_web/controllers/component_item_controller.ex内の変数pathの値をリモート環境のディレクトリに合わせてください
+・lib/home_page_web/controllers/component_item_controller.ex内の変数pathの値をリモート環境のディレクトリに合わせてください
+・lib/home_page_web/templates/category/show.html.eex内の変数description_pathの値をリモート環境のディレクトリに合わせてください
+・lib/home_page_web/templates/category/preview.html.eex内の変数description_pathの値をリモート環境のディレクトリに合わせてください
