@@ -54,19 +54,19 @@
           <% current_category = current_category(@conn) %>
           <%= for category <- category_list() do %>
             <%= case category.title do %>
-              <%= "undifined" -> %>
+              <%= "undifined" -> %><!-- 何もしない -->
               <%= t when t == current_category -> %>
                 <%= case category.position do %>
                   <%= p when p > 0 -> %>
                     <%= case p do %>
                       <%= pp when rem(pp, 4) == 0 -> %>
-                        <%= link to: category_path(@conn, :show, category.title),
+                        <%= link to: category_path(@conn, :show, category.url),
                         class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom tool-btn-pushed col-3",
                         disabled: "disabled" do %>
                           <%= category.title %>
                         <% end %>
                       <%= _ -> %>
-                        <%= link to: category_path(@conn, :show, category.title),
+                        <%= link to: category_path(@conn, :show, category.url),
                         class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-pushed col-3",
                         disabled: "disabled" do %>
                           <%= category.title %>
@@ -75,13 +75,13 @@
                   <%= q when q < -0 -> %>
                     <%= case q do %>
                       <%= qq when rem(abs(qq), 4) == 0 -> %>
-                        <%= link to: category_path(@conn, :show, category.title),
+                        <%= link to: category_path(@conn, :show, category.url),
                         class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow-last tool-btn-pushed col-3",
                         disabled: "disabled" do %>
                         <%= category.title %>
                         <% end %>
                       <%= _ -> %>
-                        <%= link to: category_path(@conn, :show, category.title),
+                        <%= link to: category_path(@conn, :show, category.url),
                         class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow tool-btn-lastrow-pushed col-3",
                         disabled: "disabled" do %>
                         <%= category.title %>
@@ -95,12 +95,12 @@
                       <%= pp when rem(pp, 4) == 0 -> %>
                         <%= case under_category(pp) do %>
                           <%= cc when cc == current_category -> %>
-                            <%= link to: category_path(@conn, :show, category.title),
+                            <%= link to: category_path(@conn, :show, category.url),
                             class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom tool-btn-above-pushed col-3" do %>
                               <%= category.title %>
                             <% end %>
                           <%= _ -> %>
-                            <%= link to: category_path(@conn, :show, category.title),
+                            <%= link to: category_path(@conn, :show, category.url),
                             class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-bottom col-3" do %>
                               <%= category.title %>
                             <% end %>
@@ -108,19 +108,19 @@
                       <%= p -> %>
                         <%= case next_category(p) do %>
                           <%= c when c == current_category -> %>
-                            <%= link to: category_path(@conn, :show, category.title),
+                            <%= link to: category_path(@conn, :show, category.url),
                             class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-beside-pushed col-3" do %>
                               <%= category.title %>
                             <% end %>
                           <%= _ -> %>
                             <%= case under_category(p) do %>
                               <%= cc when cc == current_category -> %>
-                                <%= link to: category_path(@conn, :show, category.title),
+                                <%= link to: category_path(@conn, :show, category.url),
                                 class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-above-pushed col-3" do %>
                                   <%= category.title %>
                                 <% end %>
                               <%= _ -> %>
-                                <%= link to: category_path(@conn, :show, category.title),
+                                <%= link to: category_path(@conn, :show, category.url),
                                 class: "btn btn-outline-success rounded-0 btn-sm tool-btn col-3" do %>
                                   <%= category.title %>
                                 <% end %>
@@ -130,19 +130,19 @@
                   <%= q when q < 0 -> %>
                     <%= case q do %>
                       <%= qq when rem(abs(qq), 4) == 0 -> %>
-                        <%= link to: category_path(@conn, :show, category.title),
+                        <%= link to: category_path(@conn, :show, category.url),
                         class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow-last col-3" do %>
                         <%= category.title %>
                         <% end %>
                       <%= _ -> %>
                         <%= case next_category(-q) do %>
                           <%= c when c == current_category -> %>
-                            <%= link to: category_path(@conn, :show, category.title),
+                            <%= link to: category_path(@conn, :show, category.url),
                             class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow tool-btn-beside-pushed col-3" do %>
                               <%= category.title %>
                             <% end %>
                           <%= _ -> %>
-                            <%= link to: category_path(@conn, :show, category.title),
+                            <%= link to: category_path(@conn, :show, category.url),
                             class: "btn btn-outline-success rounded-0 btn-sm tool-btn tool-btn-lastrow col-3" do %>
                               <%= category.title %>
                             <% end %>
@@ -154,28 +154,42 @@
         </div>
       </div>
     </header>
-    <main>
+    <main hidden id="main">
 
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with bottun groups">
       <%= if current_user(@conn, @view_template) do %> <!-- layout_viewより -->
-        <%= link to: session_path(@conn, :delete), method: :delete,
-          class: "btn btn-danger btn-sm" do %>
-        <i class="fa fa-user-times fa-lg"></i> ログアウト
-        <% end %>
-        <%= link to: user_path(@conn, :index),
-          class: "btn btn-success btn-sm" do %>
-        <i class="fa fa-user fa-lg"></i> ユーザページ
-        <% end %>
-        <%= link to: category_path(@conn, :index),
-          class: "btn btn-primary btn-sm" do %>
-        <i class="fa fa-object-ungroup fa-lg"></i> カテゴリ
-        <% end %>
-        <%= link to: photo_path(@conn, :index),
-          class: "btn btn-secondary btn-sm" do %>
-        <i class="fa fa-image fa-lg"></i> 画像
-        <% end %>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with bottun groups">
+          <%= link to: session_path(@conn, :delete), method: :delete,
+            class: "btn btn-danger btn-sm" do %>
+          <i class="fa fa-user-times fa-lg"></i> ログアウト
+          <% end %>
+          <%= link to: user_path(@conn, :index),
+            class: "btn btn-success btn-sm" do %>
+          <i class="fa fa-user fa-lg"></i> ユーザページ
+          <% end %>
+          <%= link to: category_path(@conn, :index),
+            class: "btn btn-primary btn-sm" do %>
+          <i class="fa fa-object-ungroup fa-lg"></i> カテゴリ
+          <% end %>
+          <%= link to: photo_path(@conn, :index),
+            class: "btn btn-secondary btn-sm" do %>
+          <i class="fa fa-image fa-lg"></i> 画像
+          <% end %>
+        </div>
+
+        <div align="right">
+          (deleteは取り消せません)<br>
+          <a class="btn btn-warning btn-sm" href="/state/0" method="get">
+            <i class="fa fa-calendar fa-lg"></i> 最新の状態に戻す
+          </a>
+          <%= for date <- saved_date() do %>
+            <a class="btn btn-warning btn-sm" href="/state/<%= date %>" method="get">
+              <i class="fa fa-calendar fa-lg"></i> <%= date %>つ前の状態に戻す
+            </a>
+          <% end %>
+        </div>
+        <br>
       <% end %>
-      </div>
+
 
       <%= if success = get_flash(@conn, :success) do %>
         <p class="alert alert-success"><%= success %></p>
@@ -189,7 +203,7 @@
 
       <%= render @view_module, @view_template, assigns %>
     </main>
-    <footer>
+    <footer hidden id="footer">
       <%=
         "Last Update: #{last_updated().year}年#{last_updated().month}月#{last_updated().date}日"
       %>

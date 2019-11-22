@@ -1,0 +1,4 @@
+* 2015年度　　オペレーティングシステム論（東京海洋大学非常勤講師　学部３回生後期向け）
+* 2013年度〜　オペレーティングシステム（学部３回生前期向け） [［シラバス］](https://www.t.kyoto-u.ac.jp/syllabus-s/?mode=subject&lang=ja&year=2013&b=6&c=91030)
+* 2012,13,16年度　計算機科学実験及演習２（学部２回生後期向け，ハードウェア実習担当） [［シラバス］](https://www.t.kyoto-u.ac.jp/syllabus-s/?mode=subject&lang=ja&year=2013&b=6&c=90220)
+* 2012年度〜　計算機科学実験及演習３（学部３回生前期向け，ハードウェア実習担当） [［シラバス］](https://www.t.kyoto-u.ac.jp/syllabus-s/?mode=subject&lang=ja&year=2013&b=6&c=90840)

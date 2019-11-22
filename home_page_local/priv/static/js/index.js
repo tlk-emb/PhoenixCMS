@@ -2,7 +2,9 @@ window_load();
 window.addEventListener("resize", window_load);
 
 
-function window_load(){
+function window_load(){ //要素間のマージンを調整する
+  //調整完了まで要素を表示しない
+
   //OSでwindow幅の処理が違う
     if(navigator.userAgent.indexOf('Mac') >= 0){
       sW = window.innerWidth - 48;
@@ -35,4 +37,10 @@ function window_load(){
         }
     }
   }
+  //完了後、要素(mainとfooter)を表示
+  var main = document.getElementById("main");
+  var footer = document.getElementById("footer");
+  main.removeAttribute("hidden");
+  footer.removeAttribute("hidden");
+
 }

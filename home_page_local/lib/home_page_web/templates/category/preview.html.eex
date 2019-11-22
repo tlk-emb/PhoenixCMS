@@ -2,7 +2,7 @@
   <div class="row">
     <% current_id = current_user(@conn).id %>
     <% line_map = how_line(@component_items, 1, %{}, []) %>
-    <% description_path = "/Users/admin/projects/local/home_page_local/priv/static/contents/" %> <!--"/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>-->
+    <% description_path = System.get_env("HOME_PAGE_CONTENTS") %> <!--"/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>-->
     <% image_path = "/images/uploaded/" %>
     <% category =
         case length(@component_items) do
@@ -113,6 +113,6 @@
   <font size="5"> 戻る</font>
 <% end %>
 
-<a class="btn" href="#" id="scroll_top_btn">
+<a class="btn" href="#" id="scroll_top_btn" hidden>
   <i class=" fa fa-angle-double-up fa-3x"></i>
 </a>

@@ -27,8 +27,8 @@ defmodule HomePageWeb.Router do
     pipe_through([:browser, :auth])
     get("/", TopController, :index)
     #get("/:category", TopController, :show)
-    get("/index/:category", CategoryController, :show)
-    get("/preview/:category", CategoryController, :preview)
+    get("/index/:url", CategoryController, :show)
+    get("/preview/:url", CategoryController, :preview)
     #get("/preview", TopController, :preview)
     #get("/delete_blank/:position", TopController, :delete_blank)
     #get("/signin", UserController, :new)
@@ -53,6 +53,7 @@ defmodule HomePageWeb.Router do
   scope "/", HomePageWeb do
     # ログイン済みの場合のみ閲覧可能
     pipe_through([:browser, :auth, :ensure_auth])
+    get("/stete/:date", ComponentItemController, :re_state)
     get("/after_create", ComponentItemController, :after_create_update)
     patch("/after_create", ComponentItemController, :after_create_update)
     get("/after_delete", ComponentItemController, :after_delete_update)

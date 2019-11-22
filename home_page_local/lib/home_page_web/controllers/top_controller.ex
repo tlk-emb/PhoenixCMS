@@ -5,7 +5,7 @@ defmodule HomePageWeb.TopController do
   alias HomePage.Pages
 
   def index(conn, _params) do
-    query = Pages.get_category!(2).title
+    query = Pages.get_category!(2).url
     conn
     |> redirect(to: category_path(conn, :show, query))
   end

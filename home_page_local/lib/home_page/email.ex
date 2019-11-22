@@ -13,7 +13,8 @@ defmodule HomePage.Email do
 
   def reset_password(token, email, name) do
     home_page_mail = "home.page.phoenix0405@gmail.com"
-    url = "http://localhost:4000/password_reset/"
+    #url = "http://localhost:4000/password_reset/"
+    url = "http://tlk-emb.jp/password_reset/"
     new_email
     |> to(email)
     |> from(home_page_mail)

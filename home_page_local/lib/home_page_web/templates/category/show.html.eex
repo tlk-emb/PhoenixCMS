@@ -2,7 +2,7 @@
   <div class="row">
     <% current_id = current_user(@conn).id %>
     <% line_map = how_line(@component_items, 1, %{}, []) %>
-    <% description_path = "/Users/admin/projects/local/home_page_local/priv/static/contents/" %>
+    <% description_path = System.get_env("HOME_PAGE_CONTENTS") %>
     <% image_path = "/images/uploaded/" %>
     <% category =
         case length(@component_items) do
@@ -176,6 +176,6 @@
   <i class="fa fa-eye fa-2x"></i><font size="5"> Preview</font>
   <% end %>
 <% end %>
-<a class="btn" href="#" id="scroll_top_btn">
+<a class="btn" href="#" id="scroll_top_btn" hidden>
   <i class=" fa fa-angle-double-up fa-3x"></i>
 </a>

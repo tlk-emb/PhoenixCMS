@@ -28,6 +28,7 @@ defmodule HomePageWeb.LayoutView do
           category
           |> tl
           |> hd
+          |> Pages.get_category_title
     end
   end
   def next_category(position) do
@@ -71,6 +72,16 @@ defmodule HomePageWeb.LayoutView do
             | add_last_row(tl(reverse_list), last_row_num - 1)]
       _ ->
         reverse_list
+    end
+  end
+  def saved_date() do
+    path = "/Users/admin/projects/local/home_page_local/priv/static/saved"
+    case File.ls(path) do
+      {:ok, list} ->
+        list
+        |> tl()
+      {:error, _raeson} ->
+        ["", "", ""]
     end
   end
   #最後にcomponent_itemsテーブルが更新された時間を返す

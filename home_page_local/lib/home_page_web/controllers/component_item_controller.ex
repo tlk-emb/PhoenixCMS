@@ -32,7 +32,7 @@ defmodule HomePageWeb.ComponentItemController do
   end
 
   def create(conn, %{"component_item" => component_item_params}) do
-    path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
+    path = System.get_env("HOME_PAGE_CONTENTS")#"/Users/admin/projects/local/home_page_local/priv/static/contents/"
     case Contents.create_component_item(Guardian.Plug.current_resource(conn), component_item_params) do #現在のユーザ情報と、createするitem情報
       {:ok, _} ->
         created = Contents.get_last_inserted()
@@ -41,8 +41,9 @@ defmodule HomePageWeb.ComponentItemController do
           "1" ->
             File.write(path <> "#{created.id}.txt",
                           component_item_params["description"])
+
           _ ->
-            description = tab_encord(component_item_params, component_item_params["id"])
+            description = tab_encord(component_item_params, created.id)
             File.write(path <> "#{created.id}.txt", description)
         end
         conn
@@ -59,7 +60,7 @@ defmodule HomePageWeb.ComponentItemController do
   end
 
   def edit(conn, %{"id" => id}) do
-    path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
+    path = System.get_env("HOME_PAGE_CONTENTS")
     component_item = Contents.get_component_item!(id)
     case File.read(path <> "#{component_item.id}.txt") do
       {:ok, description} ->
@@ -67,6 +68,9 @@ defmodule HomePageWeb.ComponentItemController do
         changeset = Contents.change_component_item(component_item)
         render(conn, "edit.html", component_item: component_item, changeset: changeset)
       {:error, _} ->
+        component_item = %{component_item | description: ""}
+        changeset = Contents.change_component_item(component_item)
+        render(conn, "edit.html", component_item: component_item, changeset: changeset)
     end
   end
 
@@ -148,7 +152,7 @@ defmodule HomePageWeb.ComponentItemController do
   end
 
   def update(conn, %{"id" => id, "component_item" => component_item_params}) do
-    path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
+    path = System.get_env("HOME_PAGE_CONTENTS")
     component_item = Contents.get_component_item!(id)
     category = component_item_params["category"]
     pre_category = component_item.category
@@ -198,11 +202,11 @@ defmodule HomePageWeb.ComponentItemController do
                       case x do
                         1 ->
                           ~s{<li class="nav-item">
-                            <a href="##{id}_tab#{x}" class="nav-link active" data-toggle="tab">#{params["tab#{x}_title"]}</a>
+                            <a href="#{id}_tab#{x}" class="nav-link active" data-toggle="tab">#{params["tab#{x}_title"]}</a>
                           </li>}
                         _ ->
                         ~s{<li class="nav-item">
-                          <a href="##{id}_tab#{x}" class="nav-link" data-toggle="tab">#{params["tab#{x}_title"]}</a>
+                          <a href="#{id}_tab#{x}" class="nav-link" data-toggle="tab">#{params["tab#{x}_title"]}</a>
                         </li>}
                       end
                     end)
@@ -277,7 +281,7 @@ defmodule HomePageWeb.ComponentItemController do
   end
 
   def delete(conn, %{"id" => id}) do
-    path = "/Users/admin/projects/local/home_page_local/priv/static/contents/"
+    path = System.get_env("HOME_PAGE_CONTENTS")
     component_item = Contents.get_component_item!(id)
     {:ok, _component_item} = Contents.delete_component_item(component_item)
     File.rm(path <> "#{id}.txt")

@@ -2,7 +2,6 @@ defmodule HomePageWeb.CategoryController do
   use HomePageWeb, :controller
 
   alias HomePage.Pages
-  alias HomePage.Pages.Category
   alias HomePage.Contents
   def index(conn, _params) do
     categories = Pages.get_pos_asc_ins_desc()
@@ -25,15 +24,17 @@ defmodule HomePageWeb.CategoryController do
     end
   end
 
-  def show(conn, %{"category" => category}) do
+  def show(conn, %{"url" => url}) do
     # そのカテゴリに属するアイテムを表示
+    category = Pages.get_category_title(url)
     component_items = Contents.position_asc_updated_desc()
                       |> Contents.get_category_matched(category)
     render(conn, "show.html", component_items: component_items)
   end
 
-  def preview(conn, %{"category" => category}) do
+  def preview(conn, %{"url" => url}) do
     # そのカテゴリに属するアイテムを表示
+    category = Pages.get_category_title(url)
     component_items = Contents.position_asc_updated_desc()
                       |> Contents.get_category_matched(category)
     render(conn, "preview.html", component_items: component_items)

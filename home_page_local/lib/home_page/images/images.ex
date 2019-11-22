@@ -52,7 +52,6 @@ defmodule HomePage.Images do
 
   """
   def create_photo(%{"name" => name, "image" => image} = attrs) do
-    IO.inspect attrs
     extension = Path.extname(image.filename)#拡張子
       case name do
         "" ->

@@ -71,6 +71,21 @@ defmodule HomePage.Pages do
     end
   end
 
+  def get_category_title(idorurl) when is_integer(idorurl) do#id -> title
+    c = Repo.get!(Category, idorurl)
+    case c do
+      nil -> nil
+      n -> n.title
+    end
+  end
+  def get_category_title(idorurl) when is_binary(idorurl) do#url -> title
+    c = Repo.get_by(Category, url: idorurl)
+    case c do
+      nil -> nil
+      u -> u.title
+    end
+  end
+
   @doc """
   Creates a category.
 

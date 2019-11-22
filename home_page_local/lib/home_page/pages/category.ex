@@ -8,6 +8,7 @@ defmodule HomePage.Pages.Category do
   schema "categories" do
     field :title, :string
     field :position, :integer
+    field :url, :string
 
     timestamps()
   end
@@ -15,9 +16,10 @@ defmodule HomePage.Pages.Category do
   @doc false
   def changeset(category, attrs) do
     category
-    |> cast(attrs, [:title, :position])
-    |> validate_required([:title, :position])
+    |> cast(attrs, [:title, :url, :position])
+    |> validate_required([:title, :url, :position])
     |> unique_constraint(:title)
+    |> unique_constraint(:url)
     |> validate_number(:position, greater_than: 0)
   end
 end

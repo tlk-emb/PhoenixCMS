@@ -18,7 +18,7 @@ defmodule HomePageWeb.PhotoController do
     try do
       case Images.create_photo(photo_params) do
         {:ok, photo} ->
-          path = "/Users/admin/projects/home_page/priv/static" <> photo.image
+          path = System.get_env("HOME_PAGE_STATIC") <> photo.image
           File.cp(photo_params["image"].path, path)
           conn
           |> put_flash(:info, "Photo created successfully.")
@@ -69,10 +69,15 @@ defmodule HomePageWeb.PhotoController do
   #ルータで明示的にパラメータ名を指定しなければ渡るパラメータではname(主キー)はidフィールドの中に入る
   def delete(conn, %{"id" => name}) do
     photo = Images.get_photo!(name)
-    {:ok, _photo} = Images.delete_photo(photo)
+    case Images.delete_photo(photo) do
+      {:ok, _params} ->
+        path = System.get_env("HOME_PAGE_UPLOADED") <> name
+        File.rm(path)
+        conn
+        |> put_flash(:info, "Photo deleted successfully.")
+        |> redirect(to: photo_path(conn, :index))
+      _ ->
 
-    conn
-    |> put_flash(:info, "Photo deleted successfully.")
-    |> redirect(to: photo_path(conn, :index))
+    end
   end
 end

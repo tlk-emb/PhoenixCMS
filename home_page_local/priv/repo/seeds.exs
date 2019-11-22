@@ -15,18 +15,22 @@ HomePage.Repo.insert! %HomePage.Accounts.User{
 #カテゴリが削除されたアイテムはundifinedとなる
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "undifined",
+  url: "undifined",
   position: 0
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "プロフィール",
+  url: "profile",
   position: 1
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "活動",
+  url: "activity",
   position: 2
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "リンク",
+  url: "link",
   position: 3
 }
 

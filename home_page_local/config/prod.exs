@@ -15,7 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :home_page, HomePageWeb.Endpoint,
   load_from_system_env: true,
-  http: [port: {:system, "PORT"}],
+  http: [port: {:system, "PORT"}],#4000
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   version: Mix.Project.config[:version],
@@ -67,7 +67,7 @@ config :home_page, HomePageWeb.Endpoint,
 # Configure your database
 config :home_page, HomePage.Repo,
   adapter: Ecto.Adapters.MySQL,
-  username: System.get_env("DATABASE_USER"),
+  username: "admin",
   password: System.get_env("DATABASE_PASS"),
   database: System.get_env("DATABASE_NAME"),
   hostname: System.get_env("DATABASE_HOSTNAME"),

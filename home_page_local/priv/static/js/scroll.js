@@ -49,14 +49,18 @@ window.onscroll = function(){
         clearTimeout(fadeOut_timer);
         var opaValue = parseFloat(btn.style.opacity);
         fadeInTimer(opaValue);
+
         btn.style.pointerEvents = "auto";
         btn.style.cursor = "pointer";
+        btn.removeAttribute("hidden");
     } else {
         clearTimeout(fadeIn_timer);
         var opaValue = parseFloat(btn.style.opacity);
         fadeOutTimer(opaValue);
+
         btn.style.pointerEvents = "none";
         btn.style.cursor = "default";
+        btn.setAttribute("hidden");
     }
 }
 
