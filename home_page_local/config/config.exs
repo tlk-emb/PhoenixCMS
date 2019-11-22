@@ -12,7 +12,7 @@ config :home_page,
 # Configures the endpoint
 config :home_page, HomePageWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "aEjVkdwaUgI7+aWQvz9z0Ei3j+aJ3YUdDJixsyXl5uxDjR95v6/SyB1i4KLKmFqz",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: HomePageWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: HomePage.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -50,7 +50,7 @@ config :home_page, HomePage.Mailer,
        server: "smtp.gmail.com",
        port: 587,
        username: "home.page.phoenix0405@gmail.com",
-       password: "Rtgbn3fuj5",
+       password: System.get_env("HOME_PAGE_MAIL_PASS"),
        tls: :if_available, #can be ':always' or ':never'
        ssl: false, #can be 'true'
        retries: 1
