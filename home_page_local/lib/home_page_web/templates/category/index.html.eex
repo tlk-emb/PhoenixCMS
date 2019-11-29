@@ -16,15 +16,18 @@
       <td><%= category.title %></td>
       <td><%= category.url %></td>
       <td><%= category.position %></td>
-      <td class="text-right">
-        <span><%= link "Show", to: category_path(@conn, :show, category.url), class: "btn btn-default btn-xs" %></span>
+      <td>
+        <span><%= link "Show", to: category_path(@conn, :show, category.url), class: "btn btn-primary btn-xs" %></span>
         <%= case category.id do%>
           <%= 1 -> %>
           <%= _ -> %>
-            <span><%= link "Edit", to: category_path(@conn, :edit, category), class: "btn btn-default btn-xs" %></span>
+            <span><%= link "Edit", to: category_path(@conn, :edit, category), class: "btn btn-info btn-xs" %></span>
+            </td>
             <%= case category.id do%>
               <% t when t != 2 ->%>
+                <td class="text-right">
                 <span><%= link "Delete", to: category_path(@conn, :delete, category), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                </td>
               <% _ -> %>
             <% end %>
         <% end %>

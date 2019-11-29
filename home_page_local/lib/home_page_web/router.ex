@@ -53,7 +53,6 @@ defmodule HomePageWeb.Router do
   scope "/", HomePageWeb do
     # ログイン済みの場合のみ閲覧可能
     pipe_through([:browser, :auth, :ensure_auth])
-    get("/stete/:date", ComponentItemController, :re_state)
     get("/after_create", ComponentItemController, :after_create_update)
     patch("/after_create", ComponentItemController, :after_create_update)
     get("/after_delete", ComponentItemController, :after_delete_update)
@@ -74,5 +73,7 @@ defmodule HomePageWeb.Router do
     patch("/category/after_delete_1", CategoryController, :solve_blank_update)
     get("/category/after_delete_2", ComponentItemController, :after_category_delete_update)
     patch("/category/after_delete_2", ComponentItemController, :after_category_delete_update)
+    resources("/tmp", DataController, except: [:edit, :update])
+    get("/tmp", DataController, :download)
   end
 end

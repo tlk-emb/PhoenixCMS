@@ -155,7 +155,7 @@ function html_preview(tab_value){
   if(tab_value <= 1 || tab_value == null){
     var markdown = $("#notab_description").val();
     if(markdown && markdown.replace(/\s+/g, "") != ""){
-      var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+      var preview = "◆◇◆◇◆◇◆Preview◇◆◇◆◇◆◇\n" + marked(markdown) + "◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇"
     }else{
       var preview = ""
     }
@@ -166,7 +166,7 @@ function html_preview(tab_value){
     for (step = 1; step <= 10; step++){
       var markdown = $("#tab" + Number(step) + "_description").val();
       if(markdown && markdown.replace(/\s+/g, "") != ""){
-        var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+        var preview = "◆◇◆◇◆◇◆Preview◇◆◇◆◇◆◇\n" + marked(markdown) + "◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇"
       }else{
         var preview = ""
       }
@@ -178,7 +178,7 @@ function html_preview(tab_value){
     for (step = 1; step <= Number(tab_value); step++){
       var markdown = $("#tab" + Number(step) + "_description").val();
       if(markdown && markdown.replace(/\s+/g, "") != ""){
-        var preview = "######プレビュー######\n" + marked(markdown) + "##########"
+        var preview = "◆◇◆◇◆◇◆Preview◇◆◇◆◇◆◇\n" + marked(markdown) + "◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇"
       }else{
         var preview = ""
       }

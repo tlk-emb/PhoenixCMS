@@ -48,8 +48,8 @@ defmodule HomePage.Mixfile do
       {:guardian_db, "~> 1.0"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.1"},
-      {:bamboo, "~> 0.7"},
-      {:bamboo_smtp, "~> 1.2.1"},
+      {:bamboo, "~> 1.2.0"},
+      {:bamboo_smtp, "~> 1.7.0"},
       {:exrm, "~> 1.0"},
       {:logger_file_backend, "~> 0.0.3"},
       {:earmark, "~> 1.3.2"}

@@ -1,3 +1,3 @@
 * [京都大学](http://www.kyoto-u.ac.jp/) [大学院情報学研究科](http://www.i.kyoto-u.ac.jp/) [通信情報システム専攻](http://www.cce.i.kyoto-u.ac.jp/)  
 * 兼担　[京都大学](http://www.kyoto-u.ac.jp/) [工学部情報学科](http://www.s-im.t.kyoto-u.ac.jp/ja) [計算機科学コース](http://www.s-im.t.kyoto-u.ac.jp/com/)  
-    [高木研究室](http://www.lab3.kuis.kyoto-u.ac.jp/)　助教              
+    [高木研究室](http://www.lab3.kuis.kyoto-u.ac.jp/)　助教         

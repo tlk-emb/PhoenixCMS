@@ -24,7 +24,10 @@ defmodule HomePageWeb.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
+    json_decoder: Poison,
+    length: 8000000000, #8GB
+    read_length: 10000000, #10MB
+    read_timeout: 300000 #300s
 
   plug Plug.MethodOverride
   plug Plug.Head

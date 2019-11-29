@@ -1,5 +1,6 @@
 defmodule HomePageWeb.LayoutView do
   use HomePageWeb, :view
+  use Timex
   alias HomePage.Accounts.Guardian
   alias HomePage.Contents
   alias HomePage.Pages
@@ -87,12 +88,13 @@ defmodule HomePageWeb.LayoutView do
   #最後にcomponent_itemsテーブルが更新された時間を返す
   def last_updated() do
     item = Contents.get_last_updated()
+    timezone = Timezone.get("Asia/Tokyo", Timex.now)
     [year, month, date_pre] =
       item.updated_at
-      |> Timex.to_datetime
+      |> Timezone.convert(timezone)
       |> DateTime.to_string
       |> String.split("-")
-    [date, rest] =
+    [date, rest, _, _] =
       date_pre
       |> String.split(" ")
     %{year: year, month: month, date: date}

@@ -1,0 +1,40 @@
+<h2>Listing Temporary Files</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Comment</th>
+      <th>Uploaded Date</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for data <- @datas do %>
+    <tr>
+      <%= case data_format(data) do %>
+        <%= "image" -> %> <td><i class="fa fa-file-image-o fa-lg"></i>
+        <%= "pdf" -> %> <td><i class="fa fa-file-pdf-o fa-lg"></i>
+        <%= "archive" -> %> <td><i class="fa fa-file-archive-o fa-lg"></i>
+        <%= _ -> %> <td><i class="fa fa-question fa-lg"></i>
+        <% end %>
+      <%= data.name %></td>
+      <td><%= data.size %></td>
+      <td><%= data.comment %></td>
+      <td><%= date_to_string(data.inserted_at) %></td>
+
+      <td><%= link "Download", download: "#{data.name}", to: "tmp/#{data.id}", class: "btn btn-info btn-xs" %></td>
+
+
+      <td class="text-right">
+
+        <span><%= link "Delete", to: data_path(@conn, :delete, data), method: :delete, data: [confirm: "Are you sure to DELETE this data?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New File Upload", to: data_path(@conn, :new) %></span>

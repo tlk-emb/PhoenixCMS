@@ -155,6 +155,7 @@ defmodule HomePageWeb.ComponentItemController do
     path = System.get_env("HOME_PAGE_CONTENTS")
     component_item = Contents.get_component_item!(id)
     category = component_item_params["category"]
+              |> Pages.get_category_url
     pre_category = component_item.category
     case Contents.update_component_item(component_item, component_item_params) do
       {:ok, _component_item} ->

@@ -174,19 +174,12 @@
             class: "btn btn-secondary btn-sm" do %>
           <i class="fa fa-image fa-lg"></i> 画像
           <% end %>
-        </div>
-
-        <div align="right">
-          (deleteは取り消せません)<br>
-          <a class="btn btn-warning btn-sm" href="/state/0" method="get">
-            <i class="fa fa-calendar fa-lg"></i> 最新の状態に戻す
-          </a>
-          <%= for date <- saved_date() do %>
-            <a class="btn btn-warning btn-sm" href="/state/<%= date %>" method="get">
-              <i class="fa fa-calendar fa-lg"></i> <%= date %>つ前の状態に戻す
-            </a>
+          <%= link to: data_path(@conn, :index),
+            class: "btn btn-dark btn-sm" do %>
+          <i class="fa fa-cubes fa-lg"></i> tmpファイル置き場
           <% end %>
         </div>
+
         <br>
       <% end %>
 

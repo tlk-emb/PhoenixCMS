@@ -20,7 +20,7 @@ config :home_page, HomePageWeb.Endpoint,
 #Configures guardian
 config :home_page, HomePage.Accounts.Guardian,
   issuer: "home_page",
-  secret_key: "${HOME_PAGE_GUARDIAN_KEY}"
+  secret_key: "rGn3EMXLqxFfJSgkMHEaLDGV7kq8LzI0t36LrXopknB774EBKd+Wl7gDG6kVIx+3"
 
 # Configures guardian_db
 config :guardian, Guardian.DB,
@@ -50,7 +50,7 @@ config :home_page, HomePage.Mailer,
        server: "smtp.gmail.com",
        port: 587,
        username: "home.page.phoenix0405@gmail.com",
-       password: System.get_env("HOME_PAGE_MAIL_PASS"),
+       password: "Rtgbn3fuj5",
        tls: :if_available, #can be ':always' or ':never'
        ssl: false, #can be 'true'
        retries: 1

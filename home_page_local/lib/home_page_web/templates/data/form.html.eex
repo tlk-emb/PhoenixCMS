@@ -1,0 +1,44 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>ファイル</label>
+    <%= file_input f, :file_list, class: "form-control", multiple: true, id: "sFiles" %>
+    <%= error_tag f, :file_list %>
+
+    <label>コメント</label>
+    <%= text_input f, :comment, class: "form-control" %>
+    <%= error_tag f, :comment %>
+
+    <input hidden class="form-control" id="data_size" name="data[size_list]" type="text">
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+
+  <script type="text/javascript">
+    //ファイル選択を検出して都度ファイルサイズを取得
+    var select = document.getElementById("sFiles");
+    select.onchange = function (){
+      var list = [];
+      if(select.value){
+        var file_list = select.files;
+        for(var i = 0; i < file_list.length; i++){
+          if(file_list[i].size >= 1000000){
+            list.push(Math.round(file_list[i].size / 1000000) + "MB")//_" + file_list[i].name); //**bytes<filename>
+          }else{
+            list.push(Math.round(file_list[i].size / 1000) + "KB")//_" + file_list[i].name); //**bytes<filename>
+          }
+        }
+      document.getElementById("data_size").value = list;
+     }
+
+    }
+  </script>
+
+<% end %>

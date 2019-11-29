@@ -85,7 +85,13 @@ defmodule HomePage.Pages do
       u -> u.title
     end
   end
-
+  def get_category_url(title) do#title->url
+    c = Repo.get_by(Category, title: title)
+    case c do
+      nil -> nil
+      t -> t.url
+    end
+  end
   @doc """
   Creates a category.
 

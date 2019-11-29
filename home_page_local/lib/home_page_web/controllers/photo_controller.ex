@@ -76,7 +76,7 @@ defmodule HomePageWeb.PhotoController do
         conn
         |> put_flash(:info, "Photo deleted successfully.")
         |> redirect(to: photo_path(conn, :index))
-      _ ->
+      _ -> 0
 
     end
   end

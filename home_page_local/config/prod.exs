@@ -60,17 +60,17 @@ config :phoenix, :serve_endpoints, true
 # start per endpoint:
 #
 config :home_page, HomePageWeb.Endpoint, server: true
-#
+# do the following command to generate secret_key_base:mix phx.gen.secret
 config :home_page, HomePageWeb.Endpoint,
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: "${SECRET_KEY_BASE}"
 
 # Configure your database
 config :home_page, HomePage.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "admin",
-  password: System.get_env("DATABASE_PASS"),
-  database: System.get_env("DATABASE_NAME"),
-  hostname: System.get_env("DATABASE_HOSTNAME"),
+  password: "${DATABASE_PASS}",
+  database: "${DATABASE_NAME}",
+  hostname: "${DATABASE_HOSTNAME}",
   pool_size: 20
 
 # Finally import the config/prod.secret.exs
