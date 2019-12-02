@@ -3,7 +3,7 @@ defmodule HomePageWeb.DataController do
 
   alias HomePage.TemporaryFiles
   alias HomePage.TemporaryFiles.Data
-  
+
   def index(conn, _params) do
     datas = TemporaryFiles.list_datas()
     render(conn, "index.html", datas: datas)
@@ -72,7 +72,7 @@ defmodule HomePageWeb.DataController do
       {:ok, data} ->
         conn
         |> put_flash(:info, "File updated successfully.")
-        |> redirect(to: data_path(conn, :show, data))
+        |> redirect(to: data_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", datas: data, changeset: changeset)
     end
@@ -90,5 +90,14 @@ defmodule HomePageWeb.DataController do
         |> redirect(to: data_path(conn, :index))
       _ -> 0
     end
+  end
+
+  def download(conn, %{"id" => id}) do
+    name = TemporaryFiles.get_data!(id).name
+    path = Application.app_dir(:home_page, "/priv/static/temporary/#{name}")
+    kind = {:file, path}
+    send_download(conn, kind)#lemoteディレクトリからfile downloadする関数
+    conn
+    |> redirect(to: data_path(conn, :index))
   end
 end

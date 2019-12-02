@@ -54,7 +54,6 @@
           <% current_category = current_category(@conn) %>
           <%= for category <- category_list() do %>
             <%= case category.title do %>
-              <%= "undifined" -> %><!-- 何もしない -->
               <%= t when t == current_category -> %>
                 <%= case category.position do %>
                   <%= p when p > 0 -> %>
@@ -127,7 +126,7 @@
                             <% end %>
                         <% end %>
                     <% end %>
-                  <%= q when q < 0 -> %>
+                  <%= q when q < -0 -> %>
                     <%= case q do %>
                       <%= qq when rem(abs(qq), 4) == 0 -> %>
                         <%= link to: category_path(@conn, :show, category.url),

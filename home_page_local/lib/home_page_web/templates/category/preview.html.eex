@@ -4,14 +4,10 @@
     <% line_map = how_line(@component_items, 1, %{}, []) %>
     <% description_path = System.get_env("HOME_PAGE_CONTENTS") %> <!--"/home/ec2-user/projects/local/home_page_local/priv/static/contents/" %>-->
     <% image_path = "/images/uploaded/" %>
-    <% category =
-        case length(@component_items) do
-           0 ->
-             current_category_preview(@conn)
-           _ ->
-             hd(@component_items).category
-    end %>
-
+    <% category = current_category_preview(@conn) %>
+    <% color = current_category_color(category) %>
+    <% bcolor = hd(color) %>
+    <% ccolor = hd(tl(color)) %>
 
     <%= for item <- @component_items do %>
       <%= case item.line do %>
@@ -47,7 +43,7 @@
 
             <div class="card-block" id="line-<%= line_map["#{item.line}"] %>">
               <div class="row">
-                <h5 class="card-header rounded-0 col-12 title blank_title">
+                <h5 class="card-header rounded-0 col-12 title blank_title category-color" bcolor="<%= bcolor %>" ccolor="<%= ccolor %>">
                   <%= item.title %>
                 </h5>
               </div>
@@ -114,5 +110,5 @@
 <% end %>
 
 <a class="btn" href="#" id="scroll_top_btn" hidden>
-  <i class=" fa fa-angle-double-up fa-3x"></i>
+  <i class=" fa fa-angle-double-up fa-3x category-color-btn" bcolor="<%= bcolor %>"></i>
 </a>

@@ -1,19 +1,14 @@
 header {
-  //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00bb80 80%, #00bb80 100%);
   background-color: #50433a;
-  //border-style: solid;
-  //border-width: 1px;
-  //border-color: #f7f7ff;
-  //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%);
   padding: 0rem;
   background-color: #50433a;
   h1.home-title{
     margin-bottom: 0rem;
   }
   div.btn-link-toolbar{
-    background-color: #00cb90;
+    //background-color: #00cb90;
+    background-color: #55ba9a;
     a.tool-btn{
-      //border-style: solid;
       font-size: 14px;
       border-width: 2px 2px 2px 0px;
       color: #fff;
@@ -23,7 +18,6 @@ header {
       border-width: 2px 0px 2px 0px;
     }
     a.tool-btn-lastrow{
-      //border-style: solid;
       border-width: 0px 2px 2px 0px;
       border-color: #50433a;
       border-bottom: #fcfcfc;
@@ -33,7 +27,8 @@ header {
     }
     a.tool-btn-pushed{
       color: #55a;
-      background-color: #aacb90;
+      //background-color: #aacb90;
+      background-color: #88cbb0;
       border-color: #50873a;
     }
     a.tool-btn-lastrow-pushed{

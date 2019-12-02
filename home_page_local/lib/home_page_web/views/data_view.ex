@@ -15,8 +15,7 @@ defmodule HomePageWeb.DataView do
     format =
       data.name
       |> String.split(".")
-      |> tl
-      |> hd
+      |> List.last
     case format do
       "png" -> "image"
       "jpg" -> "image"

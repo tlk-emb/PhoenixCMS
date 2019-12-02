@@ -1,4 +1,5 @@
 defmodule HomePageWeb.ComponentItemController do
+  require IEx
   use HomePageWeb, :controller
   import Ecto.Query, warn: false
   import Phoenix.HTML #raw
@@ -15,17 +16,19 @@ defmodule HomePageWeb.ComponentItemController do
     render(conn, "index.html", component_items: component_items)
   end
 
-  def new(conn, _params) do
+  def new(conn, %{"url" => url}) do
     component_item = Contents.build_component_item()
+    category = url
+              |> Pages.get_category_title()
 
     # positionのデフォルト値
-    case Contents.get_last_position() do
+    case Contents.get_last_position_in_category(category) do
       nil ->
-        component_item = %{component_item | position: 1}
+        component_item = %{component_item | position: 1, category: category}
         changeset = Contents.change_component_item(component_item)
         render(conn, "new.html", component_item: component_item, changeset: changeset)
       p ->
-        component_item = %{component_item | position: p.position + 1}
+        component_item = %{component_item | position: p.position + 1, category: category}
         changeset = Contents.change_component_item(component_item)
         render(conn, "new.html", changeset: changeset)
     end
@@ -242,6 +245,7 @@ defmodule HomePageWeb.ComponentItemController do
   def after_create_update(conn, _params) do
     Contents.position_up_after_create()#ここでdescriptionはテキストファイルの名前に変換
     category = Contents.get_last_updated().category
+    url = Pages.get_category_url(category)
     Contents.position_asc_updated_desc()
     |> Contents.get_category_matched(category)
     |> Contents.position_down(category, 0)
@@ -249,23 +253,19 @@ defmodule HomePageWeb.ComponentItemController do
     |> Contents.get_category_matched(category)
     |> Contents.line_set(0,1)
     conn
-    |> redirect(to: category_path(conn, :show, category))
+    |> redirect(to: category_path(conn, :show, url))
   end
-  def after_delete_update(conn, _params) do
-    #消したアイテムのカテゴリが何かはわからないので全てのカテゴリを走査する
-    Category
-    |> Repo.all()
-    |> Enum.map(fn(x) ->
-      Contents.position_asc_updated_desc
-      |> Contents.get_category_matched(x.title)
-      |> Contents.position_down(x.title, 0)
-      Contents.position_asc_updated_desc
-      |> Contents.get_category_matched(x.title)
-      |> Contents.line_set(0, 1)
-    end)
-    category = Contents.get_last_updated().category
+  def after_delete_update(conn, %{"url" => url}) do#削除したカテゴリのコンテンツを再整列
+    category = url
+              |> Pages.get_category_title()#urlからtitle取得
+    Contents.position_asc_updated_desc#position調整
+    |> Contents.get_category_matched(category)
+    |> Contents.position_down(category, 0)
+    Contents.position_asc_updated_desc#line調整
+    |> Contents.get_category_matched(category)
+    |> Contents.line_set(0,1)
     conn
-    |> redirect(to: category_path(conn, :show, category))
+    |> redirect(to: category_path(conn, :show, url))
   end
 
   # 全てのコンテンツに対してcategoryが消えていたらundifinedにする処理をかける
@@ -281,7 +281,7 @@ defmodule HomePageWeb.ComponentItemController do
     |> redirect(to: category_path(conn, :index))
   end
 
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, %{"id" => id, "url" => url}) do
     path = System.get_env("HOME_PAGE_CONTENTS")
     component_item = Contents.get_component_item!(id)
     {:ok, _component_item} = Contents.delete_component_item(component_item)
@@ -289,6 +289,6 @@ defmodule HomePageWeb.ComponentItemController do
 
     conn
     |> put_flash(:info, "[#{component_item.title}] を削除しました.")
-    |> redirect(to: component_item_path(conn, :after_delete_update))
+    |> redirect(to: component_item_path(conn, :after_delete_update, url: url))
   end
 end

@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-12 text-right">
-        <%= link to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" do %>
+        <%= link to: user_path(@conn, :edit, user), class: "btn btn-primary btn-xs" do %>
           <i class="fa fa-pencil-square"></i> 編集
         <% end %>
       </div>

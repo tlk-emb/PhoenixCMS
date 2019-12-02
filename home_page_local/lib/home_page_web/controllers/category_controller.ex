@@ -72,7 +72,9 @@ defmodule HomePageWeb.CategoryController do
   end
   defp solve_dupl(categories, num) do
     case categories do
-      [%{id: 1} | tl] ->
+      [%{id: 1} | tl] -> #undefinedのidは1
+        solve_dupl(tl, num)
+      [%{position: 0} | tl] -> #
         solve_dupl(tl, num)
       [hd | tl] ->
         Pages.update_category(hd, %{"position" => num})

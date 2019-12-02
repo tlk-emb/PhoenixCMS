@@ -1,6 +1,7 @@
 defmodule HomePageWeb.CategoryView do
   use HomePageWeb, :view
   alias HomePage.Accounts
+  alias HomePage.Pages
 
   def current_user(conn) do
     Accounts.current_user(conn)
@@ -24,19 +25,23 @@ defmodule HomePageWeb.CategoryView do
     Earmark.as_html!(markdown)
   end
 
-  def current_category(conn) do #リンク先のクエリにカテゴリ名が必要
+  def current_category(conn) do #リンク先のクエリにカテゴリのurl名が必要
     conn.request_path
     |> URI.decode()
     |> String.split("index/")
     |> tl
     |> hd
   end
-  def current_category_preview(conn) do #リンク先のクエリにカテゴリ名が必要
+  def current_category_preview(conn) do #リンク先のクエリにカテゴリのurl名が必要
     conn.request_path
     |> URI.decode()
     |> String.split("preview/")
     |> tl
     |> hd
+  end
+  def current_category_color(url) do
+    category = Pages.get_category_by_url(url)
+    [bcolor, ccolor] = [category.bcolor, category.ccolor]
   end
 
   defp list_create(num) do

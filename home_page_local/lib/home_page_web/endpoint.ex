@@ -27,7 +27,7 @@ defmodule HomePageWeb.Endpoint do
     json_decoder: Poison,
     length: 8000000000, #8GB
     read_length: 10000000, #10MB
-    read_timeout: 300000 #300s
+    read_timeout: 3600000 #1h
 
   plug Plug.MethodOverride
   plug Plug.Head

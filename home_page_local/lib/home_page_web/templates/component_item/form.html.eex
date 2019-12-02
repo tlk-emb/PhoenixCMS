@@ -25,7 +25,7 @@
   </div>
   ※タブ数を変えると未保存の記述が消えます。一旦保存してください
   <div class="form-group">
-    <%= label f, :tab, class: "control-label tab", id: "<%= #{@changeset.data.id}.txt "  %>
+    <%= label f, "tab(Max:10)", class: "control-label tab", id: "<%= #{@changeset.data.id}.txt "  %>
     <%= number_input f, :tab, class: "form-control", min: 1, max: 10, id: "tab" %>
     <%= error_tag f, :tab %>
   </div>

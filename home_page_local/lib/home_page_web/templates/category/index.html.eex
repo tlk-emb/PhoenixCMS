@@ -1,4 +1,7 @@
 <h2>Listing Categories</h2>
+positionが1以上なら昇順にヘッダに並びます</br>
+ヘッダに並べたくないカテゴリはpositionを0にして下さい(urlから移動できます)</br>
+カテゴリを失ったコンテンツのカテゴリはundifinedになります(undifinedカテゴリは編集できません)</br>
 
 <table class="table">
   <thead>
@@ -8,6 +11,8 @@
       <th>Url</th>
 
       <th>Position</th>
+
+      <th>Color</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +21,8 @@
       <td><%= category.title %></td>
       <td><%= category.url %></td>
       <td><%= category.position %></td>
+      <td><h4 style="background-color:#<%= category.bcolor %>; color:#<%= category.ccolor %>">
+          Title</h4></td>
       <td>
         <span><%= link "Show", to: category_path(@conn, :show, category.url), class: "btn btn-primary btn-xs" %></span>
         <%= case category.id do%>

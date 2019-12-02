@@ -68,7 +68,12 @@ defmodule HomePage.Contents do
     |> last(:position)
     |> Repo.one()
   end
-
+  def get_last_position_in_category(category) do
+    ComponentItem
+    |> where(category: ^category)
+    |> last(:position)
+    |> Repo.one()
+  end
   def position_asc_updated_desc() do
     ComponentItem
     |> order_by(asc: :position, desc: :updated_at)
@@ -79,10 +84,20 @@ defmodule HomePage.Contents do
   end
 
   def get_category_matched(items, category) do
-    query = from item in items,
-      where: item.category == ^category
-    query
-    |> Repo.all()
+    case category do
+      nil -> raise("the url is wrong.") #DBにないアドレスを開いた時
+      _ ->
+        try do
+          query = from item in items,
+            where: item.category == ^category
+          query
+          |> Repo.all()
+        rescue
+          e in Protocol.UndefinedError ->
+            raise("the url is wrong.")
+        end
+    end
+
   end
 
   def build_component_item() do

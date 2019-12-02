@@ -37,6 +37,19 @@ function window_load(){ //要素間のマージンを調整する
         }
     }
   }
+  //categoryテーブルのcolorフィールドから動的にコンテンツのタイトルカラーを変更
+  var title = document.getElementsByClassName("category-color");
+  var scrollbtn = document.getElementsByClassName("category-color-btn");
+  for(var t = 0; t < title.length; t++){
+    var bcolor = title[t].getAttribute("bcolor");
+    var ccolor = title[t].getAttribute("ccolor");
+    title[t].style.backgroundColor = "#" + bcolor;
+    title[t].style.color = "#" + ccolor;
+  }
+  for(var b = 0; b < scrollbtn.length; b++){
+    var bcolor = scrollbtn[b].getAttribute("bcolor");
+    scrollbtn[b].style.color = "#" + bcolor;
+  }
   //完了後、要素(mainとfooter)を表示
   var main = document.getElementById("main");
   var footer = document.getElementById("footer");

@@ -50,11 +50,10 @@ defmodule HomePageWeb.LayoutView do
   def category_list() do
     #1列に4個ヘッダに並ぶので、4で割った余りの数が最下段(0なら最下段は4つ)
     #最下段以外のカテゴリには下にボーダーを引くので区別する
-    reverse_list = Pages.get_pos_asc_ins_desc()
-                  |> tl()
-                  |> Enum.reverse()
+    reverse_list = Pages.get_pos_than_0_asc_ins_desc()#position>0(ヘッダに並べる対象)のリスト
+                  |> Enum.reverse
     last_row_num = reverse_list
-                  |> length()
+                  |> length
                   |> rem(4)
     case last_row_num do
       # 最下段のカテゴリだけpositionを負の数にする

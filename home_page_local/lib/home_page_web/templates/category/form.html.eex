@@ -25,6 +25,40 @@
   </div>
 
   <div class="form-group">
+    <%= label f, "タイトル背景色(デフォルト:f3df88,16進6桁)", class: "control-label" %>
+    <%= text_input f, :bcolor, class: "form-control", id: "bcolor", onKeyUp: "changeb(this)" %>
+    <%= error_tag f, :bcolor %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "タイトル文字色(デフォルト:335544,16進6桁)", class: "control-label" %>
+    <%= text_input f, :ccolor, class: "form-control", id: "ccolor", onKeyUp: "changec(this)" %>
+    <%= error_tag f, :ccolor %>
+  </div>
+
+  <div>
+    <h2 id="color-preview">プレビュー</h2>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
+
+  <script type="text/javascript">
+    //カラーを監視してプレビューを生成
+    var preview = document.getElementById("color-preview");
+    var bcolor = document.getElementById("bcolor");
+    var ccolor = document.getElementById("ccolor");
+    window.onload = function(){
+      preview.style.backgroundColor = "#" + bcolor.value;
+      preview.style.color = "#" + ccolor.value;
+    };
+    function changeb(b){
+      preview.style.backgroundColor = "#" + b.value;
+    };
+    function changec(c){
+      preview.style.color = "#" + c.value;
+    };
+  </script>
+
 <% end %>

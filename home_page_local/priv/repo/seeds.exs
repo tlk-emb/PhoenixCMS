@@ -16,22 +16,30 @@ HomePage.Repo.insert! %HomePage.Accounts.User{
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "undifined",
   url: "undifined",
-  position: 0
+  position: -1,
+  bcolor: "f3df88",
+  ccolor: "335544"
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "プロフィール",
   url: "profile",
-  position: 1
+  position: 1,
+  bcolor: "f3df88",
+  ccolor: "335544"
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "活動",
   url: "activity",
-  position: 2
+  position: 2,
+  bcolor: "ef8888",
+  ccolor: "ffffcc"
 }
 HomePage.Repo.insert! %HomePage.Pages.Category{
   title: "リンク",
   url: "link",
-  position: 3
+  position: 3,
+  bcolor: "33ac99",
+  ccolor: "dffeff"
 }
 
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{

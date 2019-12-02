@@ -4,13 +4,10 @@
     <% line_map = how_line(@component_items, 1, %{}, []) %>
     <% description_path = System.get_env("HOME_PAGE_CONTENTS") %>
     <% image_path = "/images/uploaded/" %>
-    <% category =
-        case length(@component_items) do
-           0 ->
-            current_category(@conn)
-           _ ->
-             hd(@component_items).category
-    end %>
+    <% category = current_category(@conn) %><!-- url -->
+    <% color = current_category_color(category) %>
+    <% bcolor = hd(color) %>
+    <% ccolor = hd(tl(color)) %>
 
     <%= for item <- @component_items do %>
       <%= case item.line do %>
@@ -86,7 +83,7 @@
 
             <div class="card-block" id="line-<%= line_map["#{item.line}"] %>">
               <div class="row">
-                <h5 class="card-header rounded-0 col-12 title blank_title">
+                <h5 class="card-header rounded-0 col-12 title blank_title category-color" bcolor="<%= bcolor %>" ccolor="<%= ccolor %>">
                   <%= item.title %>
                 </h5>
               </div>
@@ -109,25 +106,23 @@
                         <%= nil -> %>
                           <%= parse_markdown(t)
                               |> raw()%>
-                        <!-- tabの処理だけhtml,内容はmarkdownで処理させるためのゴリ押し -->
+                        <!-- tabの処理だけhtml,内容はmarkdownで処理させる -->
                         <%= tab -> %>
                         <%=   text = String.split(t, [~s{class="tab-pane active">}, ~s{class="tab-pane">}, "</div>"])
-                                    |> Enum.reject(fn(x) -> x == "" end)
-                                    |> Enum.reject(fn(x) -> x == " " end)
-                                    |> Enum.reject(fn(x) -> x == "　" end)
-                                    |> Enum.reject(fn(x) -> x == "\n" end)
+                                    |> Enum.reject(fn(x) -> x == "" or x == " "
+                                                    or x == "　" or x == "\n" end)
                               list_create(tab * 2)
                               |> Enum.map(fn(x) ->
                                             case x do
                                               1 ->
                                                 ~s{#{Enum.at(text, 0)}} <> ~s{class="tab-pane active">}
-                                              y when rem(y, 2) == 0 ->
+                                              y when rem(y, 2) == 0 -> #tab本文
                                                 ~s{#{Enum.at(text, y - 1)}}
-                                                |> String.split("                          ")# 何故かこれだけの空白が最初についてくるので除く
+                                                |> String.split("                          ") #何故かこれだけの空白が最初についてくるので除く
                                                 |> tl
                                                 |> hd
                                                 |> parse_markdown()
-                                              z ->
+                                              z -> #tab本文の直後に書くhtml
                                                 "</div>" <> ~s{#{Enum.at(text, z - 1)}} <> ~s{class="tab-pane">}
                                             end
                                           end)
@@ -153,7 +148,7 @@
                   <span><%= link "Edit", to: component_item_path(@conn, :edit, item), class: "btn btn-success btn-xs" %></span>
                   <%= case item.lock do %>
                     <%= false -> %>
-                      <span><%= link "Delete", to: component_item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                      <span><%= link "Delete", to: component_item_path(@conn, :delete, item, url: current_category(@conn)), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
                     <%= true -> %>
                       <br><i class=" fa fa-lock fa-3x lock"></i>
                   <% end %>
@@ -167,7 +162,7 @@
   </div>
 </div>
 <%= if current_user(@conn).id != -1 do %>
-  <%= link to: component_item_path(@conn, :new),
+  <%= link to: component_item_path(@conn, :new, url: current_category(@conn)),
     class: "btn btn-info" do %>
     <i class=" fa fa-plus fa-2x"></i><i class=" fa fa-plus fa-xs"></i><font size="5">Add New Item</font>
   <% end %>
@@ -177,5 +172,5 @@
   <% end %>
 <% end %>
 <a class="btn" href="#" id="scroll_top_btn" hidden>
-  <i class=" fa fa-angle-double-up fa-3x"></i>
+  <i class=" fa fa-angle-double-up fa-3x category-color-btn" bcolor="<%= bcolor %>"></i>
 </a>

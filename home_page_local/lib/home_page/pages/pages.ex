@@ -40,13 +40,17 @@ defmodule HomePage.Pages do
     Category
     |> Repo.get_by(position: position)
   end
+  def get_category_by_url(url) do
+    Category
+    |> Repo.get_by(url: url)
+  end
 
   def build_category() do
     p = Category
         |> last(:position)
         |> Repo.one()
     %Category{
-      position: p.position + 1
+      position: p.position + 1, bcolor: "f3df88", ccolor: "335544"
     }
   end
 
@@ -59,6 +63,13 @@ defmodule HomePage.Pages do
   def get_pos_asc_upd_desc() do
     Category
     |> order_by(asc: :position, desc: :updated_at)
+    |> Repo.all()
+  end
+  def get_pos_than_0_asc_ins_desc() do
+    query = from category in Category,
+      where: category.position > 0
+    query
+    |> order_by(asc: :position, desc: :inserted_at)
     |> Repo.all()
   end
 

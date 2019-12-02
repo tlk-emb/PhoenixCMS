@@ -20683,7 +20683,7 @@ header {
   header h1.home-title {
     margin-bottom: 0rem; }
   header div.btn-link-toolbar {
-    background-color: #00cb90; }
+    background-color: #55ba9a; }
     header div.btn-link-toolbar a.tool-btn {
       font-size: 14px;
       border-width: 2px 2px 2px 0px;
@@ -20699,7 +20699,7 @@ header {
       border-width: 0px 0px 0px 0px; }
     header div.btn-link-toolbar a.tool-btn-pushed {
       color: #55a;
-      background-color: #aacb90;
+      background-color: #88cbb0;
       border-color: #50873a; }
     header div.btn-link-toolbar a.tool-btn-lastrow-pushed {
       color: #50405a;
@@ -20753,8 +20753,6 @@ div.item div.row div.separate {
     margin-top: 0.4rem;
     background-color: #fcfcfc; }
   div.item div.row div.separate h5.title {
-    background-color: #f3df88;
-    color: #335544;
     font-weight: bold;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem; }
@@ -20782,11 +20780,10 @@ div.item div.row div.row:last-child {
   right: 2%;
   bottom: 1%;
   border-radius: 20%;
-  background: #00bb80;
+  background: #333333;
   opacity: 0.8; }
   #scroll_top_btn i.fa {
-    margin-top: -0.5rem;
-    color: #f3df88; }
+    margin-top: -0.5rem; }
 
 main {
   margin: 1rem; }

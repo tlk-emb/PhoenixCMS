@@ -9,6 +9,8 @@ defmodule HomePage.Pages.Category do
     field :title, :string
     field :position, :integer
     field :url, :string
+    field :bcolor, :string
+    field :ccolor, :string
 
     timestamps()
   end
@@ -16,10 +18,12 @@ defmodule HomePage.Pages.Category do
   @doc false
   def changeset(category, attrs) do
     category
-    |> cast(attrs, [:title, :url, :position])
-    |> validate_required([:title, :url, :position])
+    |> cast(attrs, [:title, :url, :position, :bcolor, :ccolor])
+    |> validate_required([:title, :url, :position, :bcolor, :ccolor])
     |> unique_constraint(:title)
     |> unique_constraint(:url)
-    |> validate_number(:position, greater_than: 0)
+    |> validate_number(:position, greater_than: -1)
+    |> validate_format(:bcolor, ~r/^[0-9a-f]{6}$/i)
+    |> validate_format(:ccolor, ~r/^[0-9a-f]{6}$/i)
   end
 end

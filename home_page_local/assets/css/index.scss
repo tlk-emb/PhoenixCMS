@@ -19,9 +19,8 @@ div.item{
         background-color: #fcfcfc;
       }
       h5.title{
-        //background:linear-gradient(180deg, #f3df88 0%, #f3df88 10%,#e9d67d 10%, #e9d67d 95%, #f3df88 95%, #f3df88 100%);
-        background-color: #f3df88;
-        color: #335544;
+        //background-color: #f3df88;
+        //color: #335544;
         font-weight: bold;
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
@@ -60,10 +59,10 @@ div.item{
   right: 2%;
   bottom: 1%;
   border-radius: 20%;
-  background: #00bb80;
+  background: #333333;
   opacity: 0.8;
   i.fa{
     margin-top: -0.5rem;
-    color: #f3df88;
+    //color: #f3df88;
   }
 }

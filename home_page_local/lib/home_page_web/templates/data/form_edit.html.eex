@@ -1,0 +1,22 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <h3><%= @datas.name %></h3>
+
+    <label>コメント</label>
+    <%= text_input f, :comment, class: "form-control" %>
+    <%= error_tag f, :comment %>
+
+    <input hidden class="form-control" id="data_size" name="data[size_list]" type="text">
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
