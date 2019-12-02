@@ -98,7 +98,7 @@ defmodule HomePageWeb.ComponentItemController do
   end
   defp tab_title_collect(splitted_more, tab_id, tab_number, item_id) do
     case length(splitted_more) do
-      #再起の初回のみhdがゴミ
+      #再帰の初回のみhdがゴミ
       lll when lll == tab_number + 1 ->
         splitted_more
         |> tl
@@ -206,11 +206,11 @@ defmodule HomePageWeb.ComponentItemController do
                       case x do
                         1 ->
                           ~s{<li class="nav-item">
-                            <a href="#{id}_tab#{x}" class="nav-link active" data-toggle="tab">#{params["tab#{x}_title"]}</a>
+                            <a href="##{id}_tab#{x}" class="nav-link active" data-toggle="tab">#{params["tab#{x}_title"]}</a>
                           </li>}
                         _ ->
                         ~s{<li class="nav-item">
-                          <a href="#{id}_tab#{x}" class="nav-link" data-toggle="tab">#{params["tab#{x}_title"]}</a>
+                          <a href="##{id}_tab#{x}" class="nav-link" data-toggle="tab">#{params["tab#{x}_title"]}</a>
                         </li>}
                       end
                     end)

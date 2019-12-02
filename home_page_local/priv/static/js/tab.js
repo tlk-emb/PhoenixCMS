@@ -186,5 +186,5 @@ function html_preview(tab_value){
       dom.html(preview);
       dom.insertBefore("#tab" + Number(step) + "_label");
     }
-  }
-}
+   }
+ }

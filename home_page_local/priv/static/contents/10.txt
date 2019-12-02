@@ -1,5 +1,3 @@
-* 現在の所属や活動
-
 * [京都大学大学院情報学研究科 高木研究室](http://www.lab3.kuis.kyoto-u.ac.jp/)
 * [組込みシステム技術に関するサマーワークショップ（SWEST）](http://swest.toppers.jp/)
 * [情報処理学会システムとLSIの設計技術研究会（IPSJ-SIGSLDM）](http://www.sig-sldm.org/)
@@ -11,4 +9,3 @@
 * [組込みシステム技術に関するサマースクール（SSEST）](http://www.ertl.jp/SSEST/)
 * [ETソフトウェアデザインロボットコンテスト（ETロボコン）](http://www.etrobo.jp/) [関西地区大会](http://kansai.etrobo.jp/)
 * [京都大学ICTイノベーション](http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/)
-                

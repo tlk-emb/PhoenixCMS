@@ -26,7 +26,7 @@
 
 
 
-                          </div><div id="7_tab2" class="tab-pane">
+                          </div><div id="7_tab2" class="tab-pane active">
                           * 組込み初学者を対象とした短期合宿型教育プログラム！！
 * 2013年〜2015年 [ETソフトウェアデザインロボットコンテスト（ETロボコン）](http://www.etrobo.jp/2013/) [関西地区大会](http://kansai.etrobo.jp/2013/)実行委員会 実行委員
 * 2012年〜2014年 [京都大学ICTイノベーション](http://ict-nw.i.kyoto-u.ac.jp/ict-innovation/) WG委員

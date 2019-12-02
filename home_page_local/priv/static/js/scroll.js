@@ -60,7 +60,7 @@ window.onscroll = function(){
 
         btn.style.pointerEvents = "none";
         btn.style.cursor = "default";
-        btn.setAttribute("hidden");
+        //btn.setAttribute("hidden", "");
     }
 }
 

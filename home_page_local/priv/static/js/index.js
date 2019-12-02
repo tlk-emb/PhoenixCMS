@@ -1,7 +1,6 @@
 window_load();
 window.addEventListener("resize", window_load);
 
-
 function window_load(){ //要素間のマージンを調整する
   //調整完了まで要素を表示しない
 

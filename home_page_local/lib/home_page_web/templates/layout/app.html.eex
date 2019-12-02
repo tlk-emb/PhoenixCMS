@@ -202,12 +202,13 @@
 
       <!--<br>URL: http://www.lab3.kuis.kyoto-u.ac.jp/~takase/index.html<br>-->
     </footer>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/marked.min.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/scroll.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/tab.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/header_size.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/tab.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
+
   </body>
   </body>
 </html>
