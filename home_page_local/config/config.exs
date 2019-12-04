@@ -49,8 +49,8 @@ config :home_page, HomePage.Mailer,
        adapter: Bamboo.SMTPAdapter,
        server: "smtp.gmail.com",
        port: 587,
-       username: "home.page.phoenix0405@gmail.com",
-       password: "Rtgbn3fuj5",
+       username: System.get_env("HOME_PAGE_MAIL_USER_NAME"),
+       password: System.get_env("HOME_PAGE_MAIL_PASS"),
        tls: :if_available, #can be ':always' or ':never'
        ssl: false, #can be 'true'
        retries: 1

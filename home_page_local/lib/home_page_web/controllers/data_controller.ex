@@ -94,7 +94,7 @@ defmodule HomePageWeb.DataController do
 
   def download(conn, %{"id" => id}) do
     name = TemporaryFiles.get_data!(id).name
-    path = Application.app_dir(:home_page, "/priv/static/temporary/#{name}")
+    path = System.get_env("HOME_PAGE_DIR") <> "priv/static/temporary/#{name}"
     kind = {:file, path}
     send_download(conn, kind)#lemoteディレクトリからfile downloadする関数
     conn

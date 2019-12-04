@@ -3,18 +3,18 @@ defmodule HomePage.Email do
 
 
   def hello_email(email) do
-    home_page_mail = "home.page.phoenix0405@gmail.com"
+    home_page_mail = System.get_env("HOME_PAGE_MAIL_USER_NAME")
     new_email
     |> to(email)
     |> from(home_page_mail)
     |> subject("Welcome!")
-    |> text_body("Welcome to HomePage!?")
+    |> text_body("Welcome to HomePage!")
   end
 
   def reset_password(token, email, name) do
-    home_page_mail = "home.page.phoenix0405@gmail.com"
+    home_page_mail = System.get_env("HOME_PAGE_MAIL_USER_NAME")
     #url = "http://localhost:4000/password_reset/"
-    url = "http://tlk-emb.jp/password_reset/"
+    url = System.get_env("HOME_PAGE_URL") <> "/password_reset/"
     new_email
     |> to(email)
     |> from(home_page_mail)
@@ -25,8 +25,7 @@ defmodule HomePage.Email do
   defp reset_text(name, url) do
     "#{name}　様
     ホームページのパスワードの再設定リクエストを受け付けました。
-    以下のURLから、フォームにシークレットキーを入力し、
-    パスワードを再設定してください。
+    以下のURLからパスワードを再設定してください。
     (期限は1時間です。期限が切れた場合、再度リクエストしてください)
     URL：#{url}"
   end

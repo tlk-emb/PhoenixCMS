@@ -157,7 +157,7 @@
 
       <%= if current_user(@conn, @view_template) do %> <!-- layout_viewより -->
         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with bottun groups">
-          <%= link to: session_path(@conn, :delete), method: :delete,
+          <%= link to: session_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure to LOGOUT?"],
             class: "btn btn-danger btn-sm" do %>
           <i class="fa fa-user-times fa-lg"></i> ログアウト
           <% end %>

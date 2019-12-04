@@ -18563,12 +18563,12 @@ header {
     header div.btn-link-toolbar a.tool-btn-lastrow-last {
       border-width: 0px 0px 0px 0px; }
     header div.btn-link-toolbar a.tool-btn-pushed {
-      color: #55a;
+      color: #50405a;
       background-color: #88cbb0;
       border-color: #50873a; }
     header div.btn-link-toolbar a.tool-btn-lastrow-pushed {
       color: #50405a;
-      background-color: #aacb90;
+      background-color: #88cbb0;
       border-color: #50873a; }
     header div.btn-link-toolbar a.tool-btn-beside-pushed {
       border-right-color: #50873a; }

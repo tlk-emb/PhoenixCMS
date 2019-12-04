@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :home_page, HomePage.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "phoenix",
-  password: "phoenix",
-  database: "home_page_dev",
-  hostname: "localhost",
+  password: System.get_env("DATABASE_PASS"),
+  database: System.get_env("DATABASE_NAME"),
+  hostname: System.get_env("DATABASE_HOSTNAME"),
   pool_size: 10
