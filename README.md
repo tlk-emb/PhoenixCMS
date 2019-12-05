@@ -37,31 +37,31 @@ The output is <secret_key_base>.
 
 Set following environment variables.(This project uses MySQL for DB!)
 
-- HOME_PAGE_GUARDIAN_KEY=<guardian_secret_key>
+- `HOME_PAGE_GUARDIAN_KEY=<guardian_secret_key>`
 
-- SECRET_KEY_BASE=<secret_key_base>
+- `SECRET_KEY_BASE=<secret_key_base>`
 
-- DATABASE_PASS=<your database password>
+- `DATABASE_PASS=<your database password>`
 
-- DATABASE_HOSTNAME=<your database hostname>
+- `DATABASE_HOSTNAME=<your database hostname>`
 
-- DATABASE_NAME=<your database name>
+- `DATABASE_NAME=<your database name>`
   
-- HOME_PAGE_CONTENTS=<absolute path to home_page_local/priv/static/contents/>
+- `HOME_PAGE_CONTENTS=<absolute path to home_page_local/priv/static/contents/>`
 
-- HOME_PAGE_STATIC=<absolute path to home_page_local/priv/static/>
+- `HOME_PAGE_STATIC=<absolute path to home_page_local/priv/static/>`
 
-- HOME_PAGE_UPLOADED=<absolute path to homepage_local/priv/static/images/uploaded/>
+- `HOME_PAGE_UPLOADED=<absolute path to homepage_local/priv/static/images/uploaded/>`
 
-- HOME_PAGE_DIR=<absolute path to home_page_local/>
+- `HOME_PAGE_DIR=<absolute path to home_page_local/>`
 
-- HOME_PAGE_URL=http<or https>://www.<your domain name>
+- `HOME_PAGE_URL=http<or https>://www.<your domain name>`
 
 you make gmail account, and
 
-- HOME_PAGE_MAIL_PASS=<your gmail account's password>
+- `HOME_PAGE_MAIL_PASS=<your gmail account's password>`
 
-- HOME_PAGE_MAIL_USER_NAME=<your gmail address>
+- `HOME_PAGE_MAIL_USER_NAME=<your gmail address>`
   
 After this, write <your DB user name> directly in dev.exs or prod.exs,please.
   
