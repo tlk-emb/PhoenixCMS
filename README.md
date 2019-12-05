@@ -1,18 +1,76 @@
 # PhoenixCMS
-CMS with elixir + phoenix on AWS
+Contents Management System made by elixir + phoenix
 
-ローカル環境でのプロジェクトです
+# Usage
 
-リモートにデプロイする際にはいくつかのファイルを編集する必要があります
 
-・config/prod.exsが参照している環境変数がDBの設定に合うように.bashrcに記述して下さい
+# Requirement
+Erlang/OTP v22
 
-・lib/home_page/email.ex内のurlをリモート環境のIPアドレスに合わせてください
+Elixir v1.9.1
 
-・lib/home_page_web/controllers/component_item_controller.ex内の変数pathの値をリモート環境のディレクトリに合わせてください
+Phoenix v1.3.4
 
-・lib/home_page_web/controllers/component_item_controller.ex内の変数pathの値をリモート環境のディレクトリに合わせてください
+MySQL v5.7.24
 
-・lib/home_page_web/templates/category/show.html.eex内の変数description_pathの値をリモート環境のディレクトリに合わせてください
+# How To Deploy
+At first,
 
-・lib/home_page_web/templates/category/preview.html.eex内の変数description_pathの値をリモート環境のディレクトリに合わせてください
+```bash
+git clone https://github.com/tlk-emb/PhoenixCMS
+cd PhoenixCMS/home_page_local
+mix deps.get
+mix compile
+```
+Then,
+```bash
+mix guardian.gen.secret
+```
+The output is <guardian_secret_key>,used for password authentication.
+
+and
+
+```bash
+mix phx.gen.secret
+```
+The output is <secret_key_base>.
+
+Set following environment variables.(This project uses MySQL for DB!)
+
+- HOME_PAGE_GUARDIAN_KEY=<guardian_secret_key>
+
+- SECRET_KEY_BASE=<secret_key_base>
+
+- DATABASE_PASS=<your database password>
+
+- DATABASE_HOSTNAME=<your database hostname>
+
+- DATABASE_NAME=<your database name>
+  
+- HOME_PAGE_CONTENTS=<absolute path to home_page_local/priv/static/contents/>
+
+- HOME_PAGE_STATIC=<absolute path to home_page_local/priv/static/>
+
+- HOME_PAGE_UPLOADED=<absolute path to homepage_local/priv/static/images/uploaded/>
+
+- HOME_PAGE_DIR=<absolute path to home_page_local/>
+
+- HOME_PAGE_URL=http<or https>://www.<your domain name>
+
+you make gmail account, and
+
+- HOME_PAGE_MAIL_PASS=<your gmail account's password>
+
+- HOME_PAGE_MAIL_USER_NAME=<your gmail address>
+  
+After this, write <your DB user name> directly in dev.exs or prod.exs,please.
+  
+Finally,execute following codes to run the application.
+```bash
+export PORT=4000
+MIX_ENV=prod<or dev> mix ecto.create
+MIX_ENV=prod<or dev> mix ecto.migrate
+MIX_ENV=prod<or dev> mix run priv/repo/seeds.exs
+MIX_ENV=prod<or dev> mix phx.server
+```
+If you are running on the local environment, go http://http://localhost:4000 and can see.
