@@ -20,7 +20,7 @@ config :home_page, HomePageWeb.Endpoint,
 #Configures guardian
 config :home_page, HomePage.Accounts.Guardian,
   issuer: "home_page",
-  secret_key: "rGn3EMXLqxFfJSgkMHEaLDGV7kq8LzI0t36LrXopknB774EBKd+Wl7gDG6kVIx+3"
+  secret_key: System.get_env("HOME_PAGE_GUARDIAN_KEY")
 
 # Configures guardian_db
 config :guardian, Guardian.DB,
