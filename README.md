@@ -73,4 +73,4 @@ MIX_ENV=prod<or dev> mix ecto.migrate
 MIX_ENV=prod<or dev> mix run priv/repo/seeds.exs
 MIX_ENV=prod<or dev> mix phx.server
 ```
-If you are running on the local environment, go http://http://localhost:4000 and can see.
+If you are running on the local environment, go http://localhost:4000 and can see.
