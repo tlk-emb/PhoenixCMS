@@ -1,7 +1,6 @@
 defmodule HomePage.Email do
   use Bamboo.Phoenix, view: HomePage.EmailView
 
-
   def hello_email(email) do
     home_page_mail = System.get_env("HOME_PAGE_MAIL_USER_NAME")
     new_email
@@ -15,6 +14,7 @@ defmodule HomePage.Email do
     home_page_mail = System.get_env("HOME_PAGE_MAIL_USER_NAME")
     #url = "http://localhost:4000/password_reset/"
     url = System.get_env("HOME_PAGE_URL") <> "/password_reset/"
+
     new_email
     |> to(email)
     |> from(home_page_mail)

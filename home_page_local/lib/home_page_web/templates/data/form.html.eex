@@ -29,7 +29,9 @@
       if(select.value){
         var file_list = select.files;
         for(var i = 0; i < file_list.length; i++){
-          if(file_list[i].size >= 1000000){
+          if(file_list[i].size >= 1000000000){
+            list.push(Math.round(file_list[i].size / 1000000000) + "GB")//_" + file_list[i].name); //**bytes<filename>
+          }else if(file_list[i].size >= 1000000){
             list.push(Math.round(file_list[i].size / 1000000) + "MB")//_" + file_list[i].name); //**bytes<filename>
           }else{
             list.push(Math.round(file_list[i].size / 1000) + "KB")//_" + file_list[i].name); //**bytes<filename>

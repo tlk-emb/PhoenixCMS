@@ -21,7 +21,14 @@
         <%= _ -> %> <td><i class="fa fa-question fa-lg"></i>
         <% end %>
       <%= data.name %></td>
-      <td><%= data.size %></td>
+      <%= case String.last(hd(String.split(data.size, "B"))) do %>
+        <%= "G" -> %>
+          <td><h4><%= data.size %></h4></td>
+        <%= "M" -> %>
+          <td><h5><%= data.size %></h5></td>
+        <%= _ -> %>
+          <td><%= data.size %></td>
+      <% end %>
       <td><%= data.comment %></td>
       <td><%= date_to_string(data.inserted_at) %></td>
 
