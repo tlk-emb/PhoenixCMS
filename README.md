@@ -190,7 +190,7 @@ you make gmail account, and
 
 - `HOME_PAGE_MAIL_USER_NAME=<your gmail address>`
   
-After this, write <your DB user name> directly in dev.exs or prod.exs,please.
+After this, write your DB user name directly in dev.exs or prod.exs,please.
   
 Finally,execute following codes to run the application.
 ```bash
