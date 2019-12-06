@@ -7,12 +7,14 @@ After starting phoenix server according to "How To Deploy",
 access http://www.localhost:4000 if running on the local server.
 
 Then the initial state is displayed as below.
+
 ![](https://user-images.githubusercontent.com/50648545/70306040-29221480-1849-11ea-968d-56daea5e78db.png)
 
 ## Login
 In order to login to PhoenixCMS, enter http://www.localhost:4000/login.
 
 Login page will be shown.
+
 ![](https://user-images.githubusercontent.com/50648545/70306043-2b846e80-1849-11ea-8007-6d8531a68e62.png)
 
 Enter your e-mail address and password, and push "Submit",then you can login.
@@ -22,16 +24,17 @@ Annotation: the initial account is registered to DB by seed data when ``` mix ru
 Its e-mail is "test@test.test"and password is "test". For the first time you must login by this account, after that you should change e-mail and password to yours(the method is described below.). 
 
 ## Managing Contents
-You can manage the DB tables "user", "category", "images", "temporary files" and "items"(main contents).
+You can manage the DB tables "user", "category", "images", "temporary files" and "component_items"(main contents).
 
 When you succeeded to login, the screen will be displayed as below.
+
 ![](https://user-images.githubusercontent.com/50648545/70307208-fd545e00-184b-11ea-8bfe-23bd27bc6638.png)
 
-1. "ログアウト"
+1. "ログアウト" ("Logout")
 
   - This button make you logout.
 
-2. "ユーザーページ"
+2. "ユーザーページ" ("User Page")
 
   - By pushing this button, you can enter the user page.
 
@@ -39,23 +42,94 @@ When you succeeded to login, the screen will be displayed as below.
   
   - (When you login or the first time, what you do first is this.)
   
-3. "カテゴリ"
+3. "カテゴリ" ("Category")
 
   - This button leads you to the category page. you can edit category table in it.
 
-  - Category table has fields as "title", "url", "positon" and "color". 
+4. "画像" ("Images")
 
-  - "title" is the string shown on the green tool-bar in the header.
-
-  - "url" is the string used in URL.
+  - From this button, you can upload image files(png, jpg).
   
-  - In the tool-bar, the order of categories is determined by "position"(ascending).
+5. "tmpファイル" ("Temporary Files")
 
-  - If you do not want some categories to be shown in the tool-bar, you can set "position" 0.
+  - You can upload your local files and download files from server.
+  
+  - The setting of uploading file is described in ```home_page_local/lib/endpoint.ex``` and can be modified.
+  
+  - When you deploy this project on the remote server, the Web server might limit the size of file you try to upload.
+  
+  - In this case, edit its setting.
+  
+6. This is the basic format of items.
 
-  - "color" determines the title color of the items of that category.
+  - You can edit from "Edit" button and delete from "Delete" button.
 
-4. 
+7. This is "blank item".
+
+  - If you set the title of the item, it will be shown as this.
+  
+  - Title and discriptions are not shown. Background color is transparent.
+  
+  - Only show its thumbnail image if it is set.
+  
+  - Basic usage is gap adjustment of items.
+  
+  - If your window is smaller than a certain ammount, "blank item" is not shown.
+  
+8. "Add New Item"
+
+  - When you add a item, push this button.
+ 
+9. "Preview"
+
+  - If you want to see how the display is shown for users who is not logged in, push this button.
+  
+## Category
+
+Category table has editable fields "title", "url", "positon" and "color". 
+
+- "title" is the string shown on the green tool-bar in the header.
+
+- "url" is the string used in URL.
+  
+- In the tool-bar, the order of categories is determined by "position"(ascending).
+
+- If you do not want some categories to be shown in the tool-bar, you can set "position" 0.
+
+- "color" determines the title color of the items of that category.
+
+## Items
+Component_items table has editable fields "title", "category", "position", "tab", "description", "size", "lock", "thumbnail"
+
+- "category" determines the URL where the item is shown.
+
+- Items are shown in ascending order of "position" from top left to right.
+
+- If "tab" value is 2 or more(up to 10), the item has tab. You can edit title and text of each tab.
+
+- Items show the text which you set in "description".
+
+- "size" specifies the size of items. The max value is 11 and if the sum of size values of items on a same line exceeds 11, item is displayed on on the next line.
+
+- If you afraid of removing items in mistake, by setting "lock" true, you can make the delete button hidden.
+
+- By entering the image file's name in image table into "thumbnail", you can show the image at the beggining of the description easily.
+
+The unit of the size of item is a size obtained by dividing your window size horizontally into 12 parts, 
+
+and displayed size of items change dynamically when you change the size of the window.
+
+1/12 is used for the margin between items, thus the upper limit of size is 11.
+
+## Customizing design
+If you want to custom the design of PhoenixCMS in more detail,
+
+you can edit css files in ```home_page_local/assets/css```.
+
+Note: the changes of css file are not reflected while running in prod mode. So, after change them, run the phoenix server in dev mode once.
+
+### In more detail
+Please rewrite html.eex files in ```home_page_dev/lib/home_page_web/templates```.
 
 # Requirement
 Erlang/OTP v22
