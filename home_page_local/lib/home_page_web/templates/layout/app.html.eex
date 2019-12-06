@@ -27,9 +27,6 @@
 
   <body>
     <header>
-      <!--<%= link to: top_path(@conn, :index) do %>
-      <h1>高瀬 英希　(TAKASE hideki)</h1>
-      <% end %>-->
       <nav class="navbar navbar-dark">
       <h1 class="home-title navbar-brand">PhoenixCMS</h1>
 
