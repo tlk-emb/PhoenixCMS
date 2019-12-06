@@ -32,57 +32,57 @@ When you succeeded to login, the screen will be displayed as below.
 
 1. "ログアウト" ("Logout")
 
-  - This button make you logout.
+    - This button make you logout.
 
 2. "ユーザーページ" ("User Page")
 
-  - By pushing this button, you can enter the user page.
+    - By pushing this button, you can enter the user page.
 
-  - In it, you can change your username, e-mail and password.
+    - In it, you can change your username, e-mail and password.
   
-  - (When you login or the first time, what you do first is this.)
+    - (When you login or the first time, what you do first is this.)
   
 3. "カテゴリ" ("Category")
 
-  - This button leads you to the category page. you can edit category table in it.
+    - This button leads you to the category page. you can edit category table in it.
 
 4. "画像" ("Images")
 
-  - From this button, you can upload image files(png, jpg).
+    - From this button, you can upload image files(png, jpg).
   
 5. "tmpファイル" ("Temporary Files")
 
-  - You can upload your local files and download files from server.
+    - You can upload your local files and download files from server.
   
-  - The setting of uploading file is described in ```home_page_local/lib/endpoint.ex``` and can be modified.
+    - The setting of uploading file is described in ```home_page_local/lib/endpoint.ex``` and can be modified.
   
-  - When you deploy this project on the remote server, the Web server might limit the size of file you try to upload.
+    - When you deploy this project on the remote server, the Web server might limit the size of file you try to upload.
   
-  - In this case, edit its setting.
+    - In this case, edit its setting.
   
 6. This is the basic format of items.
 
-  - You can edit from "Edit" button and delete from "Delete" button.
+    - You can edit from "Edit" button and delete from "Delete" button.
 
 7. This is "blank item".
 
-  - If you set the title of the item, it will be shown as this.
+    - If you set the title of the item, it will be shown as this.
   
-  - Title and discriptions are not shown. Background color is transparent.
+    - Title and discriptions are not shown. Background color is transparent.
   
-  - Only show its thumbnail image if it is set.
+    - Only show its thumbnail image if it is set.
   
-  - Basic usage is gap adjustment of items.
+    - Basic usage is gap adjustment of items.
   
-  - If your window is smaller than a certain ammount, "blank item" is not shown.
+    - If your window is smaller than a certain ammount, "blank item" is not shown.
   
 8. "Add New Item"
 
-  - When you add a item, push this button.
+    - When you add a item, push this button.
  
 9. "Preview"
 
-  - If you want to see how the display is shown for users who is not logged in, push this button.
+    - If you want to see how the display is shown for users who is not logged in, push this button.
   
 ## Category
 
