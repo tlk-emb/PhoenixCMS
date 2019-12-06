@@ -8,10 +8,13 @@
   <div class="form-group">
     <h3><%= @datas.name %></h3>
 
-    <label>コメント</label>
-    <%= text_input f, :comment, class: "form-control" %>
-    <%= error_tag f, :comment %>
 
+  <div class="form-group">
+    <%= label f, "コメント", class: "control-label" %>
+    <textarea class="form-control" name="data[comment]"><%= @changeset.data.comment %></textarea>
+    <%= error_tag f, :comment %>
+  </div>
+  <div>
     <input hidden class="form-control" id="data_size" name="data[size_list]" type="text">
   </div>
 

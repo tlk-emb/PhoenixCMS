@@ -1,2 +1,11 @@
-* Hello,
-* PhoenixCMS!      
+<ul class="nav nav-tabs"><li class="nav-item">
+                            <a href="#1_tab1" class="nav-link active" data-toggle="tab">Hello,</a>
+                          </li><li class="nav-item">
+                          <a href="#1_tab2" class="nav-link" data-toggle="tab">PhoenixCMS!</a>
+                        </li></ul><div class="tab-content"><div id="1_tab1" class="tab-pane active">
+                          You can
+
+                          </div><div id="1_tab2" class="tab-pane">
+                          manage your contents!
+
+                          </div></div>

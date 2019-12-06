@@ -32,9 +32,20 @@ HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   title: "Hello",
   position: 1,
   description: "1.txt",
-  size: 11,
+  size: 8,
   lock: true,
   line: -1,
+  category: "origin",
+  tab: 2
+}
+HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
+  user_id: 1,
+  title: "blank",
+  position: 1,
+  description: "2.txt",
+  size: 3,
+  lock: true,
+  line: 1,
   category: "origin",
   tab: 1
 }

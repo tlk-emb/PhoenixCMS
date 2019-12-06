@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<!--
+###########################################################################################
+#        +                                                                                                                                                       +            #
+#    ※    ※    ※  +■■■■  ■        +                                             +  ■■■■▶︎  ■           ■   ■■■▶︎ + ※    ※    ※    #
+#       ＼  |  ／       ■　　■  ■                              +         ●              ■               ■■   +■■  ■                 ＼  |  ／       #
+#           △     +    ■■■■  ■■■  ■■■  ■■▶︎  ■■■  ■  ■    ■  ■               ■ ■   ■ ■   ■■■■           △           #
+#       ◁ ○ ▷       ■           ■   ■  ■   ■  ■▶︎     ■   ■  ■    ■■    ■  +           ■  ■ ■  ■          + ■      ◁ ○ ▷       #
+#         ▷ ◁         ■       +  ■   ■  ■■■  ■■■  ■   ■  ■  ■    ■   ■■■■▶︎  ■    ■    ■   ◀︎■■■         ▷ ◁         #
+#         ◆◆◆   +   ◇           ◇   ◇  ◇◇◇  ◇◇◇  ◇   ◇  ◇  ◇    ◇   ◇◇◇◇◇  ◇    ◇    ◇   ◇◇◇◇        ◆◆◆       #
+#             @◆           :::◇◇      :::  ◇      :::◇      :::◇     ::: ◇    :::    ::: ◇       :::◇           :::    :::   ◇      :::   ◇           @◆      #
+#                  :::               :::◇        :::                                          :::                  :::◇◇       :::         :::          :::◇              :::   #
+###########################################################################################
+-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TAKASE's webpage</title>
+    <title>PhoenixCMS</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="shortcut icon" href="<%= static_path(@conn, "/images/favicon.ico") %>">
   </head>
@@ -18,7 +31,7 @@
       <h1>高瀬 英希　(TAKASE hideki)</h1>
       <% end %>-->
       <nav class="navbar navbar-dark">
-      <h1 class="home-title navbar-brand">高瀬 英希 (TAKASE hideki)</h1>
+      <h1 class="home-title navbar-brand">PhoenixCMS</h1>
 
         <!-- md以下でハンバーガーメニューを表示 -->
           <% path =
@@ -156,29 +169,30 @@
     <main hidden id="main">
 
       <%= if current_user(@conn, @view_template) do %> <!-- layout_viewより -->
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with bottun groups">
-          <%= link to: session_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure to LOGOUT?"],
-            class: "btn btn-danger btn-sm" do %>
-          <i class="fa fa-user-times fa-lg"></i> ログアウト
-          <% end %>
-          <%= link to: user_path(@conn, :index),
-            class: "btn btn-success btn-sm" do %>
-          <i class="fa fa-user fa-lg"></i> ユーザページ
-          <% end %>
-          <%= link to: category_path(@conn, :index),
-            class: "btn btn-primary btn-sm" do %>
-          <i class="fa fa-object-ungroup fa-lg"></i> カテゴリ
-          <% end %>
-          <%= link to: photo_path(@conn, :index),
-            class: "btn btn-secondary btn-sm" do %>
-          <i class="fa fa-image fa-lg"></i> 画像
-          <% end %>
-          <%= link to: data_path(@conn, :index),
-            class: "btn btn-dark btn-sm" do %>
-          <i class="fa fa-cubes fa-lg"></i> tmpファイル置き場
-          <% end %>
+        <div class="container-fluid editbar-background">
+          <div class="btn-editbar row" role="editbar" aria-label="Editbar with button groups">
+            <%= link to: session_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure to LOGOUT?"],
+              class: "btn btn-danger rounded-0 btn-sm edit-btn-top edit-btn-left col-3" do %>
+            <i class="fa fa-user-times fa-lg"></i> ログアウト
+            <% end %>
+            <%= link to: user_path(@conn, :index),
+              class: "btn btn-success rounded-0 btn-sm edit-btn-top col-3" do %>
+            <i class="fa fa-user fa-lg"></i> ユーザページ
+            <% end %>
+            <%= link to: category_path(@conn, :index),
+              class: "btn btn-primary rounded-0 btn-sm edit-btn-top edit-btn-right col-6" do %>
+            <i class="fa fa-object-ungroup fa-lg"></i> カテゴリ
+            <% end %>
+            <%= link to: photo_path(@conn, :index),
+              class: "btn btn-secondary rounded-0 btn-sm edit-btn-bottom edit-btn-left col-6" do %>
+            <i class="fa fa-image fa-lg"></i> 画像
+            <% end %>
+            <%= link to: data_path(@conn, :index),
+              class: "btn btn-dark rounded-0 btn-sm edit-btn-bottom edit-btn-right col-6" do %>
+            <i class="fa fa-cubes fa-lg"></i> tmpファイル
+            <% end %>
+          </div>
         </div>
-
         <br>
       <% end %>
 
@@ -209,6 +223,5 @@
     <script src="<%= static_path(@conn, "/js/tab.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/index.js") %>"></script>
 
-  </body>
   </body>
 </html>

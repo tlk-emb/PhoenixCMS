@@ -11,7 +11,7 @@
     <%= error_tag f, :file_list %>
 
     <label>コメント</label>
-    <%= text_input f, :comment, class: "form-control" %>
+    <textarea class="form-control" name="data[comment]"></textarea>
     <%= error_tag f, :comment %>
 
     <input hidden class="form-control" id="data_size" name="data[size_list]" type="text">

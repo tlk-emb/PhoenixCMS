@@ -144,7 +144,7 @@ defmodule HomePageWeb.ComponentItemController do
         (splitted_more
         |> tl
         |> hd #タブ一つ分のdescription
-        |> String.split("                          ")# 何故かこれだけの空白が最初についてくるので除く
+        |> String.split("                          ")# 何故かこれだけの空白が最初についてくるので除く<-解決しているかも
         |> tl
         |> hd)
         <> "</div>"

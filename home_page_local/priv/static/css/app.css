@@ -18543,8 +18543,7 @@ div.no-display {
 
 header {
   background-color: #50433a;
-  padding: 0rem;
-  background-color: #50433a; }
+  padding: 0rem; }
   header h1.home-title {
     margin-bottom: 0rem; }
   header div.btn-link-toolbar {
@@ -18652,8 +18651,13 @@ div.item div.row div.row:last-child {
 
 main {
   margin: 1rem; }
-  main div.btn-toolbar {
+  main div.editbar-background div.btn-editbar {
+    background-color: #dada00;
     margin-bottom: 1rem; }
+    main div.editbar-background div.btn-editbar a.edit-btn-top {
+      margin-top: 0.1rem; }
+    main div.editbar-background div.btn-editbar a.edit-btn-bottom {
+      margin-bottom: 0.15rem; }
 
 div.page-title {
   font-size: 2rem;

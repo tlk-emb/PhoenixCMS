@@ -29,7 +29,7 @@
         <%= _ -> %>
           <td><%= data.size %></td>
       <% end %>
-      <td><%= data.comment %></td>
+      <td style="white-space:pre-wrap;word-wrap:break-word"><%= data.comment %></td>
       <td><%= date_to_string(data.inserted_at) %></td>
 
       <td><%= link "Download", to: data_path(@conn, :download, data), class: "btn btn-info btn-xs" %>
