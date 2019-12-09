@@ -24,7 +24,7 @@ Annotation: the initial account is registered to DB by seed data when ``` mix ru
 Its e-mail is "test@test.test"and password is "test". For the first time you must login by this account, after that you should change e-mail and password to yours(the method is described below.). 
 
 ## Managing Contents
-Title on the header can be set in '''home_page_local/lib/home_page_web/templates/app.html.eex'''.
+Title on the header can be set in ```home_page_local/lib/home_page_web/templates/app.html.eex```.
 
 You can manage the DB tables "user", "category", "images", "temporary files" and "component_items"(main contents).
 
