@@ -24,6 +24,8 @@ Annotation: the initial account is registered to DB by seed data when ``` mix ru
 Its e-mail is "test@test.test"and password is "test". For the first time you must login by this account, after that you should change e-mail and password to yours(the method is described below.). 
 
 ## Managing Contents
+Title on the header can be set in '''home_page_local/lib/home_page_web/templates/app.html.eex'''.
+
 You can manage the DB tables "user", "category", "images", "temporary files" and "component_items"(main contents).
 
 When you succeeded to login, the screen will be displayed as below.
@@ -162,7 +164,7 @@ mix phx.gen.secret
 ```
 The output is <secret_key_base>.
 
-Set following environment variables.(This project uses MySQL for DB!)
+Set following environment variables.(This project uses MySQL for DB.)
 
 - `HOME_PAGE_GUARDIAN_KEY=<guardian_secret_key>`
 
@@ -184,7 +186,7 @@ Set following environment variables.(This project uses MySQL for DB!)
 
 - `HOME_PAGE_URL=http<or https>://www.<your domain name(if running on the local server, "localhost:4000")>`
 
-you make gmail account, and
+Make gmail account for using when you forget your password, and
 
 - `HOME_PAGE_MAIL_PASS=<your gmail account's password>`
 
