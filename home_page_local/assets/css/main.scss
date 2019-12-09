@@ -3,19 +3,29 @@ main {
   margin: 1rem;
   div.editbar-background{
     div.btn-editbar{
-      background-color: #dada00;
+      //background-color: #dada00;
       margin-bottom: 1rem;
-      a.edit-btn-left{
+      a.edit-btn-top-left{
         //margin-left: 0.1rem;
+        border-top-left-radius: 0.25rem !important;
       }
-      a.edit-btn-right{
+      a.edit-btn-top-right{
         //margin-right: 0.1rem;
+        border-top-right-radius: 0.25rem !important;
+      }
+      a.edit-btn-bottom-left{
+        //margin-right: 0.1rem;
+        border-bottom-left-radius: 0.25rem !important;
+      }
+      a.edit-btn-bottom-right{
+        //margin-right: 0.1rem;
+        border-bottom-right-radius: 0.25rem !important;
       }
       a.edit-btn-top{
-        margin-top: 0.1rem;
+        //margin-top: 0.1rem;
       }
       a.edit-btn-bottom{
-        margin-bottom: 0.15rem;
+        //margin-bottom: 0.15rem;
       }
     }
   }

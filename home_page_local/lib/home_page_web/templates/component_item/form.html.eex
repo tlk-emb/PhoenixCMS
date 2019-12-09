@@ -38,8 +38,7 @@
       動的生成する　-->
   <div class="form-group no-display">
     <%= label f, :description, class: "control-label" %>
-    <div id="description"><%= @changeset.data.description %>
-    </div>
+    <div id="description"><%= @changeset.data.description %></div>
     <textarea class="form-control" name="component_item[description]"></textarea>
     <%= error_tag f, :description %>
   </div>

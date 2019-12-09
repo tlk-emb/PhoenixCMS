@@ -87,15 +87,19 @@ defmodule HomePageWeb.LayoutView do
   #最後にcomponent_itemsテーブルが更新された時間を返す
   def last_updated() do
     item = Contents.get_last_updated()
-    timezone = Timezone.get("Asia/Tokyo", Timex.now)
-    [year, month, date_pre] =
-      item.updated_at
-      |> Timezone.convert(timezone)
-      |> DateTime.to_string
-      |> String.split("-")
-    [date, rest, _, _] =
-      date_pre
-      |> String.split(" ")
-    %{year: year, month: month, date: date}
+    case item do
+      nil -> %{year: "-", month: "-", date: "-"}
+      _ ->
+        timezone = Timezone.get("Asia/Tokyo", Timex.now)
+        [year, month, date_pre] =
+          item.updated_at
+          |> Timezone.convert(timezone)
+          |> DateTime.to_string
+          |> String.split("-")
+        [date, rest, _, _] =
+          date_pre
+          |> String.split(" ")
+        %{year: year, month: month, date: date}
+    end
   end
 end

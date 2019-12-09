@@ -5,7 +5,9 @@
                         </li></ul><div class="tab-content"><div id="1_tab1" class="tab-pane active">
                           You can
 
+
                           </div><div id="1_tab2" class="tab-pane">
                           manage your contents!
+
 
                           </div></div>

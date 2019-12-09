@@ -20,9 +20,9 @@
         <%= "blank" -> %>
           <%= case item.size do %>
             <%= 11 -> %>
-          <div class="card border-light col-md-12 d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>"><!-- blankはmd以下で表示されない -->
+          <div class="card border-0 col-md-12 d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>"><!-- blankはmd以下で表示されない -->
             <%= _ -> %>
-          <div class="card border-light col-md-<%= item.size %> d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>">
+          <div class="card border-0 col-md-<%= item.size %> d-none d-md-block blank line-<%= line_map["#{item.line}"] %>" id="line-<%= line_map["#{item.line}"] %>">
           <% end %>
           <!-- サムネを持つかどうか -->
             <%= case item.thumbnail do %>

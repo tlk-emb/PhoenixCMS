@@ -1,12 +1,3 @@
-
-#user_id=1はblank
-#HomePage.Repo.insert! %HomePage.Accounts.User{
-#  name: "blank_user",
-#  email: "blank",
-#  password: Bcrypt.hash_pwd_salt("blank")
-#}
-
-
 HomePage.Repo.insert! %HomePage.Accounts.User{
   name: "test",
   email: "test@test.test",
@@ -41,11 +32,12 @@ HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
 HomePage.Repo.insert! %HomePage.Contents.ComponentItem{
   user_id: 1,
   title: "blank",
-  position: 1,
+  position: 2,
   description: "2.txt",
   size: 3,
-  lock: true,
+  lock: false,
   line: 1,
   category: "origin",
+  thumbnail: "origin.png",
   tab: 1
 }

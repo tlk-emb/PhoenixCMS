@@ -33,17 +33,21 @@ div.item{
     }
     div.blank{
       margin-bottom: 1.2rem;
-      background-color: #fefef0;
+      background-color: rgba(0,0,0,0);
       div.blank_title{
         color: #ffffff;
         background-color: white;
+      }
+      i.lock{
+        color: #bb0;
+        margin-top: 0.5rem;
       }
       img.thumbnail{
         background-color: gray;
         width: 100%;
       }
       div.card-img-overlay{
-        color: #222;
+        //color: #222;
       }
     }
 

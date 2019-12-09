@@ -18625,15 +18625,16 @@ div.item div.row div.separate {
 
 div.item div.row div.blank {
   margin-bottom: 1.2rem;
-  background-color: #fefef0; }
+  background-color: rgba(0, 0, 0, 0); }
   div.item div.row div.blank div.blank_title {
     color: #ffffff;
     background-color: white; }
+  div.item div.row div.blank i.lock {
+    color: #bb0;
+    margin-top: 0.5rem; }
   div.item div.row div.blank img.thumbnail {
     background-color: gray;
     width: 100%; }
-  div.item div.row div.blank div.card-img-overlay {
-    color: #222; }
 
 div.item div.row div.row:last-child {
   margin-bottom: 1.0rem; }
@@ -18652,12 +18653,15 @@ div.item div.row div.row:last-child {
 main {
   margin: 1rem; }
   main div.editbar-background div.btn-editbar {
-    background-color: #dada00;
     margin-bottom: 1rem; }
-    main div.editbar-background div.btn-editbar a.edit-btn-top {
-      margin-top: 0.1rem; }
-    main div.editbar-background div.btn-editbar a.edit-btn-bottom {
-      margin-bottom: 0.15rem; }
+    main div.editbar-background div.btn-editbar a.edit-btn-top-left {
+      border-top-left-radius: 0.25rem !important; }
+    main div.editbar-background div.btn-editbar a.edit-btn-top-right {
+      border-top-right-radius: 0.25rem !important; }
+    main div.editbar-background div.btn-editbar a.edit-btn-bottom-left {
+      border-bottom-left-radius: 0.25rem !important; }
+    main div.editbar-background div.btn-editbar a.edit-btn-bottom-right {
+      border-bottom-right-radius: 0.25rem !important; }
 
 div.page-title {
   font-size: 2rem;

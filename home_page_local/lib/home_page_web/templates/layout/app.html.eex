@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<!--
-###########################################################################################
-#        +                                                                                                                                                       +            #
-#    ※    ※    ※  +■■■■  ■        +                                             +  ■■■■▶︎  ■           ■   ■■■▶︎ + ※    ※    ※    #
-#       ＼  |  ／       ■　　■  ■                              +         ●              ■               ■■   +■■  ■                 ＼  |  ／       #
-#           △     +    ■■■■  ■■■  ■■■  ■■▶︎  ■■■  ■  ■    ■  ■               ■ ■   ■ ■   ■■■■           △           #
-#       ◁ ○ ▷       ■           ■   ■  ■   ■  ■▶︎     ■   ■  ■    ■■    ■  +           ■  ■ ■  ■          + ■      ◁ ○ ▷       #
-#         ▷ ◁         ■       +  ■   ■  ■■■  ■■■  ■   ■  ■  ■    ■   ■■■■▶︎  ■    ■    ■   ◀︎■■■         ▷ ◁         #
-#         ◆◆◆   +   ◇           ◇   ◇  ◇◇◇  ◇◇◇  ◇   ◇  ◇  ◇    ◇   ◇◇◇◇◇  ◇    ◇    ◇   ◇◇◇◇        ◆◆◆       #
-#             @◆           :::◇◇      :::  ◇      :::◇      :::◇     ::: ◇    :::    ::: ◇       :::◇           :::    :::   ◇      :::   ◇           @◆      #
-#                  :::               :::◇        :::                                          :::                  :::◇◇       :::         :::          :::◇              :::   #
-###########################################################################################
--->
+<!----------------------------------------------------------------------------------------
+■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■
+■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■
+■■□□■■■■□□■□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■■■◆□□■□□□□□□□■□□□■■■◆□□□■■
+■□□□■□□■□□■□□□□□□□□□□□□□□□□□□□●□□□□□□□□■□□□□□□■■□□□□□■■□□■□□□□□□□□■
+□□□□■■■■□□■■■□□■■■□□■■◆□□■■■□□■□□■□□■□□■□□□□□□■□■□□□■□■□□□■■■■□□□□□
+■□□□■□□□□□■□■□□■□■□□■◆□□□■□■□□■□□□■■□□□■□□□□□□■□□■□■□□■□□□□□□□■□□□■
+■■□□■□□□□□■□■□□■■■□□■■■□□■□■□□■□□■□□■□□■■■■◆□□■□□□■□□□■□□□◆■■■□□□■■
+■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■
+■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■
+https://github.com/tlk-emb/PhoenixCMS
+----------------------------------------------------------------------------------------->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -166,30 +165,56 @@
     <main hidden id="main">
 
       <%= if current_user(@conn, @view_template) do %> <!-- layout_viewより -->
-        <div class="container-fluid editbar-background">
+        <div class="container-fluid editbar-background d-none d-md-block">
           <div class="btn-editbar row" role="editbar" aria-label="Editbar with button groups">
             <%= link to: session_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure to LOGOUT?"],
-              class: "btn btn-danger rounded-0 btn-sm edit-btn-top edit-btn-left col-3" do %>
-            <i class="fa fa-user-times fa-lg"></i> ログアウト
+              class: "btn btn-danger rounded-0 btn-sm edit-btn-top edit-btn-top-left col-3" do %>
+            <i class="fa fa-user-times fa-lg"></i>ログアウト
             <% end %>
             <%= link to: user_path(@conn, :index),
               class: "btn btn-success rounded-0 btn-sm edit-btn-top col-3" do %>
             <i class="fa fa-user fa-lg"></i> ユーザページ
             <% end %>
             <%= link to: category_path(@conn, :index),
-              class: "btn btn-primary rounded-0 btn-sm edit-btn-top edit-btn-right col-6" do %>
+              class: "btn btn-primary rounded-0 btn-sm edit-btn-top edit-btn-top-right col-6" do %>
             <i class="fa fa-object-ungroup fa-lg"></i> カテゴリ
             <% end %>
             <%= link to: photo_path(@conn, :index),
-              class: "btn btn-secondary rounded-0 btn-sm edit-btn-bottom edit-btn-left col-6" do %>
+              class: "btn btn-secondary rounded-0 btn-sm edit-btn-bottom edit-btn-bottom-left col-6" do %>
             <i class="fa fa-image fa-lg"></i> 画像
             <% end %>
             <%= link to: data_path(@conn, :index),
-              class: "btn btn-dark rounded-0 btn-sm edit-btn-bottom edit-btn-right col-6" do %>
+              class: "btn btn-dark rounded-0 btn-sm edit-btn-bottom edit-btn-bottom-right col-6" do %>
             <i class="fa fa-cubes fa-lg"></i> tmpファイル
             <% end %>
           </div>
         </div>
+
+        <div class="container-fluid editbar-background d-md-none">
+          <div class="btn-editbar row" role="editbar" aria-label="Editbar with button groups">
+            <%= link to: session_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure to LOGOUT?"],
+              class: "btn btn-danger rounded-0 btn-sm edit-btn-top edit-btn-top-left col-3" do %>
+            ログアウト
+            <% end %>
+            <%= link to: user_path(@conn, :index),
+              class: "btn btn-success rounded-0 btn-sm edit-btn-top col-3" do %>
+            ユーザページ
+            <% end %>
+            <%= link to: category_path(@conn, :index),
+              class: "btn btn-primary rounded-0 btn-sm edit-btn-top edit-btn-top-right col-6" do %>
+            カテゴリ
+            <% end %>
+            <%= link to: photo_path(@conn, :index),
+              class: "btn btn-secondary rounded-0 btn-sm edit-btn-bottom edit-btn-bottom-left col-6" do %>
+            画像
+            <% end %>
+            <%= link to: data_path(@conn, :index),
+              class: "btn btn-dark rounded-0 btn-sm edit-btn-bottom edit-btn-bottom-right col-6" do %>
+            tmpファイル
+            <% end %>
+          </div>
+        </div>
+        <br>
         <br>
       <% end %>
 
@@ -213,6 +238,7 @@
 
       <!--<br>URL: http://www.lab3.kuis.kyoto-u.ac.jp/~takase/index.html<br>-->
     </footer>
+
     <script src="<%= static_path(@conn, "/js/marked.min.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/scroll.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/header_size.js") %>"></script>

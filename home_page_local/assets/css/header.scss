@@ -1,17 +1,20 @@
 header {
   background-color: #50433a;
+  //background-color: #24e;
   padding: 0rem;
   h1.home-title{
     margin-bottom: 0rem;
   }
   div.btn-link-toolbar{
-    //background-color: #00cb90;
     background-color: #55ba9a;
+    //background-color: #f3df88;
     a.tool-btn{
       font-size: 14px;
       border-width: 2px 2px 2px 0px;
       color: #fff;
+      //color: #555;
       border-color: #50433a;
+      //border-color: #24e;
     }
     a.tool-btn-bottom{
       border-width: 2px 0px 2px 0px;
@@ -19,47 +22,48 @@ header {
     a.tool-btn-lastrow{
       border-width: 0px 2px 2px 0px;
       border-color: #50433a;
-      border-bottom: #fcfcfc;
+      border-bottom: #fcfcfc; //the body background color
+      //border-color: #24e;
+      //border-bottom: #fff;
     }
     a.tool-btn-lastrow-last{
       border-width: 0px 0px 0px 0px;
     }
     a.tool-btn-pushed{
-      //color: #55a;
       color: #50405a;
-      //background-color: #aacb90;
       background-color: #88cbb0;
       border-color: #50873a;
+      //background-color: #acd;
+      //border-color: #dfa;
     }
     a.tool-btn-lastrow-pushed{
       color: #50405a;
-      //color: #55a;
-      //background-color: #aacb90;
       background-color: #88cbb0;
       border-color: #50873a;
+      //background-color: #acd;
+      //border-color: #dfa;
     }
     a.tool-btn-beside-pushed{
       border-right-color: #50873a;
+      //border-right-color: #dfa;
     }
     a.tool-btn-above-pushed{
       border-bottom-color: #50873a;
+      //border-bottom-color: #dfa;
     }
   }
   a.home_title{
     padding-bottom: 0rem;
   }
   h1 {
-    //color: #f42288;
     color: #fefef0;
     font-size: 1.5rem;
-    //margin: 0.5rem;
   }
   nav.navbar{
     margin-right: auto;
-    //margin-bottom: 0.6rem;
-    //background:linear-gradient(180deg,#50433a 0%, #50433a 80%, #00cb90 80%, #00cb90 100%);
     button.hamburger{
       background-color: #60534a;
+      //background-color: #529;
       margin-bottom: 0.5rem;
       span.navbar-toggler-icon{
         margin-left: -0.5rem;
