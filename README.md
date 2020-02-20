@@ -134,7 +134,7 @@ Note: the changes of css file are not reflected while running in prod mode. So, 
 Please rewrite html.eex files in ```home_page_dev/lib/home_page_web/templates```.
 
 # Requirement
-Erlang/OTP v20.2
+Erlang/OTP v21
 
 Elixir v1.7.4
 
