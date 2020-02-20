@@ -134,11 +134,11 @@ Note: the changes of css file are not reflected while running in prod mode. So, 
 Please rewrite html.eex files in ```home_page_dev/lib/home_page_web/templates```.
 
 # Requirement
-Erlang/OTP v22
+Erlang/OTP v20.2
 
-Elixir v1.9.1
+Elixir v1.7.4
 
-Phoenix v1.3.4
+Phoenix v1.3.2
 
 MySQL v5.7.24
 
