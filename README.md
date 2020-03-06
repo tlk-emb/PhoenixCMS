@@ -136,7 +136,7 @@ Please rewrite html.eex files in ```home_page_dev/lib/home_page_web/templates```
 # Requirement
 Erlang/OTP v21
 
-Elixir v1.7.4
+Elixir v1.8.1
 
 Phoenix v1.3.2
 
